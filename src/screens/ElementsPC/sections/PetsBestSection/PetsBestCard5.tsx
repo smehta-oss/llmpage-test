@@ -33,26 +33,7 @@ const tabItems = [
   { id: "plan-details", label: "Plan Details" },
 ];
 
-const prosConsData = [
-  {
-    pro: "Pets Best will pay your vet directly if your vet signs the Veterinarian Reimbursement Release form",
-    con: "Does not cover prescription food or supplements"
-  },
-  {
-    pro: "CareCredit cardholders can use the card to pay for vet bills and receive reimbursement directly to the card",
-    con: "Does not cover stem cell treatments"
-  },
-  {
-    pro: "No upper pet age limit for buying a new policy",
-    con: "6-month waiting period for coverage of cruciate ligament issues"
-  },
-  {
-    pro: "Offers a 1-month trial policy for dogs and cats ages 8 and under through certain veterinary clinics and companies that partner with Pets Best",
-    con: null
-  }
-];
-
-export const PetsBestDetailsSection = (): JSX.Element => {
+export const PetsBestCard5 = (): JSX.Element => {
   const [activeTab, setActiveTab] = useState("expert-take");
 
   return (
@@ -61,7 +42,7 @@ export const PetsBestDetailsSection = (): JSX.Element => {
         <CardContent className="p-0 space-y-6">
           <header className="flex items-center gap-2">
             <h2 className="[font-family:'Work_Sans',Helvetica] font-bold text-black text-2xl leading-8 underline">
-              Pets Best
+              Spot
             </h2>
             <ExternalLinkIcon className="w-6 h-6" />
           </header>
@@ -70,15 +51,15 @@ export const PetsBestDetailsSection = (): JSX.Element => {
             <div className="col-span-12 lg:col-span-5 relative">
               <div className="w-full h-[58px] bg-[#f8f8fa] rounded-[16px_16px_0px_0px] overflow-hidden flex items-center justify-center">
                 <img 
-                  src="/pets-best-logo.png" 
-                  alt="Pets Best Logo" 
+                  src="/SpotIcon.png" 
+                  alt="Spot Logo" 
                   className="w-[125px] h-[58px] object-contain"
                 />
               </div>
               <img
                 className="w-full h-[207px] object-cover rounded-[0px_0px_16px_16px]"
-                alt="Rectangle"
-                src="/rectangle-2.png"
+                alt="Spot Pet Insurance"
+                src="/Spotlogo.png"
               />
             </div>
 
@@ -98,9 +79,8 @@ export const PetsBestDetailsSection = (): JSX.Element => {
                     lineHeight: '36px',
                     wordWrap: 'break-word'
                   }}>
-                    Best overall
+                    Best for healthy pets
                   </h3>
-                  <TrophyIcon className="w-6 h-6 text-[#007ac8]" />
                 </div>
                 <Separator className="h-px" />
               </div>
@@ -181,115 +161,6 @@ export const PetsBestDetailsSection = (): JSX.Element => {
             </div>
             </div>
 
-            {activeTab === "pros-cons" && (
-              <>
-                <h4 className="[font-family:'Work_Sans',Helvetica] font-semibold text-black text-xl tracking-[-0.33px] leading-8">
-                  Pros & Cons of Pets Best
-                </h4>
-
-                <table className="w-full border-collapse">
-                  <thead>
-                    <tr>
-                      <th 
-                        className="w-1/2 p-2 bg-[#F8F8FA] border-r border-[#ECECEC] text-left"
-                        style={{
-                          color: 'black',
-                          fontSize: 12,
-                          fontFamily: 'Work Sans',
-                          fontWeight: '700',
-                          lineHeight: '16px',
-                          wordWrap: 'break-word'
-                        }}
-                      >
-                        <div className="flex items-center gap-1">
-                          <div className="w-5 h-5 relative overflow-hidden">
-                            <div 
-                              className="absolute"
-                              style={{
-                                width: 16.25,
-                                height: 16.67,
-                                left: 1.67,
-                                top: 1.67,
-                                outline: '1.50px black solid',
-                                outlineOffset: '-0.75px'
-                              }}
-                            />
-                          </div>
-                          Pros
-                        </div>
-                      </th>
-                      <th 
-                        className="w-1/2 p-2 bg-[#F8F8FA] text-left"
-                        style={{
-                          color: 'black',
-                          fontSize: 12,
-                          fontFamily: 'Work Sans',
-                          fontWeight: '700',
-                          lineHeight: '16px',
-                          wordWrap: 'break-word'
-                        }}
-                      >
-                        <div className="flex items-center gap-2">
-                          <div className="w-6 h-6 relative overflow-hidden rotate-180">
-                            <div 
-                              className="absolute"
-                              style={{
-                                width: 19.50,
-                                height: 20,
-                                left: 2.50,
-                                top: 2,
-                                outline: '1.50px black solid',
-                                outlineOffset: '-0.75px'
-                              }}
-                            />
-                          </div>
-                          Cons
-                        </div>
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {prosConsData.map((row, index) => (
-                      <tr key={index}>
-                        <td 
-                          className="p-2 bg-[#F8F8FA] border-t border-r border-[#ECECEC] align-top"
-                          style={{
-                            color: 'black',
-                            fontSize: 14,
-                            fontFamily: 'Work Sans',
-                            fontWeight: '400',
-                            lineHeight: '24px',
-                            wordWrap: 'break-word'
-                          }}
-                        >
-                          <ol start={index + 1} className="list-decimal list-inside m-0 p-0">
-                            <li className="pl-0">{row.pro}</li>
-                          </ol>
-                        </td>
-                        <td 
-                          className="p-2 bg-[#F8F8FA] border-t border-[#ECECEC] align-top"
-                          style={{
-                            color: 'black',
-                            fontSize: 14,
-                            fontFamily: 'Work Sans',
-                            fontWeight: '400',
-                            lineHeight: '24px',
-                            wordWrap: 'break-word'
-                          }}
-                        >
-                          {row.con && (
-                            <ol start={index + 1} className="list-decimal list-inside m-0 p-0">
-                              <li className="pl-0">{row.con}</li>
-                            </ol>
-                          )}
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </>
-            )}
-
             {activeTab === "expert-take" && (
               <>
                 <h4 className="[font-family:'Work_Sans',Helvetica] font-semibold text-black text-xl tracking-[-0.33px] leading-8">
@@ -306,19 +177,7 @@ export const PetsBestDetailsSection = (): JSX.Element => {
                     wordWrap: 'break-word',
                     margin: 0
                   }}>
-                    The Pets Best Elite policy is the top-scoring policy in our evaluation. It stands out for its competitive prices and robust coverage, including vet exam fees, dental illnesses, behavioral therapy and alternative therapies. You'll have access to a 24/7 pet telehealth line and the option to buy one of two different tiers of wellness plans to cover expenses such as annual vet exams, vaccinations, microchipping and neutering/spaying.
-                  </p>
-                  
-                  <p style={{ 
-                    color: '#333333', 
-                    fontSize: '18px', 
-                    fontFamily: 'Georgia', 
-                    fontWeight: '400', 
-                    lineHeight: '29.12px', 
-                    wordWrap: 'break-word',
-                    margin: 0
-                  }}>
-                    Pets Best's Essential and Plus policies also scored well in our analysis (4.9 stars each). They have differences in coverage and price.
+                    Spot pet insurance stands out in our analysis due to its impressive array of coverage benefits included with its base policy, such as coverage for behavioral therapy, alternative therapy, prescription food and supplements, stem cell therapy, dental illnesses, vet exam fees and end-of-life expenses, including euthanasia, burial and cremation. It also includes access to a 24/7 pet telehealth line and the option to add a wellness plan.
                   </p>
                   
                   <p style={{ 
@@ -340,7 +199,7 @@ export const PetsBestDetailsSection = (): JSX.Element => {
                       lineHeight: '29.12px', 
                       wordWrap: 'break-word' 
                     }}>
-                      Pets Best Pet Insurance Review
+                      Spot Pet Insurance Review
                     </span>
                   </p>
                 </div>

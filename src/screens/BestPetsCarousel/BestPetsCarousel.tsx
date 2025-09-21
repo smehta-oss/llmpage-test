@@ -2,17 +2,15 @@ import {
   ArrowRightIcon,
   ChevronLeftIcon,
   ChevronRightIcon,
-  StarIcon,
 } from "lucide-react";
 import React from "react";
-import { cn } from "../../lib/utils";
 import { Button } from "../../components/ui/button";
-import { Card, CardContent } from "../../components/ui/card";
-import { INSURANCE_PLANS } from "../../data/insurance-providers";
 import { useCarousel } from "../../hooks/useCarousel";
+import { CarouselCard1, CarouselCard2, CarouselCard3, CarouselCard4, CarouselCard5 } from "./components";
 
 export const BestPetsCarousel = (): JSX.Element => {
   const CARD_WIDTH = 312 + 20; // card width + gap
+  const TOTAL_CARDS = 5; // Total number of individual card components
   
   const {
     carouselRef,
@@ -23,7 +21,7 @@ export const BestPetsCarousel = (): JSX.Element => {
     paginationDots
   } = useCarousel({
     cardWidth: CARD_WIDTH,
-    itemCount: INSURANCE_PLANS.length
+    itemCount: TOTAL_CARDS
   });
 
   return (
@@ -59,113 +57,11 @@ export const BestPetsCarousel = (): JSX.Element => {
               className="flex overflow-x-auto gap-5 mb-10 scroll-smooth scrollbar-hide"
               style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
             >
-              {INSURANCE_PLANS.map((plan, index) => (
-                <div 
-                  key={`plan-${index}`} 
-                  className={cn("insurance-plan-card", {
-                    "most-popular-card": plan.isPopular
-                  })}
-                  style={{
-                    width: '100%',
-                    paddingTop: '12px',
-                    paddingBottom: '8px',
-                    paddingLeft: '8px',
-                    paddingRight: '8px',
-                    position: 'relative',
-                    background: plan.isPopular ? '#f3c0601a' : '#F8F8FA',
-                    overflow: 'hidden',
-                    borderRadius: '24px',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    flexGrow: 1,
-                    maxWidth: '312px',
-                    flexShrink: 0,
-                    ...(plan.isPopular && {
-                      outline: '2px #F3C060 solid',
-                      outlineOffset: '-2px',
-                      backdropFilter: 'blur(2.0px) brightness(110%)',
-                      boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.40), inset 1px 0 0 rgba(255,255,255,0.32), inset 0 -1px 1px rgba(0,0,0,0.13), inset -1px 0 1px rgba(0,0,0,0.11)'
-                    })
-                  }}
-                >
-                  {plan.isPopular ? (
-                    <div 
-                      className="most-popular-title"
-                      style={{display: 'flex', alignItems: 'flex-start', justifyContent: 'center', gap: '9px', position: 'relative', alignSelf: 'stretch', width: '100%', flex: '0 0 auto', minHeight: '40px'}}
-                    >
-                      <StarIcon className="w-6 h-6 text-black" />
-                      <div style={{position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center', width: 'fit-content', marginTop: '-1px', fontFamily: 'Work Sans', fontWeight: '600', color: 'black', fontSize: '14px', textAlign: 'center', letterSpacing: '0.92px', lineHeight: '20px', whiteSpace: 'nowrap'}}>
-                        MOST POPULAR
-                      </div>
-                    </div>
-                  ) : null}
-
-                  <div className="card-content-group flex flex-col flex-grow relative">
-                    <div style={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent: 'space-between',
-                    width: '100%',
-                    alignItems: 'flex-start',
-                    gap: '12px',
-                    padding: plan.isPopular ? '12px 24px' : '12px 24px 12px 24px',
-                    position: 'relative',
-                    flexGrow: 1,
-                    background: plan.isPopular ? '#ffffffcc' : 'transparent',
-                    borderRadius: '16px',
-                    boxShadow: plan.isPopular ? '0px 0px 16px 4px #7d0af81f, inset 0 1px 0 rgba(255,255,255,0.40), inset 1px 0 0 rgba(255,255,255,0.32), inset 0 -1px 1px rgba(0,0,0,0.13), inset -1px 0 1px rgba(0,0,0,0.11)' : 'none',
-                    backdropFilter: plan.isPopular ? 'blur(2.0px) brightness(110%)' : 'none',
-                    marginTop: plan.isPopular ? '0px' : '12px'
-                    }}
-                    className={cn({
-                      "most-popular-content": plan.isPopular
-                    })}
-                    >
-                      <div className="card-content-wrapper">
-                    <div style={{display: 'flex', flexDirection: 'column', gap: '4px', flex: plan.isPopular ? '1' : 'none'}}>
-                      <div style={{alignSelf: 'stretch', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'flex-start', gap: '4px', display: 'flex'}}>
-                        <div style={{alignSelf: 'stretch', justifyContent: 'center', display: 'flex', flexDirection: 'column', color: 'black', fontSize: '16px', fontFamily: 'Work Sans', fontWeight: '400', textDecoration: 'underline', lineHeight: '26px', wordWrap: 'break-word'}}>
-                          {plan.provider}
-                        </div>
-
-                        <div style={{alignSelf: 'stretch', justifyContent: 'center', display: 'flex', flexDirection: 'column', color: 'black', fontSize: '20px', fontFamily: 'Work Sans', fontWeight: '600', lineHeight: '26px', wordWrap: 'break-word', whiteSpace: 'pre-line'}}>
-                          {plan.category}
-                        </div>
-                      </div>
-
-                      <div style={{alignSelf: 'stretch', color: '#606F7F', fontSize: '16px', fontFamily: 'Work Sans', fontWeight: '400', lineHeight: '24px', wordWrap: 'break-word'}}>
-                        {plan.description}
-                      </div>
-                    </div>
-
-                    <div style={{alignSelf: 'stretch', justifyContent: 'space-between', alignItems: 'center', display: 'inline-flex', marginTop: plan.isPopular ? '0px' : 'auto'}}>
-                      <div style={{alignSelf: 'stretch', justifyContent: 'flex-start', alignItems: 'center', display: 'inline-flex', gap: '56px'}}>
-                        <div style={{minWidth: '60px', height: '48px', paddingLeft: '16px', paddingRight: '16px', paddingTop: '9px', paddingBottom: '9px', background: '#007AC8', borderRadius: '8px', justifyContent: 'center', alignItems: 'center', display: 'flex'}}>
-                          <div style={{textAlign: 'center', justifyContent: 'center', display: 'flex', flexDirection: 'row', color: 'white', fontSize: '18px', fontFamily: 'Work Sans', fontWeight: '600', lineHeight: '30px', whiteSpace: 'nowrap'}}>
-                            Learn More
-                          </div>
-                        </div>
-
-                        <div style={{width: '80px', height: '80px', background: 'white', boxShadow: '0px 8px 16px -3px rgba(0, 0, 0, 0.10)', borderRadius: '8px', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', gap: '8px', display: 'inline-flex'}}>
-                          <img
-                            style={{width: '64px', height: '64px', objectFit: 'contain'}}
-                            alt="Provider logo"
-                            src={plan.logoSrc}
-                          />
-                        </div>
-                      </div>
-                    </div>
-
-                      </div>
-                    </div>
-                    <img
-                      className={`${plan.petImageClasses}`}
-                      alt="Pet"
-                      src={plan.petImageSrc}
-                    />
-                  </div>
-                </div>
-              ))}
+              <CarouselCard4 />
+              <CarouselCard2 />
+              <CarouselCard3 />
+              <CarouselCard1 />
+              <CarouselCard5 />
             </div>
           </div>
 

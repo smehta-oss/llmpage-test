@@ -16,6 +16,7 @@ module.exports = {
         "schnyder": ["Schnyder S", "serif"],
         "schnyder-demi": ["Schnyder S", "serif"],
         "schnyder-bold": ["Schnyder S", "serif"],
+        "work-sans": ["Work Sans", "sans-serif"],
         "graphik": ["Graphik", "Helvetica", "Arial", "sans-serif"],
         "inter": ["Inter", "sans-serif"],
         sans: [

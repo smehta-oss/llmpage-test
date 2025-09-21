@@ -52,7 +52,7 @@ const prosConsData = [
   }
 ];
 
-export const PetsBestDetailsSection = (): JSX.Element => {
+export const PetsBestCard2 = (): JSX.Element => {
   const [activeTab, setActiveTab] = useState("expert-take");
 
   return (
@@ -61,7 +61,7 @@ export const PetsBestDetailsSection = (): JSX.Element => {
         <CardContent className="p-0 space-y-6">
           <header className="flex items-center gap-2">
             <h2 className="[font-family:'Work_Sans',Helvetica] font-bold text-black text-2xl leading-8 underline">
-              Pets Best
+              Figo
             </h2>
             <ExternalLinkIcon className="w-6 h-6" />
           </header>
@@ -70,8 +70,8 @@ export const PetsBestDetailsSection = (): JSX.Element => {
             <div className="col-span-12 lg:col-span-5 relative">
               <div className="w-full h-[58px] bg-[#f8f8fa] rounded-[16px_16px_0px_0px] overflow-hidden flex items-center justify-center">
                 <img 
-                  src="/pets-best-logo.png" 
-                  alt="Pets Best Logo" 
+                  src="/FigoIcon.png" 
+                  alt="Figo Logo" 
                   className="w-[125px] h-[58px] object-contain"
                 />
               </div>
@@ -98,9 +98,8 @@ export const PetsBestDetailsSection = (): JSX.Element => {
                     lineHeight: '36px',
                     wordWrap: 'break-word'
                   }}>
-                    Best overall
+                    Best for all-round coverage
                   </h3>
-                  <TrophyIcon className="w-6 h-6 text-[#007ac8]" />
                 </div>
                 <Separator className="h-px" />
               </div>
@@ -181,115 +180,6 @@ export const PetsBestDetailsSection = (): JSX.Element => {
             </div>
             </div>
 
-            {activeTab === "pros-cons" && (
-              <>
-                <h4 className="[font-family:'Work_Sans',Helvetica] font-semibold text-black text-xl tracking-[-0.33px] leading-8">
-                  Pros & Cons of Pets Best
-                </h4>
-
-                <table className="w-full border-collapse">
-                  <thead>
-                    <tr>
-                      <th 
-                        className="w-1/2 p-2 bg-[#F8F8FA] border-r border-[#ECECEC] text-left"
-                        style={{
-                          color: 'black',
-                          fontSize: 12,
-                          fontFamily: 'Work Sans',
-                          fontWeight: '700',
-                          lineHeight: '16px',
-                          wordWrap: 'break-word'
-                        }}
-                      >
-                        <div className="flex items-center gap-1">
-                          <div className="w-5 h-5 relative overflow-hidden">
-                            <div 
-                              className="absolute"
-                              style={{
-                                width: 16.25,
-                                height: 16.67,
-                                left: 1.67,
-                                top: 1.67,
-                                outline: '1.50px black solid',
-                                outlineOffset: '-0.75px'
-                              }}
-                            />
-                          </div>
-                          Pros
-                        </div>
-                      </th>
-                      <th 
-                        className="w-1/2 p-2 bg-[#F8F8FA] text-left"
-                        style={{
-                          color: 'black',
-                          fontSize: 12,
-                          fontFamily: 'Work Sans',
-                          fontWeight: '700',
-                          lineHeight: '16px',
-                          wordWrap: 'break-word'
-                        }}
-                      >
-                        <div className="flex items-center gap-2">
-                          <div className="w-6 h-6 relative overflow-hidden rotate-180">
-                            <div 
-                              className="absolute"
-                              style={{
-                                width: 19.50,
-                                height: 20,
-                                left: 2.50,
-                                top: 2,
-                                outline: '1.50px black solid',
-                                outlineOffset: '-0.75px'
-                              }}
-                            />
-                          </div>
-                          Cons
-                        </div>
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {prosConsData.map((row, index) => (
-                      <tr key={index}>
-                        <td 
-                          className="p-2 bg-[#F8F8FA] border-t border-r border-[#ECECEC] align-top"
-                          style={{
-                            color: 'black',
-                            fontSize: 14,
-                            fontFamily: 'Work Sans',
-                            fontWeight: '400',
-                            lineHeight: '24px',
-                            wordWrap: 'break-word'
-                          }}
-                        >
-                          <ol start={index + 1} className="list-decimal list-inside m-0 p-0">
-                            <li className="pl-0">{row.pro}</li>
-                          </ol>
-                        </td>
-                        <td 
-                          className="p-2 bg-[#F8F8FA] border-t border-[#ECECEC] align-top"
-                          style={{
-                            color: 'black',
-                            fontSize: 14,
-                            fontFamily: 'Work Sans',
-                            fontWeight: '400',
-                            lineHeight: '24px',
-                            wordWrap: 'break-word'
-                          }}
-                        >
-                          {row.con && (
-                            <ol start={index + 1} className="list-decimal list-inside m-0 p-0">
-                              <li className="pl-0">{row.con}</li>
-                            </ol>
-                          )}
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </>
-            )}
-
             {activeTab === "expert-take" && (
               <>
                 <h4 className="[font-family:'Work_Sans',Helvetica] font-semibold text-black text-xl tracking-[-0.33px] leading-8">
@@ -306,19 +196,7 @@ export const PetsBestDetailsSection = (): JSX.Element => {
                     wordWrap: 'break-word',
                     margin: 0
                   }}>
-                    The Pets Best Elite policy is the top-scoring policy in our evaluation. It stands out for its competitive prices and robust coverage, including vet exam fees, dental illnesses, behavioral therapy and alternative therapies. You'll have access to a 24/7 pet telehealth line and the option to buy one of two different tiers of wellness plans to cover expenses such as annual vet exams, vaccinations, microchipping and neutering/spaying.
-                  </p>
-                  
-                  <p style={{ 
-                    color: '#333333', 
-                    fontSize: '18px', 
-                    fontFamily: 'Georgia', 
-                    fontWeight: '400', 
-                    lineHeight: '29.12px', 
-                    wordWrap: 'break-word',
-                    margin: 0
-                  }}>
-                    Pets Best's Essential and Plus policies also scored well in our analysis (4.9 stars each). They have differences in coverage and price.
+                    Figo stood out in our evaluation due to its solid coverage in the base plan and the options to upgrade your plan via "Powerups." Figo's Powerups include hard-to-find coverage for expenses such as advertising and rewards if your pet is lost or stolen and up to $250 in final respects coverage (including burial and cremation expenses). Also included: up to $10,000 in liability coverage if your pet damages someone else's property, boarding expenses if you are hospitalized and vet exam fees. You're not likely to find all of this coverage at other top pet insurers.
                   </p>
                   
                   <p style={{ 
@@ -340,7 +218,7 @@ export const PetsBestDetailsSection = (): JSX.Element => {
                       lineHeight: '29.12px', 
                       wordWrap: 'break-word' 
                     }}>
-                      Pets Best Pet Insurance Review
+                      Figo Pet Insurance Review
                     </span>
                   </p>
                 </div>

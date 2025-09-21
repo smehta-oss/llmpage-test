@@ -52,7 +52,7 @@ const prosConsData = [
   }
 ];
 
-export const PetsBestDetailsSection = (): JSX.Element => {
+export const PetsBestCard1 = (): JSX.Element => {
   const [activeTab, setActiveTab] = useState("expert-take");
 
   return (
@@ -61,7 +61,7 @@ export const PetsBestDetailsSection = (): JSX.Element => {
         <CardContent className="p-0 space-y-6">
           <header className="flex items-center gap-2">
             <h2 className="[font-family:'Work_Sans',Helvetica] font-bold text-black text-2xl leading-8 underline">
-              Pets Best
+              PetsBest
             </h2>
             <ExternalLinkIcon className="w-6 h-6" />
           </header>
@@ -70,15 +70,15 @@ export const PetsBestDetailsSection = (): JSX.Element => {
             <div className="col-span-12 lg:col-span-5 relative">
               <div className="w-full h-[58px] bg-[#f8f8fa] rounded-[16px_16px_0px_0px] overflow-hidden flex items-center justify-center">
                 <img 
-                  src="/pets-best-logo.png" 
+                  src="/pets-best-logo.png?t=1726973000" 
                   alt="Pets Best Logo" 
                   className="w-[125px] h-[58px] object-contain"
                 />
               </div>
               <img
                 className="w-full h-[207px] object-cover rounded-[0px_0px_16px_16px]"
-                alt="Rectangle"
-                src="/rectangle-2.png"
+                alt="Figo Pet Insurance"
+                src="/FigoImg.png"
               />
             </div>
 

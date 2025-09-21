@@ -20,7 +20,7 @@ export const PetInsuranceComparison: React.FC<PetInsuranceComparisonProps> = ({ 
             <div className="flex flex-col items-start gap-10 w-full">
               
               {/* Pet Insurance Cost Section */}
-              <section className="flex flex-col items-start gap-6 pt-10 w-full border-t border-[#ced4db]">
+              <section className="flex flex-col items-start gap-6 mt-6 pt-10 w-full border-t border-[#ced4db]">
                 <div className="flex flex-col items-start gap-6 w-full">
                   <div className="flex flex-col items-start gap-2 w-full">
                     <SectionTitle>Pet Insurance Cost for Dogs and Cats</SectionTitle>

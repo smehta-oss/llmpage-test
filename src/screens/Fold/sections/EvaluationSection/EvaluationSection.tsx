@@ -30,23 +30,23 @@ const NAVIGATION_TABS: NavigationTab[] = [
 
 const STATISTICS_DATA: StatisticData[] = [
   {
-    number: "100+",
-    title: "Sample Category Name With 40 characters.",
+    number: "90,024+",
+    title: "Datapoints Evaluated",
     description: "This is a sample sentence with a character limit set at 84 characters as max-limit..",
   },
   {
-    number: "1,300",
+    number: "2,600",
     title: "Pet Owners Surveyed",
     description: "This is a sample sentence with a character limit set at 84 characters as max-limit..",
   },
   {
-    number: "100+",
-    title: "Sample Category Name With 40 characters.",
+    number: "300",
+    title: "Breeds Assessed",
     description: "This is a sample sentence with a character limit set at 84 characters as max-limit..",
   },
   {
-    number: "100+",
-    title: "Sample Category Name With 40 characters.",
+    number: "36",
+    title: "Coverage Categories",
     description: "This is a sample sentence with a character limit set at 84 characters as max-limit..",
   },
 ];
@@ -95,16 +95,16 @@ const TabButton: React.FC<{
   );
 };
 
-const StatisticCard: React.FC<{ stat: StatisticData }> = ({ stat }) => (
+const StatisticCard: React.FC<{ stat: StatisticData; index: number }> = ({ stat, index }) => (
   <div className="flex-1 min-w-[144px] flex-col justify-start items-start gap-3 inline-flex">
-    <div className="self-stretch text-white text-2xl leading-[29px] break-words font-schnyder-s">
+    <div className={`self-stretch text-white text-2xl leading-[29px] break-words font-schnyder-bold schnyder-test ai-style-change-${10 + index}`} style={{ fontFamily: 'Schnyder S', fontWeight: 700 }}>
       {stat.number}
     </div>
     <div className="self-stretch flex-col justify-start items-start gap-3 flex">
-      <div className="self-stretch text-white text-sm font-semibold leading-6 break-words font-work-sans">
+      <div className="self-stretch text-white text-sm font-semibold leading-6 break-words" style={{ fontFamily: 'Work Sans' }}>
         {stat.title}
       </div>
-      <div className="self-stretch text-white text-xs leading-5 break-words font-work-sans">
+      <div className="self-stretch text-white text-xs leading-5 break-words" style={{ fontFamily: 'Work Sans' }}>
         {stat.description}
       </div>
     </div>
@@ -112,7 +112,7 @@ const StatisticCard: React.FC<{ stat: StatisticData }> = ({ stat }) => (
 );
 
 const OverviewSection: React.FC = () => (
-  <div className="methodology-overview mt-6">
+  <div className="methodology-overview ai-style-change-7">
     <div className="flex flex-col gap-6">
       <div 
         className="Overview-text"
@@ -134,8 +134,9 @@ const OverviewSection: React.FC = () => (
           fontFamily: 'Georgia', 
           fontWeight: '400', 
           lineHeight: '26px', 
-          wordWrap: 'break-word'
-        }}>
+          wordWrap: 'break-word',
+          marginBottom: '24px'
+        }} className="ai-style-change-8">
           To find the best pet insurance, we collected data and scored each
           pet insurance company across several categories. Only pet insurers
           offering annual maximum coverage of $100,000 or unlimited were
@@ -147,7 +148,7 @@ const OverviewSection: React.FC = () => (
     </div>
 
     <div className="methodology-datapoint-block Overview-datapoints">
-      <div className="w-full px-6 py-8 relative flex flex-col justify-start items-start gap-10 overflow-hidden">
+      <div className="w-full px-6 py-8 relative flex flex-col justify-start items-start gap-10 overflow-hidden ai-style-change-9">
         {/* Background Image with Overlay */}
         <div className="w-full h-[295px] absolute left-0 top-0 overflow-hidden">
           <img 
@@ -160,7 +161,7 @@ const OverviewSection: React.FC = () => (
 
         {/* Header Section */}
         <div className="self-stretch justify-between items-center inline-flex flex-wrap relative z-10">
-          <div className="max-w-[600px] min-w-[272px] text-white text-2xl font-semibold leading-[30px] break-words font-work-sans">
+          <div className="max-w-[600px] min-w-[272px] text-white text-2xl font-semibold leading-[30px] break-words" style={{ fontFamily: 'Work Sans' }}>
             How We Evaluate Pet Insurance Providers
           </div>
           <div className="justify-end items-start gap-6 flex flex-wrap">
@@ -170,7 +171,7 @@ const OverviewSection: React.FC = () => (
                 <div className="w-[18px] h-[18px] left-[3px] top-[3px] absolute bg-white" />
               </div>
               <div className="flex-1 justify-center items-center flex">
-                <div className="flex-1 justify-center flex flex-col text-white text-sm font-semibold leading-6 break-words font-work-sans">
+                <div className="flex-1 justify-center flex flex-col text-white text-sm font-semibold leading-6 break-words" style={{ fontFamily: 'Work Sans' }}>
                   EXPERT REVIEWED
                 </div>
               </div>
@@ -185,7 +186,7 @@ const OverviewSection: React.FC = () => (
         {/* Statistics Grid */}
         <div className="self-stretch justify-start items-start gap-5 inline-flex flex-wrap relative z-10">
           {STATISTICS_DATA.map((stat, index) => (
-            <StatisticCard key={index} stat={stat} />
+            <StatisticCard key={index} stat={stat} index={index} />
           ))}
         </div>
       </div>
@@ -218,17 +219,17 @@ export const EvaluationSection: React.FC<EvaluationSectionProps> = ({
   };
 
   return (
-    <section className="w-full border-t [border-top-style:solid] border-[#ced4db]">
-      <GridRow>
-        <GridCol span={12}>
-          <header className="mb-8 pt-16">
+    <section className="w-full border-t [border-top-style:solid] border-[#ced4db] flex flex-col py-16">
+      <div className="grid grid-cols-12 gap-5">
+        <div className="col-span-12">
+          <header className="mb-8">
             <h1 
               style={{
                 justifyContent: 'center', 
                 display: 'flex', 
                 flexDirection: 'column', 
                 color: 'black', 
-                fontSize: 40, 
+                fontSize: '40px', 
                 fontFamily: 'Schnyder S', 
                 fontWeight: '700', 
                 lineHeight: '48px', 
@@ -249,14 +250,14 @@ export const EvaluationSection: React.FC<EvaluationSectionProps> = ({
               />
             ))}
           </nav>
-        </GridCol>
-      </GridRow>
+        </div>
+      </div>
 
-      <GridRow className="mt-8">
-        <GridCol span={12}>
+      <div className="grid grid-cols-12 gap-5 mt-8">
+        <div className="col-span-12">
           {renderContent()}
-        </GridCol>
-      </GridRow>
+        </div>
+      </div>
     </section>
   );
 };
