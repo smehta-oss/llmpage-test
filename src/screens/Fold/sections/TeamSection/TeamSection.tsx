@@ -44,15 +44,24 @@ export const TeamSection = (): JSX.Element => {
                 </Avatar>
 
                 <div className="inline-flex flex-col items-start gap-1.5">
-                  <div className="[font-family:'Graphik-Semibold',Helvetica] leading-[16.8px] underline w-fit font-normal text-[#333333] text-sm tracking-[0] whitespace-nowrap">
+                  <div 
+                    className="leading-[16.8px] underline w-fit font-normal text-[#333333] text-sm tracking-[0] whitespace-nowrap"
+                    style={{ fontFamily: 'Work Sans' }}
+                  >
                     {editor.name}
                   </div>
 
-                  <div className="font-forbes-media-label-SM-normal leading-[var(--forbes-media-label-SM-normal-line-height)] w-fit font-[number:var(--forbes-media-label-SM-normal-font-weight)] text-[#333333] text-[length:var(--forbes-media-label-SM-normal-font-size)] tracking-[var(--forbes-media-label-SM-normal-letter-spacing)] whitespace-nowrap [font-style:var(--forbes-media-label-SM-normal-font-style)]">
+                  <div 
+                    className="w-fit font-normal text-[#333333] text-sm leading-[18px] tracking-[0] whitespace-nowrap"
+                    style={{ fontFamily: 'Work Sans' }}
+                  >
                     {editor.title}
                   </div>
 
-                  <div className="w-fit font-forbes-media-label-SM-normal font-[number:var(--forbes-media-label-SM-normal-font-weight)] text-[#333333] text-[length:var(--forbes-media-label-SM-normal-font-size)] tracking-[var(--forbes-media-label-SM-normal-letter-spacing)] leading-[var(--forbes-media-label-SM-normal-line-height)] whitespace-nowrap [font-style:var(--forbes-media-label-SM-normal-font-style)]">
+                  <div 
+                    className="w-fit font-normal text-[#333333] text-sm leading-[18px] tracking-[0] whitespace-nowrap"
+                    style={{ fontFamily: 'Work Sans' }}
+                  >
                     {editor.vertical}
                   </div>
                 </div>
@@ -84,14 +93,14 @@ export const TeamSection = (): JSX.Element => {
                     size="icon"
                     className="px-3 py-2 bg-white border border-[#7a8ec7] rounded"
                   >
-                    <div className="w-6 h-6 bg-blue-500 rounded"></div>
+                    <img src="/trailing-icon-left.svg" alt="Previous" className="w-6 h-6" />
                   </Button>
                   <Button
                     variant="outline"
                     size="icon"
                     className="px-3 py-2 bg-white border border-[#7a8ec7] rounded"
                   >
-                    <div className="w-6 h-6 bg-blue-500 rounded"></div>
+                    <img src="/trailing-icon-right.svg" alt="Next" className="w-6 h-6" />
                   </Button>
                 </div>
               </div>

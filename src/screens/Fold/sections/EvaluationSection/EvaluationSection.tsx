@@ -145,14 +145,13 @@ const OverviewSection: React.FC = () => (
 
     <div className="methodology-datapoint-block Overview-datapoints">
       <div className="w-full px-6 py-8 relative flex flex-col justify-start items-start gap-10 overflow-hidden ai-style-change-9">
-        {/* Background Image with Overlay */}
+        {/* Background Image */}
         <div className="w-full h-[295px] absolute left-0 top-0 overflow-hidden">
           <img 
-            className="w-[1059px] h-[704px] absolute left-[-19px] top-[-238px]" 
-            src="https://images.pexels.com/photos/4498362/pexels-photo-4498362.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+            className="w-full h-full object-cover" 
+            src="/MethodologyImg.png" 
             alt="Background"
           />
-          <div className="w-full h-[295px] absolute left-0 top-0 bg-black/60 backdrop-blur-[6px]" />
         </div>
 
         {/* Header Section */}
@@ -163,8 +162,7 @@ const OverviewSection: React.FC = () => (
           <div className="justify-end items-start gap-6 flex flex-wrap">
             <div className="w-[196px] justify-start items-center gap-2 flex">
               <div className="w-6 h-6 relative">
-                <div className="w-6 h-6 left-0 top-0 absolute" />
-                <div className="w-[18px] h-[18px] left-[3px] top-[3px] absolute bg-white" />
+                <img src="/Verified1.svg" alt="Verified" className="w-6 h-6" />
               </div>
               <div className="flex-1 justify-center items-center flex">
                 <div className="flex-1 justify-center flex flex-col text-white text-sm font-semibold leading-6 break-words" style={{ fontFamily: 'Work Sans' }}>
@@ -172,8 +170,7 @@ const OverviewSection: React.FC = () => (
                 </div>
               </div>
               <div className="w-6 h-6 relative">
-                <div className="w-6 h-6 left-0 top-0 absolute" />
-                <div className="w-[18px] h-[18px] left-[3px] top-[3px] absolute bg-white" />
+                <img src="/tooltip.svg" alt="Tooltip" className="w-6 h-6" />
               </div>
             </div>
           </div>
