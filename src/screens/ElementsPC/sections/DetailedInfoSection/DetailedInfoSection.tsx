@@ -14,13 +14,23 @@ export const DetailedInfoSection = (): JSX.Element => {
         <div className="grid grid-cols-12 gap-5 pt-16">
           <div className="col-span-12 flex flex-col gap-10">
             <MainContentSection />
-            <div className="flex flex-col gap-6">
+            <div className="flex flex-col">
               <PetsBestCard1 />
-              <PetsBestCard2 />
-              <PetsBestCard3 />
-              <PetsBestCard4 />
-              <PetsBestCard5 />
-              <PetsBestCard6 />
+              <div className="mt-12">
+                <PetsBestCard2 />
+              </div>
+              <div className="mt-6">
+                <PetsBestCard3 />
+              </div>
+              <div className="mt-6">
+                <PetsBestCard4 />
+              </div>
+              <div className="mt-6">
+                <PetsBestCard5 />
+              </div>
+              <div className="mt-6">
+                <PetsBestCard6 />
+              </div>
             </div>
           </div>
         </div>

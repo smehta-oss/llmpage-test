@@ -57,7 +57,52 @@ export const PetsBestCard2 = (): JSX.Element => {
 
   return (
     <div className="grid grid-cols-12 gap-5">
-      <Card className="col-span-12 p-6 bg-white rounded-3xl border-2 border-[#F3C060]">
+      <Card className="col-span-12 p-6 bg-white rounded-3xl border-4 border-[#F3C060] relative" style={{ overflow: 'visible' }}>
+        {/* Most Popular Badge */}
+        <div style={{
+          padding: '2px 12px', 
+          left: -24, 
+          top: -28, 
+          position: 'absolute', 
+          background: 'var(--Colors-Tertiary-400, #F3C060)', 
+          overflow: 'hidden', 
+          borderRadius: 16, 
+          justifyContent: 'center', 
+          alignItems: 'center', 
+          gap: 8, 
+          display: 'inline-flex',
+          zIndex: 1,
+          maxHeight: 48
+        }}>
+          <div style={{width: 24, height: 24, position: 'relative', overflow: 'hidden'}}>
+            <img 
+              src="/Popular.svg" 
+              alt="Popular" 
+              style={{
+                width: 20, 
+                height: 20, 
+                left: 2, 
+                top: 2, 
+                position: 'absolute'
+              }} 
+            />
+          </div>
+          <div style={{
+            justifyContent: 'center', 
+            display: 'flex', 
+            flexDirection: 'column', 
+            color: 'var(--Colors-Quinary-800, #171614)', 
+            fontSize: 15, 
+            fontFamily: 'Work Sans', 
+            fontWeight: '600', 
+            textTransform: 'uppercase', 
+            lineHeight: 20, 
+            wordWrap: 'break-word'
+          }}>
+            MOST POPULAR
+          </div>
+        </div>
+        
         <CardContent className="p-0 space-y-6">
           <header className="flex items-center gap-2">
             <h2 className="[font-family:'Work_Sans',Helvetica] font-bold text-black text-2xl leading-8 underline">
