@@ -16,7 +16,7 @@ export const PetInsuranceComparison: React.FC<PetInsuranceComparisonProps> = ({ 
     <div className="bg-white w-full min-h-screen">
       <div className="max-w-[1440px] mx-auto">
         <div className="grid grid-cols-12 gap-5">
-          <main className="col-span-12 flex flex-col items-start gap-12 bg-white py-6 md:py-12 w-full max-w-[1016px] mx-auto">
+            <main className="col-span-12 flex flex-col items-start gap-12 bg-white py-6 md:py-0 w-full max-w-[1016px] mx-auto">
             <div className="flex flex-col items-start gap-10 w-full">
               
               {/* Pet Insurance Cost Section */}

@@ -8,7 +8,7 @@ export const Fold = (): JSX.Element => {
   return (
     <main className="bg-white w-full min-h-screen px-0">
       <div className="w-full">
-        <div className="flex flex-col py-16">
+        <div className="flex flex-col py-4">
           <EvaluationSection 
             activeSection={activeSection} 
             setActiveSection={setActiveSection} 

@@ -44,7 +44,7 @@ export const PetsBestCard3 = (): JSX.Element => {
             <h2 className="[font-family:'Work_Sans',Helvetica] font-bold text-black text-2xl leading-8 underline">
               Chewy
             </h2>
-            <ExternalLinkIcon className="w-6 h-6" />
+            <img src="/-duocolor-arrow-up-right.svg" alt="External link" className="w-6 h-6" />
           </header>
 
           <div className="grid grid-cols-12 gap-5 lg:gap-8">
@@ -123,15 +123,15 @@ export const PetsBestCard3 = (): JSX.Element => {
 
           <div className="flex flex-col gap-7">
             <div className="flex flex-wrap items-center gap-4 max-w-[968px]">
-            <div id="product-card-navigation" className="flex flex-wrap items-center gap-4 max-w-[968px]">
+            <div id="product-card-navigation" className="flex flex-wrap items-center gap-4 w-full max-w-[968px]">
               {tabItems.map((tab, index) => (
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
                   className={`navigation-button h-14 px-4 py-2 rounded-[40px] ${
                     activeTab === tab.id
-                      ? "bg-[#1d1d1f] text-white shadow-SEM-shadows-4dp"
-                      : "bg-[#f8f8fa] text-[#1d1d1f]"
+                      ? "bg-[#1d1d1f] text-white shadow-SEM-shadows-4dp flex-grow"
+                      : "bg-[#f8f8fa] text-[#1d1d1f] flex-shrink-0"
                   }`}
                   style={{
                     boxShadow: activeTab === tab.id 

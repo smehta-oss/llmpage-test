@@ -79,11 +79,12 @@ const TabButton: React.FC<{
       <div className="h-14 px-4 justify-start items-center inline-flex">
         <div className="justify-start items-center flex">
           <div className="w-[38px] h-6 pr-[14px] inline-flex flex-col justify-start items-start">
-            <div className="w-6 h-6 overflow-hidden flex flex-col justify-center items-start">
-              <div className="w-6 flex-1 relative">
-                <div className="w-[22.60px] h-[22.60px] left-[0.70px] top-[0.70px] absolute border border-[#1D1D1F]" />
-                <div className="w-[10px] h-[10px] left-[7px] top-[7px] absolute bg-[#1D1D1F]" />
-              </div>
+            <div className="w-6 h-6 flex justify-center items-center">
+              <img
+                src="/Plus.svg"
+                alt="Plus icon"
+                className="w-6 h-6"
+              />
             </div>
           </div>
           <div className="text-center justify-center flex flex-col text-[#1D1D1F] text-sm font-work-sans font-semibold leading-5 break-words">
@@ -137,12 +138,7 @@ const OverviewSection: React.FC = () => (
           wordWrap: 'break-word',
           marginBottom: '24px'
         }} className="ai-style-change-8">
-          To find the best pet insurance, we collected data and scored each
-          pet insurance company across several categories. Only pet insurers
-          offering annual maximum coverage of $100,000 or unlimited were
-          scored so that comparisons were fair among companies. If a company
-          has more than one top-scoring policy, we show only the policy with
-          the highest score.
+          We analyzed key coverage factors—costs, pay-the-vet-directly options, 24/7 tele-vet access, and wellness add-ons. We reviewed 900,024 pet-insurance rates across the U.S., spanning 34 categories, and surveyed 2,600 pet parents across 300 breeds to deliver a comprehensive, transparent comparison. Data is updated regularly.
         </div>
       </div>
     </div>
@@ -219,7 +215,7 @@ export const EvaluationSection: React.FC<EvaluationSectionProps> = ({
   };
 
   return (
-    <section className="w-full border-t [border-top-style:solid] border-[#ced4db] flex flex-col py-16">
+    <section className="w-full border-t [border-top-style:solid] border-[#ced4db] flex flex-col py-8">
       <div className="grid grid-cols-12 gap-5">
         <div className="col-span-12">
           <header className="mb-8">

@@ -1,213 +1,165 @@
 import React from "react";
-import { GridRow, GridCol } from "../../../../components/ui/grid";
-import { Separator } from "../../../../components/ui/separator";
+import { PieChart } from "../../../../components/charts/PieChart";
 
-const DonutChart: React.FC = () => {
-  return (
-    <div className="w-full h-full">
-      <img 
-        src="/Chart.svg" 
-        alt="Methodology Chart" 
-        className="w-full h-full object-contain"
-      />
-    </div>
-  );
-};
+const chartSegments = [
+  { value: 35, color: "#2F7F5F" }, // Green
+  { value: 10, color: "#1F564A" }, // Dark green
+  { value: 10, color: "#5A9BD5" }, // Blue
+  { value: 10, color: "#70AD47" }, // Light green
+  { value: 10, color: "#A5D5E8" }, // Light blue
+  { value: 5, color: "#FFC000" }, // Yellow
+  { value: 5, color: "#C5504B" }, // Red
+  { value: 5, color: "#B85450" }, // Dark red
+  { value: 5, color: "#5B9BD5" }, // Blue
+  { value: 5, color: "#2C2C2C" }, // Dark gray
+];
 
 const leftColumnLegendItems = [
   {
-    color: "bg-[#1a4c3f]",
-    percentage: "(35%)",
+    color: "#2F7F5F",
+    percentage: "35%",
     label: "Datapoint with 30 characters",
   },
   {
-    color: "bg-[#34997d]",
-    percentage: "(10%)",
+    color: "#1F564A",
+    percentage: "10%",
     label: "Datapoint with 30 characters",
   },
   {
-    color: "bg-[#003186]",
-    percentage: "(10%)",
+    color: "#5A9BD5",
+    percentage: "10%",
     label: "Datapoint with 30 characters",
   },
   {
-    color: "bg-[#209be3]",
-    percentage: "(10%)",
+    color: "#70AD47",
+    percentage: "10%",
     label: "Datapoint with 30 characters",
   },
   {
-    color: "bg-[#98d4f6]",
-    percentage: "(10%)",
+    color: "#A5D5E8",
+    percentage: "10%",
     label: "Datapoint with 30 characters",
   },
 ];
 
 const rightColumnLegendItems = [
   {
-    color: "bg-[#fec864]",
-    percentage: "(5%)",
+    color: "#FFC000",
+    percentage: "5%",
     label: "Datapoint with 30 characters",
   },
   {
-    color: "bg-[#e77575]",
-    percentage: "(5%)",
+    color: "#C5504B",
+    percentage: "5%",
     label: "Datapoint with 30 characters",
   },
   {
-    color: "bg-[#bc2739]",
-    percentage: "(5%)",
+    color: "#B85450",
+    percentage: "5%",
     label: "Datapoint with 30 characters",
   },
   {
-    color: "bg-[#7a8ec7]",
-    percentage: "(5%)",
+    color: "#5B9BD5",
+    percentage: "5%",
     label: "Datapoint with 30 characters",
   },
   {
-    color: "bg-[#616a76]",
-    percentage: "(5%)",
+    color: "#2C2C2C",
+    percentage: "5%",
     label: "Datapoint with 30 characters",
   },
 ];
 
+const LegendItem: React.FC<{ color: string; percentage: string; label: string; showSeparator?: boolean }> = ({ 
+  color, 
+  percentage, 
+  label,
+  showSeparator = true
+}) => (
+  <div className="mb-3">
+    <div className="flex items-center gap-3">
+      <div 
+        className="w-3 h-3 rounded-full flex-shrink-0" 
+        style={{ backgroundColor: color }}
+      />
+      <span className="text-sm font-medium text-gray-600 min-w-[40px] font-work-sans">
+        ({percentage})
+      </span>
+      <span className="text-sm font-semibold text-gray-900 flex-1 font-work-sans">
+        {label}
+      </span>
+      <div className="w-4 h-4 bg-gray-300 rounded-full flex items-center justify-center text-xs text-gray-600 flex-shrink-0 font-work-sans">
+        i
+      </div>
+    </div>
+    {showSeparator && <hr className="mt-3 border-gray-200" />}
+  </div>
+);
+
 export const RatingsSection = (): JSX.Element => {
   return (
-    <>
-      <GridRow>
-        <GridCol span={12}>
-          <header className="mb-8">
-            <div className="flex flex-col gap-6">
-              <div className="flex flex-col gap-4 Methodology-header">
-                <div className="flex items-center gap-2.5">
-                  <h1 className="flex-1 font-forbes-media-label-LG-semibold font-[number:var(--forbes-media-label-LG-semibold-font-weight)] text-[#1e2125] text-[length:var(--forbes-media-label-LG-semibold-font-size)] tracking-[var(--forbes-media-label-LG-semibold-letter-spacing)] leading-[var(--forbes-media-label-LG-semibold-line-height)] [font-style:var(--forbes-media-label-LG-semibold-font-style)]">
-                    Major Title (if required)
-                  </h1>
-                </div>
+    <div className="w-full py-0">
+      {/* Header Section */}
+      <div className="mb-8">
+        <h2 className="text-xl font-semibold text-gray-900 mb-2 font-work-sans">
+          Read Our Methodology
+        </h2>
+        <p className="text-gray-700 mb-4" style={{ fontFamily: 'Georgia, serif', fontSize: '18px', lineHeight: '30px' }}>
+          We evaluate pet insurance using a data-first model that blends price, benefits and real-owner signal. First, we compile 900,024 U.S. rate observations and normalize them by species, breed, age, deductible, reimbursement and annual limit. We then score key coverage categories—including overall cost, whether a plan can pay the vet directly, access to a 24/7 tele-vet line, and the option to add a wellness plan—alongside policy terms (waiting periods, exclusions) and service metrics. To ground the experience data, we survey 2,600 pet parents across 300 breeds and roll those results into a consumer-satisfaction index.
+        </p>
+        <p className="text-gray-700 mb-4" style={{ fontFamily: 'Georgia, serif', fontSize: '18px', lineHeight: '30px' }}>
+          Each insurer receives a composite score derived from transparent weights across 34 factors, and we publish liftable tables so readers and LLMs can verify the inputs. Because prices and offerings change by state and over time, we refresh datasets and label each table with its data window and sample size, and we link to our rating definitions and category weights.
+        </p>
+      </div>
 
-                <div className="flex items-center gap-2.5">
-                  <h2 className="flex-1 font-forbes-media-label-MD-semibold font-[number:var(--forbes-media-label-MD-semibold-font-weight)] text-[#1e2125] text-[length:var(--forbes-media-label-MD-semibold-font-size)] tracking-[var(--forbes-media-label-MD-semibold-letter-spacing)] leading-[var(--forbes-media-label-MD-semibold-line-height)] [font-style:var(--forbes-media-label-MD-semibold-font-style)]">
-                    Title
-                  </h2>
-                </div>
+      {/* Chart and Legend Section */}
+      <div className="grid grid-cols-1 lg:grid-cols-[auto_1fr] gap-8 items-start">
+        {/* Chart */}
+        <div className="flex justify-start pl-0 pr-6">
+          <div className="relative">
+            <img
+              src="/Chart2.svg"
+              alt="Forbes Rating Chart"
+              className="w-80 h-80"
+            />
+          </div>
+        </div>
 
-                <div className="flex flex-col items-start justify-center gap-1">
-                  <p className="font-SEM-text-styles-body-lg-serif-regular font-[number:var(--SEM-text-styles-body-lg-serif-regular-font-weight)] text-[#383c43] text-[length:var(--SEM-text-styles-body-lg-serif-regular-font-size)] tracking-[var(--SEM-text-styles-body-lg-serif-regular-letter-spacing)] leading-[var(--SEM-text-styles-body-lg-serif-regular-line-height)] [font-style:var(--SEM-text-styles-body-lg-serif-regular-font-style)]">
-                    The character limit for this first content block is 360
-                    characters. For writers, a random sentence can help them get their
-                    creative juices flowing. Since the topic of the sentence is
-                    completely unknown, it forces the writer to be creative when the
-                    sentence appears. There are a number of different ways a writer
-                    can use the random sentence for creativity.
-                  </p>
-                </div>
-
-                <div className="flex items-center justify-center gap-2.5">
-                  <p className="flex-1 font-SEM-text-styles-body-lg-serif-regular font-[number:var(--SEM-text-styles-body-lg-serif-regular-font-weight)] text-[#383c43] text-[length:var(--SEM-text-styles-body-lg-serif-regular-font-size)] tracking-[var(--SEM-text-styles-body-lg-serif-regular-letter-spacing)] leading-[var(--SEM-text-styles-body-lg-serif-regular-line-height)] [font-style:var(--SEM-text-styles-body-lg-serif-regular-font-style)]">
-                    The character limit for this first content block is 360
-                    characters.
-                  </p>
-                </div>
-              </div>
+        {/* Legend */}
+        <div>
+          <h4 className="text-xl font-semibold text-gray-900 mb-6 font-work-sans">
+            How We Review Providers
+          </h4>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8">
+            {/* Left Column */}
+            <div>
+              {leftColumnLegendItems.map((item, index) => (
+                <LegendItem 
+                  key={`left-${index}`}
+                  color={item.color}
+                  percentage={item.percentage}
+                  label={item.label}
+                  showSeparator={index !== leftColumnLegendItems.length - 1}
+                />
+              ))}
             </div>
-          </header>
-        </GridCol>
-      </GridRow>
 
-      <GridRow>
-        <GridCol span={12} spanMd={5} spanLg={5} className="Methodology-chart">
-          <div className="relative w-full max-w-[400px] h-[400px] mx-auto">
-            <DonutChart />
+            {/* Right Column */}
+            <div>
+              {rightColumnLegendItems.map((item, index) => (
+                <LegendItem 
+                  key={`right-${index}`}
+                  color={item.color}
+                  percentage={item.percentage}
+                  label={item.label}
+                  showSeparator={index !== rightColumnLegendItems.length - 1}
+                />
+              ))}
+            </div>
           </div>
-        </GridCol>
-
-        <GridCol span={12} spanMd={7} spanLg={7}>
-          <div className="flex flex-col gap-6 h-full Methodology-datapoints-group">
-            <h3 className="font-forbes-media-heading-XL font-[number:var(--forbes-media-heading-XL-font-weight)] text-[#333333] text-[length:var(--forbes-media-heading-XL-font-size)] tracking-[var(--forbes-media-heading-XL-letter-spacing)] leading-[var(--forbes-media-heading-XL-line-height)] [font-style:var(--forbes-media-heading-XL-font-style)]">
-              Star Ratings Methodology for Cash-Back Cards
-            </h3>
-
-            <GridRow>
-              <GridCol span={12} spanMd={6}>
-                <div className="flex flex-col gap-3">
-                  {leftColumnLegendItems.map((item, index) => (
-                    <div
-                      key={`left-legend-${index}`}
-                      className="flex flex-col gap-4"
-                    >
-                      <div className="flex items-center gap-2">
-                        <div className="inline-flex items-center gap-2.5">
-                          <div
-                            className={`${item.color} w-2 h-2 rounded`}
-                          />
-                        </div>
-
-                        <div className="flex items-center gap-2 flex-1">
-                          <div className="inline-flex h-4 items-center gap-2.5">
-                            <span className="font-forbes-media-label-breadcrumb font-[number:var(--forbes-media-label-breadcrumb-font-weight)] text-[#7f8b9a] text-[length:var(--forbes-media-label-breadcrumb-font-size)] tracking-[var(--forbes-media-label-breadcrumb-letter-spacing)] leading-[var(--forbes-media-label-breadcrumb-line-height)] whitespace-nowrap [font-style:var(--forbes-media-label-breadcrumb-font-style)]">
-                              {item.percentage}
-                            </span>
-                          </div>
-
-                          <div className="flex items-center flex-1">
-                            <span className="flex-1 font-forbes-media-label-XS-semibold font-[number:var(--forbes-media-label-XS-semibold-font-weight)] text-[#1e2125] text-[length:var(--forbes-media-label-XS-semibold-font-size)] tracking-[var(--forbes-media-label-XS-semibold-letter-spacing)] leading-[var(--forbes-media-label-XS-semibold-line-height)] [font-style:var(--forbes-media-label-XS-semibold-font-style)]">
-                              {item.label}
-                            </span>
-                          </div>
-                        </div>
-
-                        <div className="w-4 h-4 bg-gray-300 rounded-full flex items-center justify-center">
-                          <span className="text-xs">i</span>
-                        </div>
-                      </div>
-
-                      <Separator className="w-full h-px" />
-                    </div>
-                  ))}
-                </div>
-              </GridCol>
-
-              <GridCol span={12} spanMd={6}>
-                <div className="flex flex-col gap-3">
-                  {rightColumnLegendItems.map((item, index) => (
-                    <div
-                      key={`right-legend-${index}`}
-                      className="flex flex-col gap-4"
-                    >
-                      <div className="flex items-center gap-2">
-                        <div className="inline-flex items-center gap-2.5">
-                          <div
-                            className={`${item.color} w-2 h-2 rounded`}
-                          />
-                        </div>
-
-                        <div className="flex items-center gap-2 flex-1">
-                          <div className="inline-flex h-4 items-center gap-2.5">
-                            <span className="font-forbes-media-label-breadcrumb font-[number:var(--forbes-media-label-breadcrumb-font-weight)] text-[#7f8b9a] text-[length:var(--forbes-media-label-breadcrumb-font-size)] tracking-[var(--forbes-media-label-breadcrumb-letter-spacing)] leading-[var(--forbes-media-label-breadcrumb-line-height)] whitespace-nowrap [font-style:var(--forbes-media-label-breadcrumb-font-style)]">
-                              {item.percentage}
-                            </span>
-                          </div>
-
-                          <div className="flex items-center flex-1">
-                            <span className="flex-1 font-forbes-media-label-XS-semibold font-[number:var(--forbes-media-label-XS-semibold-font-weight)] text-[#1e2125] text-[length:var(--forbes-media-label-XS-semibold-font-size)] tracking-[var(--forbes-media-label-XS-semibold-letter-spacing)] leading-[var(--forbes-media-label-XS-semibold-line-height)] [font-style:var(--forbes-media-label-XS-semibold-font-style)]">
-                              {item.label}
-                            </span>
-                          </div>
-                        </div>
-
-                        <div className="w-4 h-4 bg-gray-300 rounded-full flex items-center justify-center">
-                          <span className="text-xs">i</span>
-                        </div>
-                      </div>
-
-                      <Separator className="w-full h-px" />
-                    </div>
-                  ))}
-                </div>
-              </GridCol>
-            </GridRow>
-          </div>
-        </GridCol>
-      </GridRow>
-    </>
+        </div>
+      </div>
+    </div>
   );
 };
