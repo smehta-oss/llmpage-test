@@ -13,17 +13,17 @@ interface PetInsuranceComparisonProps {
 // Main component
 export const PetInsuranceComparison: React.FC<PetInsuranceComparisonProps> = ({ onCTAClick }) => {
   return (
-    <div className="bg-white w-full min-h-screen">
-      <div className="max-w-[1440px] mx-auto">
-        <div className="grid grid-cols-12 gap-5">
-            <main className="col-span-12 flex flex-col items-start gap-12 bg-white py-6 md:py-0 w-full max-w-[1016px] mx-auto">
+    <div className="bg-white w-full min-w-[378px] min-h-screen">
+      <div className="max-w-[1440px] min-w-[378px] mx-auto px-0 sm:px-6 md:px-8 lg:px-0">
+        <div className="grid grid-cols-6 sm:grid-cols-8 md:grid-cols-10 lg:grid-cols-12 gap-5">
+            <main className="col-span-6 sm:col-span-8 md:col-span-10 lg:col-span-12 flex flex-col items-start gap-8 sm:gap-10 md:gap-12 bg-white py-4 sm:py-6 md:py-0 w-full mx-auto">
             <div className="flex flex-col items-start gap-10 w-full">
               
               {/* Pet Insurance Cost Section */}
               <section id="insurance-cost" className="flex flex-col items-start gap-6 mt-6 pt-10 w-full border-t border-[#CED4DB]">
                 <div className="flex flex-col items-start gap-6 w-full">
                   <div className="flex flex-col items-start gap-2 w-full">
-                    <SectionTitle>Pet Insurance Cost for Dogs and Cats</SectionTitle>
+                    <SectionTitle level="h3">Pet Insurance Cost for Dogs and Cats</SectionTitle>
                     <SectionDescription>
                       The table below shows the average monthly cost for the leading pet insurance providers for dogs and cats.
                     </SectionDescription>
@@ -58,7 +58,7 @@ export const PetInsuranceComparison: React.FC<PetInsuranceComparisonProps> = ({ 
               <section id="plan-details" className="flex flex-col items-start gap-10 pt-10 w-full border-t border-[#CED4DB]">
                 <div className="flex flex-col items-start gap-6 w-full">
                   <div className="flex flex-col items-start gap-2 w-full">
-                    <SectionTitle>Pet Insurance Plan Details</SectionTitle>
+                    <SectionTitle level="h3">Pet Insurance Plan Details</SectionTitle>
                     <SectionDescription>
                       Understanding the different coverage options of plans is essential in choosing the best plan for your pet. Here are the most important pet insurance plan information:
                     </SectionDescription>
@@ -101,7 +101,7 @@ export const PetInsuranceComparison: React.FC<PetInsuranceComparisonProps> = ({ 
               <section id="user-opinion" className="flex flex-col items-start gap-6 pt-10 w-full border-t border-[#CED4DB]">
                 <div className="flex flex-col items-start gap-6 w-full">
                   <div className="flex flex-col items-start gap-2 w-full">
-                    <SectionTitle>User Opinion of Pet Insurance Companies</SectionTitle>
+                    <SectionTitle level="h3">User Opinion of Pet Insurance Companies</SectionTitle>
                     <SectionDescription>
                       Forbes Advisor collects user sentiment both directly through NPS surveys and indirectly by collecting user feedback across the internet using the Consumer Sentiment Index (CSI). This is how real users described their opinion of leading pet insurance companies:
                     </SectionDescription>
@@ -140,7 +140,7 @@ export const PetInsuranceComparison: React.FC<PetInsuranceComparisonProps> = ({ 
               <section id="claims-feedback" className="flex flex-col items-start gap-6 pt-10 w-full border-t border-[#CED4DB]">
                 <div className="flex flex-col items-start gap-6 w-full">
                   <div className="flex flex-col items-start gap-2 w-full">
-                    <SectionTitle>User Feedback on Claims Process</SectionTitle>
+                    <SectionTitle level="h3">User Feedback on Claims Process</SectionTitle>
                     <SectionDescription>
                       Forbes Advisor surveyed users of each pet insurance company to get feedback on the claims process. This table displays real pet insurance user opinion of claims over a 12 month period from 2023 to 2024.
                     </SectionDescription>
@@ -180,7 +180,7 @@ export const PetInsuranceComparison: React.FC<PetInsuranceComparisonProps> = ({ 
               <section id="faq" className="flex flex-col items-start gap-6 pt-10 w-full border-t border-[#CED4DB]">
                 <div className="flex flex-col items-start gap-6 w-full">
                   <div className="flex flex-col items-start gap-2 w-full">
-                    <SectionTitle>Frequently Asked Questions</SectionTitle>
+                    <SectionTitle level="h2">Frequently Asked Questions</SectionTitle>
                     <SectionDescription>
                       Common questions about pet insurance coverage, costs, and claims process.
                     </SectionDescription>

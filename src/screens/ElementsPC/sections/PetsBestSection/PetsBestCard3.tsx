@@ -35,6 +35,7 @@ const tabItems = [
 
 export const PetsBestCard3 = (): JSX.Element => {
   const [activeTab, setActiveTab] = useState("expert-take");
+  const [isExpanded, setIsExpanded] = useState(false);
 
   return (
     <div className="grid grid-cols-12 gap-5">
@@ -123,12 +124,16 @@ export const PetsBestCard3 = (): JSX.Element => {
 
           <div className="flex flex-col gap-7">
             <div className="flex flex-wrap items-center gap-4 max-w-[968px]">
-            <div id="product-card-navigation" className="flex flex-wrap items-center gap-4 w-full max-w-[968px]">
+            <div id="product-card-navigation" className="flex overflow-x-auto items-center gap-4 w-full max-w-[968px] scrollbar-hide py-2 px-1" style={{
+              scrollbarWidth: 'none',
+              msOverflowStyle: 'none',
+              WebkitOverflowScrolling: 'touch'
+            }}>
               {tabItems.map((tab, index) => (
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
-                  className={`navigation-button h-14 px-4 py-2 rounded-[40px] ${
+                  className={`navigation-button h-14 px-4 py-2 rounded-[40px] flex-shrink-0 ${
                     activeTab === tab.id
                       ? "bg-[#1d1d1f] text-white shadow-SEM-shadows-4dp flex-grow"
                       : "bg-[#f8f8fa] text-[#1d1d1f] flex-shrink-0"
@@ -175,45 +180,71 @@ export const PetsBestCard3 = (): JSX.Element => {
                     fontWeight: '400', 
                     lineHeight: '29.12px', 
                     wordWrap: 'break-word',
-                    margin: 0
+                    margin: 0,
+                    display: '-webkit-box',
+                    WebkitLineClamp: isExpanded ? 'none' : 3,
+                    WebkitBoxOrient: 'vertical',
+                    overflow: isExpanded ? 'visible' : 'hidden'
                   }}>
                     Chewy has partnered with Trupanion and Lemonade to offer pet insurance. Chewy's plan through Trupanion stands out thanks to its ability to pay a vet directly (if the vet has Trupanion's software). This makes Chewy's vet pay system easier to use compared to other insurers that offer ways to pay a vet directly. Options from other pet insurers rely on preapproval from the insurer or the vet waiting for payment.
                   </p>
                   
-                  <p style={{ 
-                    color: '#333333', 
-                    fontSize: '18px', 
-                    fontFamily: 'Georgia', 
-                    fontWeight: '400', 
-                    lineHeight: '29.12px', 
-                    wordWrap: 'break-word',
-                    margin: 0
-                  }}>
-                    Our rating is based on Chewy's Essential Plus policy through Trupanion. You can buy a plan directly from Trupanion, but Chewy's plan through Trupanion offers different coverage details, cheaper pricing, and it scored higher in our evaluation.
-                  </p>
+                  {isExpanded && (
+                    <>
+                      <p style={{ 
+                        color: '#333333', 
+                        fontSize: '18px', 
+                        fontFamily: 'Georgia', 
+                        fontWeight: '400', 
+                        lineHeight: '29.12px', 
+                        wordWrap: 'break-word',
+                        margin: 0
+                      }}>
+                        Our rating is based on Chewy's Essential Plus policy through Trupanion. You can buy a plan directly from Trupanion, but Chewy's plan through Trupanion offers different coverage details, cheaper pricing, and it scored higher in our evaluation.
+                      </p>
+                      
+                      <p style={{ 
+                        color: '#333333', 
+                        fontSize: '18px', 
+                        fontFamily: 'Georgia', 
+                        fontWeight: '400', 
+                        lineHeight: '29.12px', 
+                        wordWrap: 'break-word',
+                        margin: 0
+                      }}>
+                        <span>More: </span>
+                        <span style={{ 
+                          color: '#007AC8', 
+                          fontSize: '18px', 
+                          fontFamily: 'Georgia', 
+                          fontWeight: '700', 
+                          textDecoration: 'underline', 
+                          lineHeight: '29.12px', 
+                          wordWrap: 'break-word' 
+                        }}>
+                          Chewy Pet Insurance Review
+                        </span>
+                      </p>
+                    </>
+                  )}
                   
-                  <p style={{ 
-                    color: '#333333', 
-                    fontSize: '18px', 
-                    fontFamily: 'Georgia', 
-                    fontWeight: '400', 
-                    lineHeight: '29.12px', 
-                    wordWrap: 'break-word',
-                    margin: 0
-                  }}>
-                    <span>More: </span>
-                    <span style={{ 
-                      color: '#007AC8', 
-                      fontSize: '18px', 
-                      fontFamily: 'Georgia', 
-                      fontWeight: '700', 
-                      textDecoration: 'underline', 
-                      lineHeight: '29.12px', 
-                      wordWrap: 'break-word' 
-                    }}>
-                      Chewy Pet Insurance Review
-                    </span>
-                  </p>
+                  <button
+                    onClick={() => setIsExpanded(!isExpanded)}
+                    className="text-left underline hover:no-underline transition-all duration-200"
+                    style={{
+                      color: '#007AC8',
+                      fontSize: '18px',
+                      fontFamily: 'Georgia',
+                      fontWeight: '400',
+                      lineHeight: '29.12px',
+                      background: 'none',
+                      border: 'none',
+                      padding: 0,
+                      cursor: 'pointer'
+                    }}
+                  >
+                    {isExpanded ? 'Read Less' : 'Read More'}
+                  </button>
                 </div>
               </>
             )}

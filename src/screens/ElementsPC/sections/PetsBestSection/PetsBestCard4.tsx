@@ -35,6 +35,7 @@ const tabItems = [
 
 export const PetsBestCard4 = (): JSX.Element => {
   const [activeTab, setActiveTab] = useState("expert-take");
+  const [isExpanded, setIsExpanded] = useState(false);
 
   return (
     <div className="grid grid-cols-12 gap-5">
@@ -123,12 +124,16 @@ export const PetsBestCard4 = (): JSX.Element => {
 
           <div className="flex flex-col gap-7">
             <div className="flex flex-wrap items-center gap-4 max-w-[968px]">
-            <div id="product-card-navigation" className="flex flex-wrap items-center gap-4 w-full max-w-[968px]">
+            <div id="product-card-navigation" className="flex overflow-x-auto items-center gap-4 w-full max-w-[968px] scrollbar-hide py-2 px-1" style={{
+              scrollbarWidth: 'none',
+              msOverflowStyle: 'none',
+              WebkitOverflowScrolling: 'touch'
+            }}>
               {tabItems.map((tab, index) => (
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
-                  className={`navigation-button h-14 px-4 py-2 rounded-[40px] ${
+                  className={`navigation-button h-14 px-4 py-2 rounded-[40px] flex-shrink-0 ${
                     activeTab === tab.id
                       ? "bg-[#1d1d1f] text-white shadow-SEM-shadows-4dp flex-grow"
                       : "bg-[#f8f8fa] text-[#1d1d1f] flex-shrink-0"
@@ -175,33 +180,57 @@ export const PetsBestCard4 = (): JSX.Element => {
                     fontWeight: '400', 
                     lineHeight: '29.12px', 
                     wordWrap: 'break-word',
-                    margin: 0
+                    margin: 0,
+                    display: '-webkit-box',
+                    WebkitLineClamp: isExpanded ? 'none' : 3,
+                    WebkitBoxOrient: 'vertical',
+                    overflow: isExpanded ? 'visible' : 'hidden'
                   }}>
                     We like Embrace because it offers a unique way to save on its accident and illness policy with its Healthy Pet Discount Program. If your claim reimbursements are less than $300 per pet in the year prior to the discount period, you'll qualify for a 5% discount in the first year and 10% in the second year for each pet. Embrace will automatically apply the savings to your annual payment or monthly bill.
                   </p>
                   
-                  <p style={{ 
-                    color: '#333333', 
-                    fontSize: '18px', 
-                    fontFamily: 'Georgia', 
-                    fontWeight: '400', 
-                    lineHeight: '29.12px', 
-                    wordWrap: 'break-word',
-                    margin: 0
-                  }}>
-                    <span>More: </span>
-                    <span style={{ 
-                      color: '#007AC8', 
+                  {isExpanded && (
+                    <p style={{ 
+                      color: '#333333', 
                       fontSize: '18px', 
                       fontFamily: 'Georgia', 
-                      fontWeight: '700', 
-                      textDecoration: 'underline', 
+                      fontWeight: '400', 
                       lineHeight: '29.12px', 
-                      wordWrap: 'break-word' 
+                      wordWrap: 'break-word',
+                      margin: 0
                     }}>
-                      Embrace Pet Insurance Review
-                    </span>
-                  </p>
+                      <span>More: </span>
+                      <span style={{ 
+                        color: '#007AC8', 
+                        fontSize: '18px', 
+                        fontFamily: 'Georgia', 
+                        fontWeight: '700', 
+                        textDecoration: 'underline', 
+                        lineHeight: '29.12px', 
+                        wordWrap: 'break-word' 
+                      }}>
+                        Embrace Pet Insurance Review
+                      </span>
+                    </p>
+                  )}
+                  
+                  <button
+                    onClick={() => setIsExpanded(!isExpanded)}
+                    className="text-left underline hover:no-underline transition-all duration-200"
+                    style={{
+                      color: '#007AC8',
+                      fontSize: '18px',
+                      fontFamily: 'Georgia',
+                      fontWeight: '400',
+                      lineHeight: '29.12px',
+                      background: 'none',
+                      border: 'none',
+                      padding: 0,
+                      cursor: 'pointer'
+                    }}
+                  >
+                    {isExpanded ? 'Read Less' : 'Read More'}
+                  </button>
                 </div>
               </>
             )}

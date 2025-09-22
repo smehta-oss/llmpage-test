@@ -54,26 +54,26 @@ const prosConsData = [
 
 export const PetsBestCard2 = (): JSX.Element => {
   const [activeTab, setActiveTab] = useState("expert-take");
+  const [isExpanded, setIsExpanded] = useState(false);
 
   return (
     <div className="grid grid-cols-12 gap-5">
       <Card className="col-span-12 p-6 bg-white rounded-3xl border-4 border-[#F3C060] relative" style={{ overflow: 'visible' }}>
         {/* Most Popular Badge */}
-        <div style={{
-          padding: '2px 12px', 
-          left: -24, 
-          top: -28, 
-          position: 'absolute', 
-          background: 'var(--Colors-Tertiary-400, #F3C060)', 
-          overflow: 'hidden', 
-          borderRadius: 16, 
-          justifyContent: 'center', 
-          alignItems: 'center', 
-          gap: 8, 
-          display: 'inline-flex',
-          zIndex: 1,
-          maxHeight: 48
-        }}>
+        <div 
+          className="absolute left-1/2 transform -translate-x-1/2 md:-left-6 md:transform-none md:translate-x-0 -top-7 z-10"
+          style={{
+            padding: '2px 12px', 
+            background: 'var(--Colors-Tertiary-400, #F3C060)', 
+            overflow: 'hidden', 
+            borderRadius: 16, 
+            justifyContent: 'center', 
+            alignItems: 'center', 
+            gap: 8, 
+            display: 'inline-flex',
+            maxHeight: 48
+          }}
+        >
           <div style={{width: 24, height: 24, position: 'relative', overflow: 'hidden'}}>
             <img 
               src="/Popular.svg" 
@@ -187,12 +187,16 @@ export const PetsBestCard2 = (): JSX.Element => {
 
           <div className="flex flex-col gap-7">
             <div className="flex flex-wrap items-center gap-4 max-w-[968px]">
-            <div id="product-card-navigation" className="flex flex-wrap items-center gap-4 w-full max-w-[968px]">
+            <div id="product-card-navigation" className="flex overflow-x-auto items-center gap-4 w-full max-w-[968px] scrollbar-hide py-2 px-1" style={{
+              scrollbarWidth: 'none',
+              msOverflowStyle: 'none',
+              WebkitOverflowScrolling: 'touch'
+            }}>
               {tabItems.map((tab, index) => (
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
-                  className={`navigation-button h-14 px-4 py-2 rounded-[40px] ${
+                  className={`navigation-button h-14 px-4 py-2 rounded-[40px] flex-shrink-0 ${
                     activeTab === tab.id
                       ? "bg-[#1d1d1f] text-white shadow-SEM-shadows-4dp flex-grow"
                       : "bg-[#f8f8fa] text-[#1d1d1f] flex-shrink-0"
@@ -239,33 +243,57 @@ export const PetsBestCard2 = (): JSX.Element => {
                     fontWeight: '400', 
                     lineHeight: '29.12px', 
                     wordWrap: 'break-word',
-                    margin: 0
+                    margin: 0,
+                    display: '-webkit-box',
+                    WebkitLineClamp: isExpanded ? 'none' : 3,
+                    WebkitBoxOrient: 'vertical',
+                    overflow: isExpanded ? 'visible' : 'hidden'
                   }}>
                     Figo stood out in our evaluation due to its solid coverage in the base plan and the options to upgrade your plan via "Powerups." Figo's Powerups include hard-to-find coverage for expenses such as advertising and rewards if your pet is lost or stolen and up to $250 in final respects coverage (including burial and cremation expenses). Also included: up to $10,000 in liability coverage if your pet damages someone else's property, boarding expenses if you are hospitalized and vet exam fees. You're not likely to find all of this coverage at other top pet insurers.
                   </p>
                   
-                  <p style={{ 
-                    color: '#333333', 
-                    fontSize: '18px', 
-                    fontFamily: 'Georgia', 
-                    fontWeight: '400', 
-                    lineHeight: '29.12px', 
-                    wordWrap: 'break-word',
-                    margin: 0
-                  }}>
-                    <span>More: </span>
-                    <span style={{ 
-                      color: '#007AC8', 
+                  {isExpanded && (
+                    <p style={{ 
+                      color: '#333333', 
                       fontSize: '18px', 
                       fontFamily: 'Georgia', 
-                      fontWeight: '700', 
-                      textDecoration: 'underline', 
+                      fontWeight: '400', 
                       lineHeight: '29.12px', 
-                      wordWrap: 'break-word' 
+                      wordWrap: 'break-word',
+                      margin: 0
                     }}>
-                      Figo Pet Insurance Review
-                    </span>
-                  </p>
+                      <span>More: </span>
+                      <span style={{ 
+                        color: '#007AC8', 
+                        fontSize: '18px', 
+                        fontFamily: 'Georgia', 
+                        fontWeight: '700', 
+                        textDecoration: 'underline', 
+                        lineHeight: '29.12px', 
+                        wordWrap: 'break-word' 
+                      }}>
+                        Figo Pet Insurance Review
+                      </span>
+                    </p>
+                  )}
+                  
+                  <button
+                    onClick={() => setIsExpanded(!isExpanded)}
+                    className="text-left underline hover:no-underline transition-all duration-200"
+                    style={{
+                      color: '#007AC8',
+                      fontSize: '18px',
+                      fontFamily: 'Georgia',
+                      fontWeight: '400',
+                      lineHeight: '29.12px',
+                      background: 'none',
+                      border: 'none',
+                      padding: 0,
+                      cursor: 'pointer'
+                    }}
+                  >
+                    {isExpanded ? 'Read Less' : 'Read More'}
+                  </button>
                 </div>
               </>
             )}

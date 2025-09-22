@@ -6,14 +6,15 @@ export const CarouselCard1 = (): JSX.Element => {
       className="insurance-plan-card"
       style={{
         width: '100%',
-        padding: '12px 8px 8px',
+        padding: '8px 6px 6px',
         position: 'relative',
         background: '#f8f8fa',
         overflow: 'hidden',
-        borderRadius: '24px',
+        borderRadius: '20px',
         display: 'flex',
         flexDirection: 'column',
         flexGrow: 1,
+        minWidth: '280px',
         maxWidth: '312px',
         flexShrink: 0
       }}

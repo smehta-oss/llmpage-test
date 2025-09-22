@@ -5,6 +5,35 @@
   .all-\[unset\] {
     all: unset;
   }
+  
+  /* Constraint utilities for preventing overflow */
+  .constrain-content {
+    min-width: 0;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
+  
+  .constrain-container {
+    min-width: 0;
+    max-width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+  
+  .constrain-grid {
+    min-width: 0;
+    overflow: hidden;
+  }
+  
+  .constrain-text {
+    word-break: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    max-width: 100%;
+    box-sizing: border-box;
+    width: 100%;
+  }
 }
 
 :root {

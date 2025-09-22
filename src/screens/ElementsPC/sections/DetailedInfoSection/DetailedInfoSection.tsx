@@ -9,10 +9,10 @@ import { PetsBestCard6 } from "../PetsBestSection/PetsBestCard6";
 
 export const DetailedInfoSection = (): JSX.Element => {
   return (
-    <div className="bg-white w-full min-h-screen">
-      <div className="max-w-[1016px] mx-auto">
-        <div className="grid grid-cols-12 gap-5 pt-16">
-          <div className="col-span-12 flex flex-col gap-10">
+    <div className="bg-white w-full min-w-[378px] min-h-screen">
+      <div className="w-full">
+        <div className="grid grid-cols-6 sm:grid-cols-8 md:grid-cols-10 lg:grid-cols-12 gap-5 pt-8 sm:pt-12 md:pt-16">
+          <div className="col-span-6 sm:col-span-8 md:col-span-10 lg:col-span-12 flex flex-col gap-10">
             <MainContentSection />
             <div className="flex flex-col">
               <PetsBestCard1 />

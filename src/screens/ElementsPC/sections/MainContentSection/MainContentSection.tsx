@@ -30,24 +30,29 @@ export const MainContentSection = (): JSX.Element => {
   return (
     <section id="best-providers" className="grid grid-cols-12 gap-5">
       <header className="col-span-12 lg:col-span-8 flex flex-col gap-2">
-        <h1 style={{
-          color: 'black',
-          fontSize: 40,
-          fontFamily: 'Schnyder S',
-          fontWeight: '700',
-          lineHeight: '48px',
-          wordWrap: 'break-word'
-        }}>
+        <h2 
+          className="text-[32px] sm:text-[32px] md:text-[32px] lg:text-[40px] leading-[39px] sm:leading-[39px] md:leading-[39px] lg:leading-[48px]"
+          style={{
+            color: 'black',
+            fontFamily: 'Schnyder S',
+            fontWeight: '700',
+            wordWrap: 'break-word'
+          }}
+        >
           The Best Pet Insurance Plans In Detail
-        </h1>
+        </h2>
       </header>
 
-      <nav className="col-span-12 flex flex-wrap items-center gap-4">
+      <nav className="col-span-12 flex overflow-x-auto items-center gap-4 scrollbar-hide py-2 px-1" style={{
+        scrollbarWidth: 'none',
+        msOverflowStyle: 'none',
+        WebkitOverflowScrolling: 'touch'
+      }}>
         {filterOptions.map((option) => (
           <Button
             key={option.id}
             onClick={() => setSelectedFilter(option.id)}
-            className={`inline-flex h-14 items-center gap-2 px-4 py-2 rounded-[40px] ${
+            className={`inline-flex h-14 items-center gap-2 px-4 py-2 rounded-[40px] flex-shrink-0 ${
               selectedFilter === option.id
                 ? "bg-black text-white shadow-SEM-shadows-4dp"
                 : "bg-[#fafafb] text-wwwapplecomshark shadow-[inset_0px_0px_0.5px_#0000001c] rounded-[28px]"

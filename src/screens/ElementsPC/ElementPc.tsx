@@ -82,13 +82,13 @@ export const ElementPc = (): JSX.Element => {
   ];
 
   return (
-    <div className="bg-white w-full min-h-screen">
+    <div className="bg-white w-full min-w-[378px] min-h-screen">
       {/* Container with max-width and centered */}
-      <div className="max-w-[1440px] mx-auto px-[90px]">
-        {/* 12-column grid with 20px gutters */}
-        <div className="flex gap-11">
-          {/* Navigation - spans 3 columns */}
-          <nav className="flex flex-col items-start justify-start gap-3 max-w-[212px] sticky top-[152px] self-start z-10 bg-white/90 backdrop-blur-sm rounded-lg p-2">
+      <div className="max-w-[1440px] min-w-[378px] mx-auto px-5 sm:px-6 md:px-8 lg:px-[90px]">
+        {/* Responsive layout with proper gutters */}
+        <div className="flex gap-6 sm:gap-8 md:gap-11">
+          {/* Navigation - spans 3 columns - Visible only on desktop (1024px+) */}
+          <nav className="hidden lg:flex flex-col items-start justify-start gap-3 max-w-[212px] sticky top-[152px] self-start z-10 bg-white/90 backdrop-blur-sm rounded-lg p-2">
             {navigationItems.map((item, index) => (
               <Button
                 key={item.id}
@@ -126,8 +126,8 @@ export const ElementPc = (): JSX.Element => {
             ))}
           </nav>
 
-          {/* Main content - spans 9 columns */}
-          <main className="w-[1016px] self-start">
+          {/* Main content - full width on mobile/tablet, constrained width on desktop */}
+          <main className="w-full self-start">
             {/* Full content parent div */}
             <div id="compare-plans" className="full-content-parent flex flex-col gap-6">
               <div className="featured-partner-section flex flex-col items-center gap-[18px] px-4 py-1 bg-[#ffffffcc] rounded-3xl overflow-hidden border-[none] shadow-[0px_0px_16px_4px_#7d0af81f,inset_0_1px_0_rgba(255,255,255,0.40),inset_1px_0_0_rgba(255,255,255,0.32),inset_0_-1px_1px_rgba(0,0,0,0.13),inset_-1px_0_1px_rgba(0,0,0,0.11)] backdrop-blur-[2.0px] backdrop-brightness-[110%] [-webkit-backdrop-filter:blur(2.0px)_brightness(110%)] before:content-[''] before:absolute before:inset-0 before:p-1 before:rounded-3xl before:[background:linear-gradient(90deg,rgba(0,122,200,0.4)_0%,rgba(255,177,54,0.4)_50%,rgba(220,0,0,0.4)_100%)] before:[-webkit-mask:linear-gradient(#fff_0_0)_content-box,linear-gradient(#fff_0_0)] before:[-webkit-mask-composite:xor] before:[mask-composite:exclude] before:z-[1] before:pointer-events-none relative">
@@ -138,15 +138,15 @@ export const ElementPc = (): JSX.Element => {
                 </header>
 
                 <Card className="my-2 flex flex-col items-center gap-[26px] pt-5 pb-6 px-4 relative self-stretch w-full flex-[0_0_auto] bg-[#ffffffcc] rounded-2xl shadow-[0px_0px_16px_4px_#7d0af81f,inset_0_1px_0_rgba(255,255,255,0.40),inset_1px_0_0_rgba(255,255,255,0.32),inset_0_-1px_1px_rgba(0,0,0,0.13),inset_-1px_0_1px_rgba(0,0,0,0.11)] backdrop-blur-[2.0px] backdrop-brightness-[110%] [-webkit-backdrop-filter:blur(2.0px)_brightness(110%)]">
-          <CardContent className="flex items-center gap-[28.66px] relative self-stretch w-full flex-[0_0_auto] p-2">
-            <div className="relative flex-shrink-0 w-[382.42px] h-[253.96px] rounded-[15.81px] overflow-hidden [background:url(..//frame-2147237119.png)_50%_50%_/_cover]">
+          <CardContent className="flex flex-col md:flex-row items-center gap-[28.66px] relative self-stretch w-full flex-[0_0_auto] p-2">
+            <div className="relative flex-shrink-0 w-full md:w-[382.42px] h-[253.96px] rounded-[15.81px] overflow-hidden [background:url(..//frame-2147237119.png)_50%_50%_/_cover]">
               <img
-                className="absolute top-0 left-0 w-[382px] h-[254px] object-cover"
+                className="absolute top-0 left-0 w-full h-[254px] object-cover"
                 alt="Shutterstock"
                 src="/shutterstock-2480568663--1-.png"
               />
 
-              <div className="flex w-[382px] h-[57px] items-center justify-center gap-[23.72px] px-0 py-[7.91px] absolute top-0 left-0 bg-[#f8f8fa]">
+              <div className="flex w-full h-[57px] items-center justify-center gap-[23.72px] px-0 py-[7.91px] absolute top-0 left-0 bg-[#f8f8fa]">
                 <img 
                   src="/pets-best-logo.png" 
                   alt="Pets Best Logo" 

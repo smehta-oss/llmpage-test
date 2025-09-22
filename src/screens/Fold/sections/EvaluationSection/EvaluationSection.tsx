@@ -60,7 +60,7 @@ const TabButton: React.FC<{
     return (
       <div
         onClick={onClick}
-        className={`cursor-pointer h-14 bg-black shadow-[0px_4px_8px_-1px_rgba(0,0,0,0.10)] rounded-[40px] justify-center items-center gap-2 flex ${tab.width}`}
+        className={`cursor-pointer h-14 bg-black shadow-[0px_4px_8px_-1px_rgba(0,0,0,0.10)] rounded-[40px] justify-center items-center gap-2 flex flex-shrink-0 ${tab.width}`}
       >
         <div className="px-4 py-2">
           <div className="text-center text-white text-base font-work-sans font-semibold leading-[15px] break-words">
@@ -74,7 +74,7 @@ const TabButton: React.FC<{
   return (
     <div
       onClick={onClick}
-      className={`cursor-pointer h-14 bg-[#FAFAFB] shadow-[0px_0px_0.5px_rgba(0,0,0,0.11)_inset] rounded-[28px] flex-col justify-start items-start gap-2 inline-flex ${tab.width}`}
+      className={`cursor-pointer h-14 bg-[#FAFAFB] shadow-[0px_0px_0.5px_rgba(0,0,0,0.11)_inset] rounded-[28px] flex-col justify-start items-start gap-2 inline-flex flex-shrink-0 ${tab.width}`}
     >
       <div className="h-14 px-4 justify-start items-center inline-flex">
         <div className="justify-start items-center flex">
@@ -216,32 +216,40 @@ export const EvaluationSection: React.FC<EvaluationSectionProps> = ({
       <div className="grid grid-cols-12 gap-5">
         <div className="col-span-12">
           <header className="mb-8">
-            <h1 
+            <h2 
+              className="text-[32px] sm:text-[32px] md:text-[32px] lg:text-[40px] leading-[39px] sm:leading-[39px] md:leading-[39px] lg:leading-[48px]"
               style={{
                 justifyContent: 'center', 
                 display: 'flex', 
                 flexDirection: 'column', 
                 color: 'black', 
-                fontSize: '40px', 
                 fontFamily: 'Schnyder S', 
                 fontWeight: '700', 
-                lineHeight: '48px', 
                 wordWrap: 'break-word'
               }}
             >
               How We Found The Best Pet Insurance Companies
-            </h1>
+            </h2>
           </header>
           
-          <nav className="w-full justify-start items-center gap-4 inline-flex">
-            {NAVIGATION_TABS.map((tab) => (
-              <TabButton
-                key={tab.id}
-                tab={tab}
-                isActive={activeSection === tab.id}
-                onClick={() => setActiveSection(tab.id)}
-              />
-            ))}
+          <nav 
+            className="w-full overflow-x-auto scrollbar-hide py-2 px-1"
+            style={{ 
+              scrollbarWidth: 'none', 
+              msOverflowStyle: 'none',
+              WebkitOverflowScrolling: 'touch'
+            }}
+          >
+            <div className="flex justify-start items-center gap-4 min-w-max">
+              {NAVIGATION_TABS.map((tab) => (
+                <TabButton
+                  key={tab.id}
+                  tab={tab}
+                  isActive={activeSection === tab.id}
+                  onClick={() => setActiveSection(tab.id)}
+                />
+              ))}
+            </div>
           </nav>
         </div>
       </div>

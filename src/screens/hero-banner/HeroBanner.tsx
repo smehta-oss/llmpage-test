@@ -5,7 +5,7 @@ import { CustomNavigationSection } from "./sections/CustomNavigationSection/Cust
 
 export const HeroBanner = (): JSX.Element => {
   return (
-    <div className="bg-white overflow-hidden w-full min-w-[1440px] min-h-[790px] flex flex-col">
+    <div className="bg-white overflow-hidden w-full min-w-[378px] min-h-[790px] flex flex-col">
       <div className="grouped-header">
         <HeaderSection />
         <CustomNavigationSection />
