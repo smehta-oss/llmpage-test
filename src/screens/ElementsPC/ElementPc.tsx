@@ -88,7 +88,7 @@ export const ElementPc = (): JSX.Element => {
         {/* Responsive layout with proper gutters */}
         <div className="flex gap-6 sm:gap-8 md:gap-11">
           {/* Navigation - spans 3 columns - Visible only on desktop (1024px+) */}
-          <nav className="hidden lg:flex flex-col items-start justify-start gap-3 max-w-[212px] sticky top-[152px] self-start z-10 bg-white/90 backdrop-blur-sm rounded-lg p-2">
+          <nav className="hidden lg:flex flex-col items-start justify-start gap-3 max-w-[212px] sticky top-[152px] self-start z-[1] bg-white/90 backdrop-blur-sm rounded-lg p-2">
             {navigationItems.map((item, index) => (
               <Button
                 key={item.id}

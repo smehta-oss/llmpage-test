@@ -66,32 +66,32 @@ export const PetInsuranceComparison: React.FC<PetInsuranceComparisonProps> = ({ 
                 </div>
                 
                 <div className="flex flex-col items-start gap-6 w-full">
-                  <div className="w-full overflow-x-auto">
-                    <table className="w-full border-separate border-spacing-0 table-fixed">
-                      <thead>
-                        <tr>
-                          <TableCell isHeader className="w-[10%] rounded-tl-[8px] ">Provider</TableCell>
-                          <TableCell isHeader className="w-[15%]">Age Restrictions</TableCell>
-                          <TableCell isHeader className="w-[35%]">Waiting Periods</TableCell>
-                          <TableCell isHeader className="w-[13%]">End of Life Expenses</TableCell>
-                          <TableCell isHeader className="w-[13%]">Vet Exam Fees</TableCell>
-                          <TableCell isHeader className="w-[14%] rounded-tr-[16px] overflow-hidden">Microchipping</TableCell>
+                <div className="w-full overflow-x-auto relative">
+                  <table className="w-full border-separate border-spacing-0 table-fixed min-w-[1000px] relative">
+                    <thead>
+                      <tr>
+                        <TableCell isHeader className="w-[10%] rounded-tl-[8px] sticky left-0 z-[1] bg-[#ecf1ff]">Provider</TableCell>
+                        <TableCell isHeader className="w-[15%]">Age Restrictions</TableCell>
+                        <TableCell isHeader className="w-[35%]">Waiting Periods</TableCell>
+                        <TableCell isHeader className="w-[13%]">End of Life Expenses</TableCell>
+                        <TableCell isHeader className="w-[13%]">Vet Exam Fees</TableCell>
+                        <TableCell isHeader className="w-[14%] rounded-tr-[16px] overflow-hidden">Microchipping</TableCell>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {PLAN_DETAILS_DATA.map((row) => (
+                        <tr key={row.provider}>
+                          <TableCell isProvider className="align-top sticky left-0 z-[1] bg-white">{row.provider}</TableCell>
+                          <TableCell className="align-top">{row.ageRestrictions}</TableCell>
+                          <TableCell className="align-top">{row.waitingPeriods}</TableCell>
+                          <TableCell className="align-top">{row.endOfLife}</TableCell>
+                          <TableCell className="align-top">{row.vetExamFees}</TableCell>
+                          <TableCell className="align-top">{row.microchipping}</TableCell>
                         </tr>
-                      </thead>
-                      <tbody>
-                        {PLAN_DETAILS_DATA.map((row) => (
-                          <tr key={row.provider}>
-                            <TableCell isProvider className="align-top">{row.provider}</TableCell>
-                            <TableCell className="align-top">{row.ageRestrictions}</TableCell>
-                            <TableCell className="align-top">{row.waitingPeriods}</TableCell>
-                            <TableCell className="align-top">{row.endOfLife}</TableCell>
-                            <TableCell className="align-top">{row.vetExamFees}</TableCell>
-                            <TableCell className="align-top">{row.microchipping}</TableCell>
-                          </tr>
-                        ))}
-                      </tbody>
-                    </table>
-                  </div>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
                   
                   <CTAButton onClick={onCTAClick} />
                 </div>
@@ -108,11 +108,11 @@ export const PetInsuranceComparison: React.FC<PetInsuranceComparisonProps> = ({ 
                   </div>
                 </div>
                 
-                <div className="w-full overflow-x-auto">
-                  <table className="w-full table-fixed border-separate border-spacing-0">
+                <div className="w-full overflow-x-auto relative">
+                  <table className="w-full table-fixed border-separate border-spacing-0 min-w-[800px] relative">
                     <thead>
                       <tr>
-                        <TableCell isHeader className="w-[15%] rounded-tl-[8px] ">Provider</TableCell>
+                        <TableCell isHeader className="w-[15%] rounded-tl-[8px] sticky left-0 z-[1] bg-[#ecf1ff]">Provider</TableCell>
                         <TableCell isHeader className="w-[15%]">CSI Rating</TableCell>
                         <TableCell isHeader className="w-[20%]">How Likely to Recommend</TableCell>
                         <TableCell isHeader className="w-[25%]">Common Positive Sentiments</TableCell>
@@ -122,7 +122,7 @@ export const PetInsuranceComparison: React.FC<PetInsuranceComparisonProps> = ({ 
                     <tbody>
                       {USER_OPINION_DATA.map((row) => (
                         <tr key={row.provider}>
-                          <TableCell isProvider>{row.provider}</TableCell>
+                          <TableCell isProvider className="sticky left-0 z-[1] bg-white">{row.provider}</TableCell>
                           <TableCell className="font-bold">{row.csiRating}</TableCell>
                           <TableCell>{row.likelyToRecommend}</TableCell>
                           <TableCell>{row.positiveComments}</TableCell>
@@ -147,11 +147,11 @@ export const PetInsuranceComparison: React.FC<PetInsuranceComparisonProps> = ({ 
                   </div>
                 </div>
                 
-                <div className="w-full overflow-x-auto">
-                  <table className="w-full table-fixed border-separate border-spacing-0">
+                <div className="w-full overflow-x-auto relative">
+                  <table className="w-full table-fixed border-separate border-spacing-0 min-w-[600px] relative">
                     <thead>
                       <tr>
-                        <TableCell isHeader className="w-[25%] rounded-tl-[8px] ">Provider</TableCell>
+                        <TableCell isHeader className="w-[25%] rounded-tl-[8px] sticky left-0 z-[1] bg-[#ecf1ff]">Provider</TableCell>
                         <TableCell isHeader className="w-[37.5%]">Satisfaction with Claims</TableCell>
                         <TableCell isHeader className="w-[37.5%] rounded-tr-[16px]">Overall Satisfaction</TableCell>
                       </tr>
@@ -159,7 +159,7 @@ export const PetInsuranceComparison: React.FC<PetInsuranceComparisonProps> = ({ 
                     <tbody>
                       {CLAIMS_DATA.map((row) => (
                         <tr key={row.provider}>
-                          <TableCell isProvider>{row.provider}</TableCell>
+                          <TableCell isProvider className="sticky left-0 z-[1] bg-white">{row.provider}</TableCell>
                           <TableCell>{row.claimsSatisfaction}</TableCell>
                           <TableCell>{row.overallSatisfaction}</TableCell>
                         </tr>

@@ -116,7 +116,7 @@ export const ContentSection = (): JSX.Element => {
                     <BreadcrumbItem>
                       <BreadcrumbLink
                         href={item.href}
-                        className="[font-family:'Graphik-Regular',Helvetica] font-normal text-[#333333] text-xs tracking-[0] leading-[18px] underline"
+                        className="[font-family:'Graphik-Regular',Helvetica] font-normal text-[#333333] text-xs tracking-[0] leading-[18px]"
                       >
                         {item.label}
                       </BreadcrumbLink>

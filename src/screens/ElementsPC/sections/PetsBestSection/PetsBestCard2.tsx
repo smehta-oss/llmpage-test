@@ -61,7 +61,7 @@ export const PetsBestCard2 = (): JSX.Element => {
       <Card className="col-span-12 p-6 bg-white rounded-3xl border-4 border-[#F3C060] relative" style={{ overflow: 'visible' }}>
         {/* Most Popular Badge */}
         <div 
-          className="absolute left-1/2 transform -translate-x-1/2 md:-left-6 md:transform-none md:translate-x-0 -top-7 z-10"
+          className="absolute left-1/2 transform -translate-x-1/2 md:-left-6 md:transform-none md:translate-x-0 -top-7 z-[1]"
           style={{
             padding: '2px 12px', 
             background: 'var(--Colors-Tertiary-400, #F3C060)', 
