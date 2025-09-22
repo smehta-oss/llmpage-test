@@ -144,9 +144,9 @@ const OverviewSection: React.FC = () => (
     </div>
 
     <div className="methodology-datapoint-block Overview-datapoints">
-      <div className="w-full px-6 py-8 relative flex flex-col justify-start items-start gap-10 overflow-hidden ai-style-change-9">
+      <div className="w-full px-6 py-8 relative flex flex-col justify-start items-start gap-10 rounded-lg overflow-hidden ai-style-change-9" style={{ isolation: 'isolate' }}>
         {/* Background Image */}
-        <div className="w-full h-[295px] absolute left-0 top-0 overflow-hidden">
+        <div className="absolute inset-0 w-full h-full overflow-hidden">
           <img 
             className="w-full h-full object-cover" 
             src="/MethodologyImg.png" 
@@ -212,7 +212,7 @@ export const EvaluationSection: React.FC<EvaluationSectionProps> = ({
   };
 
   return (
-    <section id="methodology" className="w-full border-t [border-top-style:solid] border-[#ced4db] flex flex-col py-8">
+    <section id="methodology" className="w-full border-t [border-top-style:solid] border-[#CED4DB] flex flex-col py-8">
       <div className="grid grid-cols-12 gap-5">
         <div className="col-span-12">
           <header className="mb-8">
@@ -247,8 +247,10 @@ export const EvaluationSection: React.FC<EvaluationSectionProps> = ({
       </div>
 
       <div className="grid grid-cols-12 gap-5 mt-8">
-        <div className="col-span-12">
-          {renderContent()}
+        <div className="col-span-12 min-h-0">
+          <div className="w-full">
+            {renderContent()}
+          </div>
         </div>
       </div>
     </section>

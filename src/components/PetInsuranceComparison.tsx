@@ -20,7 +20,7 @@ export const PetInsuranceComparison: React.FC<PetInsuranceComparisonProps> = ({ 
             <div className="flex flex-col items-start gap-10 w-full">
               
               {/* Pet Insurance Cost Section */}
-              <section id="insurance-cost" className="flex flex-col items-start gap-6 mt-6 pt-10 w-full border-t border-[#ced4db]">
+              <section id="insurance-cost" className="flex flex-col items-start gap-6 mt-6 pt-10 w-full border-t border-[#CED4DB]">
                 <div className="flex flex-col items-start gap-6 w-full">
                   <div className="flex flex-col items-start gap-2 w-full">
                     <SectionTitle>Pet Insurance Cost for Dogs and Cats</SectionTitle>
@@ -31,10 +31,10 @@ export const PetInsuranceComparison: React.FC<PetInsuranceComparisonProps> = ({ 
                 </div>
                 
                 <div className="w-full overflow-x-auto">
-                  <table className="w-full table-fixed border-collapse">
+                  <table className="w-full table-fixed border-separate border-spacing-0">
                     <thead>
                       <tr>
-                        <TableCell isHeader className="w-[25%] rounded-tl-[8px] border-[#ededed]">Provider</TableCell>
+                        <TableCell isHeader className="w-[25%] rounded-tl-[8px] ">Provider</TableCell>
                         <TableCell isHeader className="w-[37.5%]">Average Monthly for Dogs</TableCell>
                         <TableCell isHeader className="w-[37.5%] rounded-tr-[16px]">Average Monthly for Cats</TableCell>
                       </tr>
@@ -55,7 +55,7 @@ export const PetInsuranceComparison: React.FC<PetInsuranceComparisonProps> = ({ 
               </section>
 
               {/* Pet Insurance Plan Details Section */}
-              <section id="plan-details" className="flex flex-col items-start gap-10 pt-10 w-full border-t border-[#ced4db]">
+              <section id="plan-details" className="flex flex-col items-start gap-10 pt-10 w-full border-t border-[#CED4DB]">
                 <div className="flex flex-col items-start gap-6 w-full">
                   <div className="flex flex-col items-start gap-2 w-full">
                     <SectionTitle>Pet Insurance Plan Details</SectionTitle>
@@ -67,10 +67,10 @@ export const PetInsuranceComparison: React.FC<PetInsuranceComparisonProps> = ({ 
                 
                 <div className="flex flex-col items-start gap-6 w-full">
                   <div className="w-full overflow-x-auto">
-                    <table className="w-full border-collapse table-fixed">
+                    <table className="w-full border-separate border-spacing-0 table-fixed">
                       <thead>
                         <tr>
-                          <TableCell isHeader className="w-[10%] rounded-tl-[8px] border-[#ededed]">Provider</TableCell>
+                          <TableCell isHeader className="w-[10%] rounded-tl-[8px] ">Provider</TableCell>
                           <TableCell isHeader className="w-[15%]">Age Restrictions</TableCell>
                           <TableCell isHeader className="w-[35%]">Waiting Periods</TableCell>
                           <TableCell isHeader className="w-[13%]">End of Life Expenses</TableCell>
@@ -98,7 +98,7 @@ export const PetInsuranceComparison: React.FC<PetInsuranceComparisonProps> = ({ 
               </section>
 
               {/* User Opinion Section */}
-              <section id="user-opinion" className="flex flex-col items-start gap-6 pt-10 w-full border-t border-[#ced4db]">
+              <section id="user-opinion" className="flex flex-col items-start gap-6 pt-10 w-full border-t border-[#CED4DB]">
                 <div className="flex flex-col items-start gap-6 w-full">
                   <div className="flex flex-col items-start gap-2 w-full">
                     <SectionTitle>User Opinion of Pet Insurance Companies</SectionTitle>
@@ -109,10 +109,10 @@ export const PetInsuranceComparison: React.FC<PetInsuranceComparisonProps> = ({ 
                 </div>
                 
                 <div className="w-full overflow-x-auto">
-                  <table className="w-full table-fixed border-collapse">
+                  <table className="w-full table-fixed border-separate border-spacing-0">
                     <thead>
                       <tr>
-                        <TableCell isHeader className="w-[15%] rounded-tl-[8px] border-[#ededed]">Provider</TableCell>
+                        <TableCell isHeader className="w-[15%] rounded-tl-[8px] ">Provider</TableCell>
                         <TableCell isHeader className="w-[15%]">CSI Rating</TableCell>
                         <TableCell isHeader className="w-[20%]">How Likely to Recommend</TableCell>
                         <TableCell isHeader className="w-[25%]">Common Positive Sentiments</TableCell>
@@ -137,7 +137,7 @@ export const PetInsuranceComparison: React.FC<PetInsuranceComparisonProps> = ({ 
               </section>
 
               {/* Claims Process Section */}
-              <section id="claims-feedback" className="flex flex-col items-start gap-6 pt-10 w-full border-t border-[#ced4db]">
+              <section id="claims-feedback" className="flex flex-col items-start gap-6 pt-10 w-full border-t border-[#CED4DB]">
                 <div className="flex flex-col items-start gap-6 w-full">
                   <div className="flex flex-col items-start gap-2 w-full">
                     <SectionTitle>User Feedback on Claims Process</SectionTitle>
@@ -148,10 +148,10 @@ export const PetInsuranceComparison: React.FC<PetInsuranceComparisonProps> = ({ 
                 </div>
                 
                 <div className="w-full overflow-x-auto">
-                  <table className="w-full table-fixed border-collapse">
+                  <table className="w-full table-fixed border-separate border-spacing-0">
                     <thead>
                       <tr>
-                        <TableCell isHeader className="w-[25%] rounded-tl-[8px] border-[#ededed]">Provider</TableCell>
+                        <TableCell isHeader className="w-[25%] rounded-tl-[8px] ">Provider</TableCell>
                         <TableCell isHeader className="w-[37.5%]">Satisfaction with Claims</TableCell>
                         <TableCell isHeader className="w-[37.5%] rounded-tr-[16px]">Overall Satisfaction</TableCell>
                       </tr>
@@ -177,7 +177,7 @@ export const PetInsuranceComparison: React.FC<PetInsuranceComparisonProps> = ({ 
               </Suspense>
 
               {/* FAQ Section */}
-              <section id="faq" className="flex flex-col items-start gap-6 pt-10 w-full border-t border-[#ced4db]">
+              <section id="faq" className="flex flex-col items-start gap-6 pt-10 w-full border-t border-[#CED4DB]">
                 <div className="flex flex-col items-start gap-6 w-full">
                   <div className="flex flex-col items-start gap-2 w-full">
                     <SectionTitle>Frequently Asked Questions</SectionTitle>
@@ -190,28 +190,37 @@ export const PetInsuranceComparison: React.FC<PetInsuranceComparisonProps> = ({ 
                 <div className="flex flex-col items-start gap-4 w-full">
                   <div className="w-full p-6 bg-[#f8f9fa] rounded-lg">
                     <h3 className="text-lg font-semibold mb-3" style={{ fontFamily: 'Work Sans' }}>
-                      What does pet insurance typically cover?
+                      Does pet insurance cover both dogs and cats under the same plan?
                     </h3>
                     <p className="text-gray-700" style={{ fontFamily: 'Work Sans' }}>
-                      Pet insurance typically covers accidents, illnesses, surgeries, medications, and emergency care. Coverage varies by provider and plan type.
+                      Most pet insurance providers require separate policies for each pet, regardless of species. However, many offer multi-pet discounts when you insure multiple pets with the same company.
                     </p>
                   </div>
                   
                   <div className="w-full p-6 bg-[#f8f9fa] rounded-lg">
                     <h3 className="text-lg font-semibold mb-3" style={{ fontFamily: 'Work Sans' }}>
-                      How much does pet insurance cost per month?
+                      Does pet insurance cover vaccinations and annual checkups?
                     </h3>
                     <p className="text-gray-700" style={{ fontFamily: 'Work Sans' }}>
-                      Monthly costs vary based on your pet's age, breed, location, and coverage level. On average, expect $30-70 for dogs and $15-40 for cats.
+                      Basic pet insurance typically covers accidents and illnesses but not routine care. However, many providers offer wellness add-ons that cover vaccinations, annual exams, and preventive care for an additional cost.
                     </p>
                   </div>
                   
                   <div className="w-full p-6 bg-[#f8f9fa] rounded-lg">
                     <h3 className="text-lg font-semibold mb-3" style={{ fontFamily: 'Work Sans' }}>
-                      Are there waiting periods for pet insurance?
+                      Are pre-existing conditions covered?
                     </h3>
                     <p className="text-gray-700" style={{ fontFamily: 'Work Sans' }}>
-                      Yes, most pet insurance policies have waiting periods ranging from 2-14 days for illnesses and longer for specific conditions like orthopedic issues.
+                      No, pet insurance does not cover pre-existing conditions. Any health issue your pet has before coverage begins or during waiting periods will be excluded from coverage permanently.
+                    </p>
+                  </div>
+                  
+                  <div className="w-full p-6 bg-[#f8f9fa] rounded-lg">
+                    <h3 className="text-lg font-semibold mb-3" style={{ fontFamily: 'Work Sans' }}>
+                      How are premiums calculated for pet insurance?
+                    </h3>
+                    <p className="text-gray-700" style={{ fontFamily: 'Work Sans' }}>
+                      Premiums are based on your pet's age, breed, location, coverage level, deductible amount, and reimbursement percentage. Older pets and certain breeds prone to health issues typically cost more to insure.
                     </p>
                   </div>
                 </div>

@@ -57,7 +57,7 @@ export const PetsBestCard1 = (): JSX.Element => {
 
   return (
     <div className="grid grid-cols-12 gap-5">
-      <Card className="col-span-12 p-6 bg-white rounded-3xl border border-[#d9dbe9]">
+      <Card className="col-span-12 p-6 bg-white rounded-3xl border border-[#CED4DB]">
         <CardContent className="p-0 space-y-6">
           <header className="flex items-center gap-2">
             <h2 className="[font-family:'Work_Sans',Helvetica] font-bold text-black text-2xl leading-8 underline">
@@ -191,7 +191,7 @@ export const PetsBestCard1 = (): JSX.Element => {
                   <thead>
                     <tr>
                       <th 
-                        className="w-1/2 p-2 bg-[#F8F8FA] border-r border-[#ECECEC] text-left"
+                        className="w-1/2 p-2 bg-[#F8F8FA] border-r border-[#CED4DB] text-left"
                         style={{
                           color: 'black',
                           fontSize: 12,
@@ -240,7 +240,7 @@ export const PetsBestCard1 = (): JSX.Element => {
                     {prosConsData.map((row, index) => (
                       <tr key={index}>
                         <td 
-                          className="p-2 bg-[#F8F8FA] border-t border-r border-[#ECECEC] align-top"
+                          className="p-2 bg-[#F8F8FA] border-t border-r border-[#CED4DB] align-top"
                           style={{
                             color: 'black',
                             fontSize: 14,
@@ -255,7 +255,7 @@ export const PetsBestCard1 = (): JSX.Element => {
                           </ol>
                         </td>
                         <td 
-                          className="p-2 bg-[#F8F8FA] border-t border-[#ECECEC] align-top"
+                          className="p-2 bg-[#F8F8FA] border-t border-[#CED4DB] align-top"
                           style={{
                             color: 'black',
                             fontSize: 14,

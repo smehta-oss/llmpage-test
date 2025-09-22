@@ -1,6 +1,45 @@
 import { ArrowUpRightIcon } from "lucide-react";
 import React from "react";
 import { CustomArrowUpRightIcon } from "../../../../assets/icons";
+
+// Question cards data
+const QUESTION_CARDS = [
+  {
+    id: "dogs-cats-same-plan",
+    question: "Does pet insurance cover both dogs and cats under the same plan?",
+    targetSection: "plan-details"
+  },
+  {
+    id: "vaccinations-checkups",
+    question: "Does pet insurance cover vaccinations and annual checkups?",
+    targetSection: "plan-details"
+  },
+  {
+    id: "pre-existing-conditions",
+    question: "Are pre-existing conditions covered?",
+    targetSection: "faq"
+  },
+  {
+    id: "cheapest-puppy-insurance",
+    question: "Cheapest pet insurance for a puppy",
+    targetSection: "insurance-cost"
+  },
+  {
+    id: "dental-coverage",
+    question: "Which coverage includes dental?",
+    targetSection: "plan-details"
+  },
+  {
+    id: "pre-existing-conditions-2",
+    question: "Are pre-existing conditions covered?",
+    targetSection: "faq"
+  },
+  {
+    id: "premium-calculation",
+    question: "How are premiums calculated for pet insurance?",
+    targetSection: "insurance-cost"
+  }
+];
 import { Badge } from "../../../../components/ui/badge";
 import {
   Breadcrumb,
@@ -13,6 +52,19 @@ import { Button } from "../../../../components/ui/button";
 import { Card, CardContent } from "../../../../components/ui/card";
 
 export const ContentSection = (): JSX.Element => {
+  // Handle question card clicks - scroll to relevant section
+  const handleQuestionClick = (targetSection: string) => {
+    const targetElement = document.getElementById(targetSection);
+    if (targetElement) {
+      const elementTop = targetElement.getBoundingClientRect().top + window.pageYOffset;
+      const offsetTop = elementTop - 80; // 80px offset to account for sticky nav
+      
+      window.scrollTo({
+        top: offsetTop,
+        behavior: 'smooth'
+      });
+    }
+  };
   const breadcrumbItems = [
     { label: "ADVISOR", href: "#" },
     { label: "INSURANCE", href: "#" },
@@ -192,62 +244,20 @@ export const ContentSection = (): JSX.Element => {
               </div>
               <div className="w-full flex flex-col justify-start items-start gap-3">
                 <div className="w-full flex flex-wrap gap-3">
-                  <div className="w-fit py-2 px-2 bg-white shadow-[0px_4px_8px_-1px_rgba(0,0,0,0.10)] rounded-lg border border-solid border-[#f4f5f8] justify-center items-center gap-2.5 flex">
-                    <div className="justify-center flex flex-col text-[#606f7f] text-xs leading-[18px] whitespace-nowrap" style={{ fontFamily: 'Work Sans', fontWeight: '400' }}>
-                      Does pet insurance cover both dogs and cats under the same plan?
+                  {QUESTION_CARDS.map((questionCard) => (
+                    <div 
+                      key={questionCard.id}
+                      onClick={() => handleQuestionClick(questionCard.targetSection)}
+                      className="w-fit py-2 px-2 bg-white shadow-[0px_4px_8px_-1px_rgba(0,0,0,0.10)] rounded-lg border border-solid border-[#f4f5f8] justify-center items-center gap-2.5 flex cursor-pointer hover:shadow-[0px_6px_12px_-1px_rgba(0,0,0,0.15)] transition-shadow duration-200"
+                    >
+                      <div className="justify-center flex flex-col text-[#606f7f] text-xs leading-[18px] whitespace-nowrap" style={{ fontFamily: 'Work Sans', fontWeight: '400' }}>
+                        {questionCard.question}
+                      </div>
+                      <div className="w-5 h-5 relative flex-shrink-0">
+                        <CustomArrowUpRightIcon />
+                      </div>
                     </div>
-                    <div className="w-5 h-5 relative flex-shrink-0">
-                      <CustomArrowUpRightIcon />
-                    </div>
-                  </div>
-                  <div className="w-fit py-2 px-2 bg-white shadow-[0px_4px_8px_-1px_rgba(0,0,0,0.10)] rounded-lg border border-solid border-[#f4f5f8] justify-center items-center gap-2.5 flex">
-                    <div className="justify-center flex flex-col text-[#606f7f] text-xs leading-[18px] whitespace-nowrap" style={{ fontFamily: 'Work Sans', fontWeight: '400' }}>
-                      Does pet insurance cover vaccinations and annual checkups?
-                    </div>
-                    <div className="w-5 h-5 relative flex-shrink-0">
-                      <CustomArrowUpRightIcon />
-                    </div>
-                  </div>
-                  <div className="w-fit py-2 px-2 bg-white shadow-[0px_4px_8px_-1px_rgba(0,0,0,0.10)] rounded-lg border border-solid border-[#f4f5f8] justify-center items-center gap-2.5 flex">
-                    <div className="justify-center flex flex-col text-[#606f7f] text-xs leading-[18px] whitespace-nowrap" style={{ fontFamily: 'Work Sans', fontWeight: '400' }}>
-                      Are pre-existing conditions covered?
-                    </div>
-                    <div className="w-5 h-5 relative flex-shrink-0">
-                      <CustomArrowUpRightIcon />
-                    </div>
-                  </div>
-                  <div className="w-fit py-2 px-2 bg-white shadow-[0px_4px_8px_-1px_rgba(0,0,0,0.10)] rounded-lg border border-solid border-[#f4f5f8] justify-center items-center gap-2.5 flex">
-                    <div className="justify-center flex flex-col text-[#606f7f] text-xs leading-[18px] whitespace-nowrap" style={{ fontFamily: 'Work Sans', fontWeight: '400' }}>
-                      Cheapest pet insurance for a puppy
-                    </div>
-                    <div className="w-5 h-5 relative flex-shrink-0">
-                      <CustomArrowUpRightIcon />
-                    </div>
-                  </div>
-                  <div className="w-fit py-2 px-2 bg-white shadow-[0px_4px_8px_-1px_rgba(0,0,0,0.10)] rounded-lg border border-solid border-[#f4f5f8] justify-center items-center gap-2.5 flex">
-                    <div className="justify-center flex flex-col text-[#606f7f] text-xs leading-[18px] whitespace-nowrap" style={{ fontFamily: 'Work Sans', fontWeight: '400' }}>
-                      Which coverage includes dental?
-                    </div>
-                    <div className="w-5 h-5 relative flex-shrink-0">
-                      <CustomArrowUpRightIcon />
-                    </div>
-                  </div>
-                  <div className="w-fit py-2 px-2 bg-white shadow-[0px_4px_8px_-1px_rgba(0,0,0,0.10)] rounded-lg border border-solid border-[#f4f5f8] justify-center items-center gap-2.5 flex">
-                    <div className="justify-center flex flex-col text-[#606f7f] text-xs leading-[18px] whitespace-nowrap" style={{ fontFamily: 'Work Sans', fontWeight: '400' }}>
-                      Are pre-existing conditions covered?
-                    </div>
-                    <div className="w-5 h-5 relative flex-shrink-0">
-                      <CustomArrowUpRightIcon />
-                    </div>
-                  </div>
-                  <div className="w-fit py-2 px-2 bg-white shadow-[0px_4px_8px_-1px_rgba(0,0,0,0.10)] rounded-lg border border-solid border-[#f4f5f8] justify-center items-center gap-2.5 flex">
-                    <div className="justify-center flex flex-col text-[#606f7f] text-xs leading-[18px] whitespace-nowrap" style={{ fontFamily: 'Work Sans', fontWeight: '400' }}>
-                      How are premiums calculated for pet insurance?
-                    </div>
-                    <div className="w-5 h-5 relative flex-shrink-0">
-                      <CustomArrowUpRightIcon />
-                    </div>
-                  </div>
+                  ))}
                 </div>
               </div>
             </div>

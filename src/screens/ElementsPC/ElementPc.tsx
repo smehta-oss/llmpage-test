@@ -97,7 +97,7 @@ export const ElementPc = (): JSX.Element => {
                 className={`navigation-buttons relative flex-[0_0_auto] min-h-[56px] py-2 h-auto ${
                   index === activeIndex
                     ? "bg-white rounded-[40px] shadow-SEM-shadows-4dp text-black hover:bg-white"
-                    : "bg-wwwapplecomathens-gray-72 rounded-[28px] shadow-[inset_0px_0px_0.5px_#0000001c] text-wwwapplecomshark"
+                    : "bg-[#EEEEF2] rounded-[28px] shadow-[inset_0px_0px_0.5px_#0000001c] text-wwwapplecomshark"
                 } hover:scale-110 active:scale-95 transition-all duration-300 ease-in-out`}
               >
                 <div className="navigation-sub-div relative flex items-center gap-2 mx-2">

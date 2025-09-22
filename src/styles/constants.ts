@@ -13,8 +13,8 @@ export const COLORS = {
     muted: '#eceff3',
   },
   border: {
-    light: '#cdced1',
-    muted: '#ced4db',
+    light: '#CED4DB',
+    muted: '#CED4DB',
   }
 } as const;
 

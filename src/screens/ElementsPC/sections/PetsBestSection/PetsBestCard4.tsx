@@ -38,7 +38,7 @@ export const PetsBestCard4 = (): JSX.Element => {
 
   return (
     <div className="grid grid-cols-12 gap-5">
-      <Card className="col-span-12 p-6 bg-white rounded-3xl border border-[#d9dbe9]">
+      <Card className="col-span-12 p-6 bg-white rounded-3xl border border-[#CED4DB]">
         <CardContent className="p-0 space-y-6">
           <header className="flex items-center gap-2">
             <h2 className="[font-family:'Work_Sans',Helvetica] font-bold text-black text-2xl leading-8 underline">
