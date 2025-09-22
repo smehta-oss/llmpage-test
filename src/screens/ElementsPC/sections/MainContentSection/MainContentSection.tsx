@@ -28,7 +28,7 @@ export const MainContentSection = (): JSX.Element => {
   ];
 
   return (
-    <section className="grid grid-cols-12 gap-5">
+    <section id="best-providers" className="grid grid-cols-12 gap-5">
       <header className="col-span-12 lg:col-span-8 flex flex-col gap-2">
         <h1 style={{
           color: 'black',

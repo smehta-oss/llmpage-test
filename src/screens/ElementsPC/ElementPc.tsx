@@ -1,5 +1,5 @@
 import { ArrowUpRightIcon } from "lucide-react";
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Button } from "../../components/ui/button";
 import { Card, CardContent } from "../../components/ui/card";
 import { PetInsuranceComparison } from "../../components/PetInsuranceComparison";
@@ -9,15 +9,65 @@ export const ElementPc = (): JSX.Element => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const navigationItems = [
-    { title: "Compare Plans" },
-    { title: "The Best Providers" },
-    { title: "Pet Insurance Cost\nfor Dogs and Cats" },
-    { title: "Pet Insurance Plan\nDetails" },
-    { title: "User Opinion of Pet\nInsurance Companies" },
-    { title: "User Feedback on\nClaims Process" },
-    { title: "Methodology" },
-    { title: "Frequently Asked\nQuestions" },
+    { title: "Compare Plans", id: "compare-plans" },
+    { title: "The Best Providers", id: "best-providers" },
+    { title: "Pet Insurance Cost\nfor Dogs and Cats", id: "insurance-cost" },
+    { title: "Pet Insurance Plan\nDetails", id: "plan-details" },
+    { title: "User Opinion of Pet\nInsurance Companies", id: "user-opinion" },
+    { title: "User Feedback on\nClaims Process", id: "claims-feedback" },
+    { title: "Methodology", id: "methodology" },
+    { title: "Frequently Asked\nQuestions", id: "faq" },
   ];
+
+  const handleNavigationClick = (index: number, id: string) => {
+    console.log(`Navigation clicked: ${id} (index: ${index})`);
+    setActiveIndex(index);
+    
+    // Scroll to the corresponding section with offset for sticky navigation
+    const targetElement = document.getElementById(id);
+    if (targetElement) {
+      const elementTop = targetElement.getBoundingClientRect().top + window.pageYOffset;
+      const offsetTop = elementTop - 80; // 80px offset to account for sticky nav and show title
+      
+      window.scrollTo({
+        top: offsetTop,
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  // Intersection Observer to detect which section is in view
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      rootMargin: '-20% 0px -70% 0px', // Trigger when section is 20% from top
+      threshold: 0
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const sectionId = entry.target.id;
+          const navIndex = navigationItems.findIndex(item => item.id === sectionId);
+          if (navIndex !== -1) {
+            setActiveIndex(navIndex);
+          }
+        }
+      });
+    }, observerOptions);
+
+    // Observe all sections
+    navigationItems.forEach(item => {
+      const element = document.getElementById(item.id);
+      if (element) {
+        observer.observe(element);
+      }
+    });
+
+    return () => {
+      observer.disconnect();
+    };
+  }, [navigationItems]);
 
   const insuranceDetails = [
     { label: "Maximum annual coverage", value: "$5,000, Unlimited" },
@@ -41,9 +91,9 @@ export const ElementPc = (): JSX.Element => {
           <nav className="flex flex-col items-start justify-start gap-3 max-w-[212px] sticky top-[152px] self-start z-10 bg-white/90 backdrop-blur-sm rounded-lg p-2">
             {navigationItems.map((item, index) => (
               <Button
-                key={index}
+                key={item.id}
                 variant={index === activeIndex ? "default" : "secondary"}
-                onClick={() => setActiveIndex(index)}
+                onClick={() => handleNavigationClick(index, item.id)}
                 className={`navigation-buttons relative flex-[0_0_auto] min-h-[56px] py-2 h-auto ${
                   index === activeIndex
                     ? "bg-white rounded-[40px] shadow-SEM-shadows-4dp text-black hover:bg-white"
@@ -79,7 +129,7 @@ export const ElementPc = (): JSX.Element => {
           {/* Main content - spans 9 columns */}
           <main className="w-[1016px] self-start">
             {/* Full content parent div */}
-            <div className="full-content-parent flex flex-col gap-6">
+            <div id="compare-plans" className="full-content-parent flex flex-col gap-6">
               <div className="featured-partner-section flex flex-col items-center gap-[18px] px-4 py-1 bg-[#ffffffcc] rounded-3xl overflow-hidden border-[none] shadow-[0px_0px_16px_4px_#7d0af81f,inset_0_1px_0_rgba(255,255,255,0.40),inset_1px_0_0_rgba(255,255,255,0.32),inset_0_-1px_1px_rgba(0,0,0,0.13),inset_-1px_0_1px_rgba(0,0,0,0.11)] backdrop-blur-[2.0px] backdrop-brightness-[110%] [-webkit-backdrop-filter:blur(2.0px)_brightness(110%)] before:content-[''] before:absolute before:inset-0 before:p-1 before:rounded-3xl before:[background:linear-gradient(90deg,rgba(0,122,200,0.4)_0%,rgba(255,177,54,0.4)_50%,rgba(220,0,0,0.4)_100%)] before:[-webkit-mask:linear-gradient(#fff_0_0)_content-box,linear-gradient(#fff_0_0)] before:[-webkit-mask-composite:xor] before:[mask-composite:exclude] before:z-[1] before:pointer-events-none relative">
               <div className="featured-partner-offer-group">
               <div className="featured-partner-offer-group mt-2">

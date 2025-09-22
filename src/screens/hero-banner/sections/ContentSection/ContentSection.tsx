@@ -188,7 +188,7 @@ export const ContentSection = (): JSX.Element => {
           <div className="grid grid-cols-12 gap-5 w-full">
             <div className="col-span-12 flex flex-col items-start gap-6">
               <div className="text-black text-xl font-bold leading-[26px] break-words" style={{ fontFamily: 'Work Sans' }}>
-                Popular queries:
+                See the data:
               </div>
               <div className="w-full flex flex-col justify-start items-start gap-3">
                 <div className="w-full flex flex-wrap gap-3">

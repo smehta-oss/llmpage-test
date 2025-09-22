@@ -212,7 +212,7 @@ export const EvaluationSection: React.FC<EvaluationSectionProps> = ({
   };
 
   return (
-    <section className="w-full border-t [border-top-style:solid] border-[#ced4db] flex flex-col py-8">
+    <section id="methodology" className="w-full border-t [border-top-style:solid] border-[#ced4db] flex flex-col py-8">
       <div className="grid grid-cols-12 gap-5">
         <div className="col-span-12">
           <header className="mb-8">
