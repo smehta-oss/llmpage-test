@@ -60,10 +60,10 @@ const TabButton: React.FC<{
     return (
       <div
         onClick={onClick}
-        className={`cursor-pointer h-14 bg-black shadow-[0px_4px_8px_-1px_rgba(0,0,0,0.10)] rounded-[40px] justify-center items-center gap-2 flex flex-shrink-0 ${tab.width}`}
+        className={`cursor-pointer h-14 bg-black shadow-[0px_4px_8px_-1px_rgba(0,0,0,0.10)] rounded-[40px] justify-center items-center gap-2 flex flex-shrink-0 transition-all duration-300 ease-in-out hover:shadow-[0px_6px_12px_-1px_rgba(0,0,0,0.15)] hover:scale-[1.02] ${tab.width}`}
       >
         <div className="px-4 py-2">
-          <div className="text-center text-white text-base font-work-sans font-semibold leading-[15px] break-words">
+          <div className="text-center text-white text-base font-work-sans font-semibold leading-[15px] break-words transition-colors duration-200">
             {tab.label}
           </div>
         </div>
@@ -74,7 +74,7 @@ const TabButton: React.FC<{
   return (
     <div
       onClick={onClick}
-      className={`cursor-pointer h-14 bg-[#FAFAFB] shadow-[0px_0px_0.5px_rgba(0,0,0,0.11)_inset] rounded-[28px] flex-col justify-start items-start gap-2 inline-flex flex-shrink-0 ${tab.width}`}
+      className={`cursor-pointer h-14 bg-[#FAFAFB] shadow-[0px_0px_0.5px_rgba(0,0,0,0.11)_inset] rounded-[28px] flex-col justify-start items-start gap-2 inline-flex flex-shrink-0 transition-all duration-300 ease-in-out hover:bg-[#F0F0F0] hover:shadow-[0px_2px_4px_rgba(0,0,0,0.08)] hover:scale-[1.02] ${tab.width}`}
     >
       <div className="h-14 px-4 justify-start items-center inline-flex">
         <div className="justify-start items-center flex">

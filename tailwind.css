@@ -163,6 +163,35 @@
   }
 }
 
+@keyframes stroke-draw {
+  0% {
+    clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+  }
+  25% {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 100%);
+  }
+  50% {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 100% 100%);
+  }
+  75% {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  }
+  100% {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  }
+}
+
+@keyframes stroke-draw-simple {
+  0% {
+    transform: scaleX(0) scaleY(0);
+    transform-origin: top left;
+  }
+  100% {
+    transform: scaleX(1) scaleY(1);
+    transform-origin: top left;
+  }
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

@@ -52,7 +52,7 @@ export const BestPetsCarousel = (): JSX.Element => {
           <div className="col-span-6 sm:col-span-8 md:col-span-10 lg:col-span-12">
             <div 
               ref={carouselRef}
-              className="flex overflow-x-auto gap-3 sm:gap-4 md:gap-5 scroll-smooth scrollbar-hide"
+              className="flex overflow-x-auto gap-3 sm:gap-4 md:gap-5 scroll-smooth scrollbar-hide py-2 px-2"
               style={{ 
                 scrollbarWidth: 'none', 
                 msOverflowStyle: 'none',

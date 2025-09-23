@@ -129,7 +129,7 @@ export const PetsBestDetailsSection = (): JSX.Element => {
               </div>
 
               <div className="flex flex-col h-[69px] gap-1.5">
-                <Button className="h-12 bg-[#007ac8] hover:bg-[#006bb3] text-white shadow-[0px_4px_12px_#00000033] rounded">
+                <Button className="h-12 bg-[#007ac8] hover:bg-[#006bb3] text-white shadow-[0px_4px_12px_#00000033] rounded relative before:content-[''] before:absolute before:inset-0 before:p-[2.5px] before:rounded before:opacity-0 hover:before:opacity-100 before:transition-opacity before:duration-300 before:[background:linear-gradient(90deg,rgba(0,122,200,0.4)_0%,rgba(255,177,54,0.4)_50%,rgba(220,0,0,0.4)_100%)] before:[-webkit-mask:linear-gradient(#fff_0_0)_content-box,linear-gradient(#fff_0_0)] before:[-webkit-mask-composite:xor] before:[mask-composite:exclude] before:z-[1] before:pointer-events-none">
                   <span className="[font-family:'Work_Sans',Helvetica] font-bold text-base">
                     See Plans
                   </span>
@@ -153,10 +153,10 @@ export const PetsBestDetailsSection = (): JSX.Element => {
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
-                  className={`navigation-button h-14 px-4 py-2 rounded-[40px] flex-shrink-0 ${
+                  className={`navigation-button h-14 px-4 py-2 rounded-[40px] flex-shrink-0 transition-all duration-300 ease-in-out relative before:content-[''] before:absolute before:inset-0 before:p-[2.5px] before:rounded-[40px] before:opacity-0 hover:before:opacity-100 before:transition-opacity before:duration-300 before:[background:linear-gradient(90deg,rgba(0,122,200,0.4)_0%,rgba(255,177,54,0.4)_50%,rgba(220,0,0,0.4)_100%)] before:[-webkit-mask:linear-gradient(#fff_0_0)_content-box,linear-gradient(#fff_0_0)] before:[-webkit-mask-composite:xor] before:[mask-composite:exclude] before:z-[1] before:pointer-events-none ${
                     activeTab === tab.id
-                      ? "bg-[#1d1d1f] text-white shadow-SEM-shadows-4dp"
-                      : "bg-[#f8f8fa] text-[#1d1d1f]"
+                      ? "bg-[#1d1d1f] text-white shadow-SEM-shadows-4dp hover:shadow-[0px_6px_12px_-1px_rgba(0,0,0,0.15)]"
+                      : "bg-[#f8f8fa] text-[#1d1d1f] hover:bg-[#e8e8ea] hover:scale-[1.02]"
                   }`}
                   style={{
                     boxShadow: activeTab === tab.id 
