@@ -8,22 +8,22 @@ export const MainContentSection = (): JSX.Element => {
     {
       id: "all",
       label: "All Providers (10)",
-      icon: "/-filled-circle.svg",
+      icon: "/Plus.svg",
     },
     {
       id: "coverage",
       label: "Best Coverage (3)",
-      icon: "/-line-circle.svg",
+      icon: "/Plus.svg",
     },
     {
       id: "pricing",
       label: "Best Pricing (2)",
-      icon: "/-line-circle.svg",
+      icon: "/Plus.svg",
     },
     {
       id: "experience",
       label: "Best Consumer Experience (3)",
-      icon: "/-line-circle.svg",
+      icon: "/Plus.svg",
     },
   ];
 
@@ -59,13 +59,13 @@ export const MainContentSection = (): JSX.Element => {
             }`}
             variant="ghost"
           >
-            <img
-              className="relative w-6 h-6"
-              alt={
-                selectedFilter === option.id ? "Filled circle" : "Line circle"
-              }
-              src={option.icon}
-            />
+            {selectedFilter !== option.id && (
+              <img
+                className="relative w-6 h-6"
+                alt="Plus icon"
+                src={option.icon}
+              />
+            )}
 
             <span className="relative w-fit [font-family:'Work_Sans',Helvetica] font-semibold text-sm text-center tracking-[-0.37px] leading-5 whitespace-nowrap">
               {option.label}

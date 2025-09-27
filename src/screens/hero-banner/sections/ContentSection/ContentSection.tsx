@@ -1,5 +1,5 @@
 import { ArrowUpRightIcon } from "lucide-react";
-import React from "react";
+import React, { useState } from "react";
 import { CustomArrowUpRightIcon } from "../../../../assets/icons";
 
 // Question cards data
@@ -52,6 +52,8 @@ import { Button } from "../../../../components/ui/button";
 import { Card, CardContent } from "../../../../components/ui/card";
 
 export const ContentSection = (): JSX.Element => {
+  const [showAllAuthors, setShowAllAuthors] = useState(false);
+  
   // Handle question card clicks - scroll to relevant section
   const handleQuestionClick = (targetSection: string) => {
     const targetElement = document.getElementById(targetSection);
@@ -116,7 +118,9 @@ export const ContentSection = (): JSX.Element => {
                     <BreadcrumbItem>
                       <BreadcrumbLink
                         href={item.href}
-                        className="[font-family:'Graphik-Regular',Helvetica] font-normal text-[#333333] text-xs tracking-[0] leading-[18px]"
+                        className={`[font-family:'Graphik-Regular',Helvetica] font-normal text-[#333333] text-xs tracking-[0] leading-[18px] ${
+                          index < 2 ? 'underline' : ''
+                        }`}
                       >
                         {item.label}
                       </BreadcrumbLink>
@@ -205,7 +209,68 @@ export const ContentSection = (): JSX.Element => {
         </div>
 
         <div className="flex flex-col w-full items-start gap-3 sm:gap-4 relative">
-          <div className="inline-flex items-center gap-6 sm:gap-10 relative flex-wrap">
+          {/* Mobile view - show first author and expandable others */}
+          <div className="sm:hidden flex flex-col items-start gap-2">
+            <div className="inline-flex items-center gap-2 relative">
+              <img
+                className="w-8 h-8 rounded-3xl object-cover flex-shrink-0"
+                alt="Author"
+                src={authors[0].image}
+              />
+              <div className="inline-flex flex-col items-start relative">
+                <div className="inline-flex items-center gap-0.5 relative">
+                  <span className="[font-family:'Work_Sans',Helvetica] font-semibold text-[#333333] text-xs tracking-[0] leading-[16px] break-words">
+                    {authors[0].type}
+                  </span>
+                  <span className="[font-family:'Work_Sans',Helvetica] font-semibold text-[#333333] text-xs tracking-[0] leading-[16px] underline break-words">
+                    {authors[0].name}
+                  </span>
+                </div>
+                <span className="[font-family:'Work_Sans',Helvetica] font-normal text-[#333333] text-xs tracking-[0] leading-4 break-words">
+                  {authors[0].role}
+                </span>
+              </div>
+            </div>
+            
+            {/* Additional authors - shown when expanded */}
+            {showAllAuthors && (
+              <div className="flex flex-col gap-2">
+                {authors.slice(1).map((author, index) => (
+                  <div key={index + 1} className="inline-flex items-center gap-2 relative">
+                    <img
+                      className="w-8 h-8 rounded-3xl object-cover flex-shrink-0"
+                      alt="Author"
+                      src={author.image}
+                    />
+                    <div className="inline-flex flex-col items-start relative">
+                      <div className="inline-flex items-center gap-0.5 relative">
+                        <span className="[font-family:'Work_Sans',Helvetica] font-semibold text-[#333333] text-xs tracking-[0] leading-[16px] break-words">
+                          {author.type}
+                        </span>
+                        <span className="[font-family:'Work_Sans',Helvetica] font-semibold text-[#333333] text-xs tracking-[0] leading-[16px] underline break-words">
+                          {author.name}
+                        </span>
+                      </div>
+                      <span className="[font-family:'Work_Sans',Helvetica] font-normal text-[#333333] text-xs tracking-[0] leading-4 break-words">
+                        {author.role}
+                      </span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+            
+            {/* Toggle CTA */}
+            <button
+              onClick={() => setShowAllAuthors(!showAllAuthors)}
+              className="[font-family:'Work_Sans',Helvetica] font-normal text-[#007AC8] text-xs tracking-[0] leading-4 break-words cursor-pointer hover:underline transition-all duration-200"
+            >
+              {showAllAuthors ? 'Show less' : '& 2 others'}
+            </button>
+          </div>
+
+          {/* Desktop view - show all authors */}
+          <div className="hidden sm:inline-flex items-center gap-6 sm:gap-10 relative flex-wrap">
             {authors.map((author, index) => (
               <div
                 key={index}
