@@ -39,7 +39,7 @@ export const PetsBestCard6 = (): JSX.Element => {
 
   return (
     <div className="grid grid-cols-12 gap-5">
-      <Card className="col-span-12 p-6 bg-white rounded-3xl border border-[#CED4DB]">
+      <Card className="col-span-12 p-0 bg-white rounded-3xl border-0 shadow-none">
         <CardContent className="p-0 space-y-6">
           <header className="flex items-center gap-2">
             <h2 className="[font-family:'Work_Sans',Helvetica] font-bold text-black text-2xl leading-8 underline">
@@ -64,7 +64,7 @@ export const PetsBestCard6 = (): JSX.Element => {
               />
             </div>
 
-            <div className="col-span-12 lg:col-span-7 flex flex-col gap-5">
+            <div className="col-span-12 lg:col-span-7 flex flex-col gap-2">
               <div className="flex flex-col gap-3.5">
                 <div className="flex items-center gap-3.5">
                   <img
@@ -123,8 +123,7 @@ export const PetsBestCard6 = (): JSX.Element => {
           </div>
 
           <div className="flex flex-col gap-7">
-            <div className="flex flex-wrap items-center gap-4 max-w-[968px]">
-            <div id="product-card-navigation" className="flex overflow-x-auto items-center gap-4 w-full max-w-[968px] scrollbar-hide py-2 px-1" style={{
+            <div id="product-card-navigation" className="flex overflow-x-auto items-center gap-5 w-full scrollbar-hide" style={{
               scrollbarWidth: 'none',
               msOverflowStyle: 'none',
               WebkitOverflowScrolling: 'touch'
@@ -133,15 +132,17 @@ export const PetsBestCard6 = (): JSX.Element => {
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
-                  className={`navigation-button h-14 px-4 py-2 rounded-[40px] flex-shrink-0 ${
+                  className={`navigation-button h-14 px-4 py-2 transition-all duration-300 ease-in-out flex justify-center items-center bg-transparent hover:bg-transparent ${
                     activeTab === tab.id
-                      ? "bg-[#1d1d1f] text-white shadow-SEM-shadows-4dp flex-grow"
-                      : "bg-[#f8f8fa] text-[#1d1d1f] flex-shrink-0"
+                      ? "border-b-[3px] border-black"
+                      : "border-b border-[#CED4DB]"
+                  } ${
+                    index === 0 && activeTab === tab.id ? "flex-shrink-0" : 
+                    index === 0 ? "flex-shrink-0" :
+                    "flex-1"
                   }`}
                   style={{
-                    boxShadow: activeTab === tab.id 
-                      ? '0px 4px 8px -1px rgba(0, 0, 0, 0.10)' 
-                      : '0px 0px 0.5px rgba(0, 0, 0, 0.11) inset'
+                    backgroundColor: 'transparent'
                   }}
                 >
                   <div className="w-full h-full flex justify-center items-center">
@@ -149,11 +150,11 @@ export const PetsBestCard6 = (): JSX.Element => {
                       <div 
                         className="text-center flex flex-col justify-center whitespace-nowrap"
                         style={{
-                          color: activeTab === tab.id ? 'white' : '#1D1D1F',
+                          color: activeTab === tab.id ? 'black' : '#1E2125',
                           fontSize: '14px',
                           fontFamily: 'Work Sans',
-                          fontWeight: '600',
-                          lineHeight: activeTab === tab.id ? '15px' : '20px',
+                          fontWeight: activeTab === tab.id ? '600' : '400',
+                          lineHeight: activeTab === tab.id ? '15px' : '24px',
                           wordWrap: 'break-word'
                         }}
                       >
@@ -163,7 +164,6 @@ export const PetsBestCard6 = (): JSX.Element => {
                   </div>
                 </button>
               ))}
-            </div>
             </div>
 
             {activeTab === "expert-take" && (
@@ -214,23 +214,17 @@ export const PetsBestCard6 = (): JSX.Element => {
                     </p>
                   )}
                   
-                  <button
-                    onClick={() => setIsExpanded(!isExpanded)}
-                    className="text-left underline hover:no-underline transition-all duration-200"
-                    style={{
-                      color: '#007AC8',
-                      fontSize: '18px',
-                      fontFamily: 'Georgia',
-                      fontWeight: '400',
-                      lineHeight: '29.12px',
-                      background: 'none',
-                      border: 'none',
-                      padding: 0,
-                      cursor: 'pointer'
-                    }}
-                  >
-                    {isExpanded ? 'Read Less' : 'Read More'}
-                  </button>
+                  <div style={{width: '100%', height: 40, justifyContent: 'space-between', alignItems: 'center', display: 'inline-flex', position: 'relative'}}>
+                    <button
+                      onClick={() => setIsExpanded(!isExpanded)}
+                      style={{width: 144, height: 40, paddingLeft: 16, paddingRight: 16, paddingTop: 12, paddingBottom: 12, background: 'white', overflow: 'hidden', borderRadius: 4, outline: '1px #7A8EC7 solid', outlineOffset: '-1px', justifyContent: 'center', alignItems: 'center', gap: 8, display: 'flex', cursor: 'pointer', border: 'none', zIndex: 1}}
+                    >
+                      <div style={{textAlign: 'center', justifyContent: 'center', display: 'flex', flexDirection: 'column', color: '#007AC8', fontSize: 14, fontFamily: 'Work Sans', fontWeight: '600', lineHeight: 22, wordWrap: 'break-word'}}>
+                        {isExpanded ? 'Read Less' : 'Read More'}
+                      </div>
+                    </button>
+                    <div style={{position: 'absolute', left: 144, right: 0, top: '50%', height: '1px', backgroundColor: '#CED4DB', transform: 'translateY(-50%)'}}></div>
+                  </div>
                 </div>
               </>
             )}

@@ -3,7 +3,7 @@ import React from "react";
 export const CarouselCard2 = (): JSX.Element => {
   return (
     <div 
-      className="insurance-plan-card transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg cursor-pointer relative before:content-[''] before:absolute before:inset-0 before:p-[2.5px] before:rounded-[24px] before:opacity-0 hover:before:opacity-100 before:transition-opacity before:duration-300 before:[background:linear-gradient(90deg,rgba(0,122,200,0.4)_0%,rgba(255,177,54,0.4)_50%,rgba(220,0,0,0.4)_100%)] before:[-webkit-mask:linear-gradient(#fff_0_0)_content-box,linear-gradient(#fff_0_0)] before:[-webkit-mask-composite:xor] before:[mask-composite:exclude] before:z-[1] before:pointer-events-none"
+      className="insurance-plan-card transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:border hover:border-[#007AC8] cursor-pointer relative"
       style={{
         width: '100%',
         padding: '12px 8px 8px',
@@ -52,7 +52,7 @@ export const CarouselCard2 = (): JSX.Element => {
 
             <div style={{alignSelf: 'stretch', justifyContent: 'space-between', alignItems: 'center', display: 'inline-flex', marginTop: '12px'}}>
               <div style={{alignSelf: 'stretch', justifyContent: 'flex-start', alignItems: 'center', display: 'inline-flex', gap: '56px'}}>
-                <div className="transition-all duration-200 hover:bg-[#006bb3] hover:scale-105 cursor-pointer relative before:content-[''] before:absolute before:inset-0 before:p-[2.5px] before:rounded-[8px] before:opacity-0 hover:before:opacity-100 before:transition-opacity before:duration-300 before:[background:linear-gradient(90deg,rgba(0,122,200,0.4)_0%,rgba(255,177,54,0.4)_50%,rgba(220,0,0,0.4)_100%)] before:[-webkit-mask:linear-gradient(#fff_0_0)_content-box,linear-gradient(#fff_0_0)] before:[-webkit-mask-composite:xor] before:[mask-composite:exclude] before:z-[1] before:pointer-events-none" style={{minWidth: '60px', height: '48px', padding: '9px 16px', background: '#007AC8', borderRadius: '8px', justifyContent: 'center', alignItems: 'center', display: 'flex'}}>
+                <div className="transition-all duration-200 hover:bg-[#006bb3] hover:scale-105 hover:border hover:border-[#007AC8] cursor-pointer" style={{minWidth: '60px', height: '48px', padding: '9px 16px', background: '#007AC8', borderRadius: '8px', justifyContent: 'center', alignItems: 'center', display: 'flex'}}>
                   <div style={{textAlign: 'center', justifyContent: 'center', display: 'flex', flexDirection: 'row', color: 'white', fontSize: '18px', fontFamily: 'Work Sans', fontWeight: '600', lineHeight: '30px', whiteSpace: 'nowrap'}}>
                     Learn More
                   </div>

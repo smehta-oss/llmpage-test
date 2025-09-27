@@ -58,7 +58,7 @@ export const PetsBestDetailsSection = (): JSX.Element => {
 
   return (
     <div className="grid grid-cols-12 gap-5">
-      <Card className="col-span-12 p-6 bg-white rounded-3xl border border-[#CED4DB]">
+      <Card className="col-span-12 p-0 bg-white rounded-3xl border-0 shadow-none">
         <CardContent className="p-0 space-y-6">
           <header className="flex items-center gap-2">
             <h2 className="[font-family:'Work_Sans',Helvetica] font-bold text-black text-2xl leading-8 underline">
@@ -83,7 +83,7 @@ export const PetsBestDetailsSection = (): JSX.Element => {
               />
             </div>
 
-            <div className="col-span-12 lg:col-span-7 flex flex-col gap-5">
+            <div className="col-span-12 lg:col-span-7 flex flex-col gap-2">
               <div className="flex flex-col gap-3.5">
                 <div className="flex items-center gap-3.5">
                   <img
@@ -129,7 +129,7 @@ export const PetsBestDetailsSection = (): JSX.Element => {
               </div>
 
               <div className="flex flex-col h-[69px] gap-1.5">
-                <Button className="h-12 bg-[#007ac8] hover:bg-[#006bb3] text-white shadow-[0px_4px_12px_#00000033] rounded relative before:content-[''] before:absolute before:inset-0 before:p-[2.5px] before:rounded before:opacity-0 hover:before:opacity-100 before:transition-opacity before:duration-300 before:[background:linear-gradient(90deg,rgba(0,122,200,0.4)_0%,rgba(255,177,54,0.4)_50%,rgba(220,0,0,0.4)_100%)] before:[-webkit-mask:linear-gradient(#fff_0_0)_content-box,linear-gradient(#fff_0_0)] before:[-webkit-mask-composite:xor] before:[mask-composite:exclude] before:z-[1] before:pointer-events-none">
+                <Button className="h-12 bg-[#007ac8] hover:bg-[#006bb3] text-white shadow-[0px_4px_12px_#00000033] rounded">
                   <span className="[font-family:'Work_Sans',Helvetica] font-bold text-base">
                     See Plans
                   </span>
@@ -143,8 +143,7 @@ export const PetsBestDetailsSection = (): JSX.Element => {
           </div>
 
           <div className="flex flex-col gap-7">
-            <div className="flex flex-wrap items-center gap-4 max-w-[968px]">
-            <div id="product-card-navigation" className="flex overflow-x-auto items-center gap-4 max-w-[968px] scrollbar-hide py-2 px-1" style={{
+            <div id="product-card-navigation" className="flex overflow-x-auto items-center gap-5 w-full scrollbar-hide" style={{
               scrollbarWidth: 'none',
               msOverflowStyle: 'none',
               WebkitOverflowScrolling: 'touch'
@@ -357,23 +356,17 @@ export const PetsBestDetailsSection = (): JSX.Element => {
                     </>
                   )}
                   
-                  <button
-                    onClick={() => setIsExpanded(!isExpanded)}
-                    className="text-left underline hover:no-underline transition-all duration-200"
-                    style={{
-                      color: '#007AC8',
-                      fontSize: '18px',
-                      fontFamily: 'Georgia',
-                      fontWeight: '400',
-                      lineHeight: '29.12px',
-                      background: 'none',
-                      border: 'none',
-                      padding: 0,
-                      cursor: 'pointer'
-                    }}
-                  >
-                    {isExpanded ? 'Read Less' : 'Read More'}
-                  </button>
+                  <div style={{width: '100%', height: 40, justifyContent: 'space-between', alignItems: 'center', display: 'inline-flex', position: 'relative'}}>
+                    <button
+                      onClick={() => setIsExpanded(!isExpanded)}
+                      style={{width: 144, height: 40, paddingLeft: 16, paddingRight: 16, paddingTop: 12, paddingBottom: 12, background: 'white', overflow: 'hidden', borderRadius: 4, outline: '1px #7A8EC7 solid', outlineOffset: '-1px', justifyContent: 'center', alignItems: 'center', gap: 8, display: 'flex', cursor: 'pointer', border: 'none', zIndex: 1}}
+                    >
+                      <div style={{textAlign: 'center', justifyContent: 'center', display: 'flex', flexDirection: 'column', color: '#007AC8', fontSize: 14, fontFamily: 'Work Sans', fontWeight: '600', lineHeight: 22, wordWrap: 'break-word'}}>
+                        {isExpanded ? 'Read Less' : 'Read More'}
+                      </div>
+                    </button>
+                    <div style={{position: 'absolute', left: 144, right: 0, top: '50%', height: '1px', backgroundColor: '#CED4DB', transform: 'translateY(-50%)'}}></div>
+                  </div>
                 </div>
               </>
             )}

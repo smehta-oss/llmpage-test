@@ -25,13 +25,13 @@ export const BestPetsCarousel = (): JSX.Element => {
   });
 
   return (
-    <section className="bg-white pt-8 sm:pt-12 md:pt-14 pb-6 sm:pb-8 overflow-hidden">
+    <section className="bg-white pt-8 sm:pt-12 md:pt-14 pb-6 sm:pb-8">
       {/* Responsive container with proper padding */}
       <div className="mx-auto px-5 sm:px-6 md:px-8 lg:px-[90px] max-w-[1440px] min-w-[378px]">
         <div className="grid grid-cols-6 sm:grid-cols-8 md:grid-cols-10 lg:grid-cols-12 gap-5">
           {/* Header spans full width (12 columns) */}
           <div className="col-span-6 sm:col-span-8 md:col-span-10 lg:col-span-12">
-            <header className="flex flex-col items-start gap-2 mb-6 sm:mb-8 md:mb-10">
+            <header className="flex flex-col items-start gap-2 mb-3 sm:mb-4 md:mb-5">
               <h2 className="font-schnyder-bold text-[32px] sm:text-[32px] md:text-[32px] lg:text-[40px] leading-[39px] sm:leading-[39px] md:leading-[39px] lg:leading-[48px]" style={{
                 color: 'black',
                 fontFamily: 'Schnyder S',
@@ -52,7 +52,7 @@ export const BestPetsCarousel = (): JSX.Element => {
           <div className="col-span-6 sm:col-span-8 md:col-span-10 lg:col-span-12">
             <div 
               ref={carouselRef}
-              className="flex overflow-x-auto gap-3 sm:gap-4 md:gap-5 scroll-smooth scrollbar-hide py-2 px-2"
+              className="flex overflow-x-auto gap-3 sm:gap-4 md:gap-5 scroll-smooth scrollbar-hide py-6 px-6 -mx-6"
               style={{ 
                 scrollbarWidth: 'none', 
                 msOverflowStyle: 'none',
