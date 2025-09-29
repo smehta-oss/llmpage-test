@@ -33,7 +33,7 @@ const tabItems = [
   { id: "plan-details", label: "Plan Details" },
 ];
 
-export const PetsBestCard4 = (): JSX.Element => {
+export const PetsBestCard6_v2 = (): JSX.Element => {
   const [activeTab, setActiveTab] = useState("expert-take");
   const [isExpanded, setIsExpanded] = useState(false);
 
@@ -43,7 +43,7 @@ export const PetsBestCard4 = (): JSX.Element => {
         <CardContent className="p-0 space-y-6">
           <header className="flex items-center gap-2">
             <h2 className="[font-family:'Work_Sans',Helvetica] font-bold text-black text-2xl leading-8">
-              4. <span className="underline">Embrace</span>
+              6. <span className="underline">Lemonade</span>
             </h2>
             <img src="/-duocolor-arrow-up-right.svg" alt="External link" className="w-6 h-6" />
           </header>
@@ -52,15 +52,15 @@ export const PetsBestCard4 = (): JSX.Element => {
             <div className="col-span-12 lg:col-span-5 relative">
               <div className="w-full h-[58px] bg-[#f8f8fa] rounded-[16px_16px_0px_0px] overflow-hidden flex items-center justify-center">
                 <img 
-                  src="/EmbraceIcon.png" 
-                  alt="Embrace Logo" 
+                  src="/Lemonadeicon.png" 
+                  alt="Lemonade Logo" 
                   className="w-[125px] h-[58px] object-contain"
                 />
               </div>
               <img
                 className="w-full h-[207px] object-cover rounded-[0px_0px_16px_16px]"
-                alt="Embrace Pet Insurance"
-                src="/Embracelogo.png"
+                alt="Lemonade Pet Insurance"
+                src="/Lemonadelogo.png"
               />
             </div>
 
@@ -68,17 +68,19 @@ export const PetsBestCard4 = (): JSX.Element => {
               <div className="flex flex-col gap-3.5">
                 <div className="flex items-center gap-3.5">
                   <img
-                    className="w-[20px] h-[20px] sm:w-[30px] sm:h-[30px]"
+                    className="w-[30px] h-[30px]"
                     alt="Frame"
                     src="/frame-2147237132.svg"
                   />
-                  <h3 className="text-[20px] leading-[28px] sm:text-[28px] sm:leading-[36px]" style={{
+                  <h3 style={{
                     color: 'black',
+                    fontSize: '28px',
                     fontFamily: 'Schnyder S',
                     fontWeight: '700',
+                    lineHeight: '36px',
                     wordWrap: 'break-word'
                   }}>
-                    Best for multi-pet
+                    Best for discounts
                   </h3>
                 </div>
                 <Separator className="h-px" />
@@ -120,7 +122,7 @@ export const PetsBestCard4 = (): JSX.Element => {
             </div>
           </div>
 
-          <div className="flex flex-col gap-4 sm:gap-7">
+          <div className="flex flex-col gap-7">
             <div id="product-card-navigation" className="flex overflow-x-auto items-center gap-5 w-full scrollbar-hide" style={{
               scrollbarWidth: 'none',
               msOverflowStyle: 'none',
@@ -166,15 +168,17 @@ export const PetsBestCard4 = (): JSX.Element => {
 
             {activeTab === "expert-take" && (
               <>
-                <h4 className="[font-family:'Work_Sans',Helvetica] font-semibold text-black text-base leading-[26px] sm:text-xl sm:leading-8 tracking-[-0.33px]">
+                <h4 className="[font-family:'Work_Sans',Helvetica] font-semibold text-black text-xl tracking-[-0.33px] leading-8">
                   Our Expert Take
                 </h4>
 
                 <div className="flex flex-col gap-[18px]">
-                  <p className="text-base leading-[26px] sm:text-lg sm:leading-[29.12px]" style={{ 
+                  <p style={{ 
                     color: '#333333', 
+                    fontSize: '18px', 
                     fontFamily: 'Georgia', 
                     fontWeight: '400', 
+                    lineHeight: '29.12px', 
                     wordWrap: 'break-word',
                     margin: 0,
                     display: '-webkit-box',
@@ -182,14 +186,16 @@ export const PetsBestCard4 = (): JSX.Element => {
                     WebkitBoxOrient: 'vertical',
                     overflow: isExpanded ? 'visible' : 'hidden'
                   }}>
-                    We like Embrace because it offers a unique way to save on its accident and illness policy with its Healthy Pet Discount Program. If your claim reimbursements are less than $300 per pet in the year prior to the discount period, you'll qualify for a 5% discount in the first year and 10% in the second year for each pet. Embrace will automatically apply the savings to your annual payment or monthly bill.
+                    Lemonade combines very competitive prices with a nice selection of discounts. You may qualify for discounts such as multi-pet discounts, bundling your pet insurance with other Lemonade policies (like car, home or renters insurance), annual payment discount, humane society and animal shelter discounts, and discounts for partnerships with veterinarian clinicians, affinity groups and employer benefits.
                   </p>
                   
                   {isExpanded && (
-                    <p className="text-base leading-[26px] sm:text-lg sm:leading-[29.12px]" style={{ 
+                    <p style={{ 
                       color: '#333333', 
+                      fontSize: '18px', 
                       fontFamily: 'Georgia', 
                       fontWeight: '400', 
+                      lineHeight: '29.12px', 
                       wordWrap: 'break-word',
                       margin: 0
                     }}>
@@ -203,7 +209,7 @@ export const PetsBestCard4 = (): JSX.Element => {
                         lineHeight: '29.12px', 
                         wordWrap: 'break-word' 
                       }}>
-                        Embrace Pet Insurance Review
+                        Lemonade Pet Insurance Review
                       </span>
                     </p>
                   )}

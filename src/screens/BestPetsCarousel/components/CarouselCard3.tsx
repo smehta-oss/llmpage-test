@@ -4,7 +4,7 @@ import { StarIcon } from "lucide-react";
 export const CarouselCard3 = (): JSX.Element => {
   return (
     <div 
-      className="insurance-plan-card most-popular-card transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:border hover:border-[#007AC8] cursor-pointer relative"
+      className="insurance-plan-card most-popular-card transition-all duration-300 ease-in-out md:hover:scale-105 md:hover:shadow-lg md:hover:border md:hover:border-[#007AC8] cursor-pointer relative"
       style={{
         width: '100%',
         padding: '12px 8px 8px',
@@ -68,7 +68,7 @@ export const CarouselCard3 = (): JSX.Element => {
 
             <div style={{alignSelf: 'stretch', justifyContent: 'space-between', alignItems: 'center', display: 'inline-flex', marginTop: '12px'}}>
               <div style={{alignSelf: 'stretch', justifyContent: 'flex-start', alignItems: 'center', display: 'inline-flex', gap: '56px'}}>
-                <div className="transition-all duration-200 hover:bg-[#006bb3] hover:scale-105 hover:border hover:border-[#007AC8] cursor-pointer" style={{minWidth: '60px', height: '48px', padding: '9px 16px', background: '#007AC8', borderRadius: '8px', justifyContent: 'center', alignItems: 'center', display: 'flex'}}>
+                <div className="transition-all duration-200 md:hover:bg-[#006bb3] md:hover:scale-105 md:hover:border md:hover:border-[#007AC8] cursor-pointer" style={{minWidth: '60px', height: '48px', padding: '9px 16px', background: '#007AC8', borderRadius: '8px', justifyContent: 'center', alignItems: 'center', display: 'flex'}}>
                   <div style={{textAlign: 'center', justifyContent: 'center', display: 'flex', flexDirection: 'row', color: 'white', fontSize: '18px', fontFamily: 'Work Sans', fontWeight: '600', lineHeight: '30px', whiteSpace: 'nowrap'}}>
                     Learn More
                   </div>

@@ -33,17 +33,80 @@ const tabItems = [
   { id: "plan-details", label: "Plan Details" },
 ];
 
-export const PetsBestCard4 = (): JSX.Element => {
+const prosConsData = [
+  {
+    pro: "Pets Best will pay your vet directly if your vet signs the Veterinarian Reimbursement Release form",
+    con: "Does not cover prescription food or supplements"
+  },
+  {
+    pro: "CareCredit cardholders can use the card to pay for vet bills and receive reimbursement directly to the card",
+    con: "Does not cover stem cell treatments"
+  },
+  {
+    pro: "No upper pet age limit for buying a new policy",
+    con: "6-month waiting period for coverage of cruciate ligament issues"
+  },
+  {
+    pro: "Offers a 1-month trial policy for dogs and cats ages 8 and under through certain veterinary clinics and companies that partner with Pets Best",
+    con: null
+  }
+];
+
+export const PetsBestCard2_v2 = (): JSX.Element => {
   const [activeTab, setActiveTab] = useState("expert-take");
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
     <div className="grid grid-cols-12 gap-5">
-      <Card className="col-span-12 p-0 bg-white rounded-3xl border-0 shadow-none">
+      <Card className="col-span-12 p-6 bg-white rounded-3xl border-4 border-[#F3C060] relative" style={{ overflow: 'visible' }}>
+        {/* Most Popular Badge */}
+        <div 
+          className="absolute left-1/2 transform -translate-x-1/2 md:-left-6 md:transform-none md:translate-x-0 -top-7 z-[1]"
+          style={{
+            padding: '2px 12px', 
+            background: 'var(--Colors-Tertiary-400, #F3C060)', 
+            overflow: 'hidden', 
+            borderRadius: 16, 
+            justifyContent: 'center', 
+            alignItems: 'center', 
+            gap: 8, 
+            display: 'inline-flex',
+            maxHeight: 48
+          }}
+        >
+          <div style={{width: 24, height: 24, position: 'relative', overflow: 'hidden'}}>
+            <img 
+              src="/Popular.svg" 
+              alt="Popular" 
+              style={{
+                width: 20, 
+                height: 20, 
+                left: 2, 
+                top: 2, 
+                position: 'absolute'
+              }} 
+            />
+          </div>
+          <div style={{
+            justifyContent: 'center', 
+            display: 'flex', 
+            flexDirection: 'column', 
+            color: 'var(--Colors-Quinary-800, #171614)', 
+            fontSize: 15, 
+            fontFamily: 'Work Sans', 
+            fontWeight: '600', 
+            textTransform: 'uppercase', 
+            lineHeight: 20, 
+            wordWrap: 'break-word'
+          }}>
+            MOST POPULAR
+          </div>
+        </div>
+        
         <CardContent className="p-0 space-y-6">
           <header className="flex items-center gap-2">
             <h2 className="[font-family:'Work_Sans',Helvetica] font-bold text-black text-2xl leading-8">
-              4. <span className="underline">Embrace</span>
+              2. <span className="underline">Figo</span>
             </h2>
             <img src="/-duocolor-arrow-up-right.svg" alt="External link" className="w-6 h-6" />
           </header>
@@ -52,15 +115,15 @@ export const PetsBestCard4 = (): JSX.Element => {
             <div className="col-span-12 lg:col-span-5 relative">
               <div className="w-full h-[58px] bg-[#f8f8fa] rounded-[16px_16px_0px_0px] overflow-hidden flex items-center justify-center">
                 <img 
-                  src="/EmbraceIcon.png" 
-                  alt="Embrace Logo" 
+                  src="/FigoIcon.png" 
+                  alt="Figo Logo" 
                   className="w-[125px] h-[58px] object-contain"
                 />
               </div>
               <img
                 className="w-full h-[207px] object-cover rounded-[0px_0px_16px_16px]"
-                alt="Embrace Pet Insurance"
-                src="/Embracelogo.png"
+                alt="Rectangle"
+                src="/rectangle-2.png"
               />
             </div>
 
@@ -68,17 +131,19 @@ export const PetsBestCard4 = (): JSX.Element => {
               <div className="flex flex-col gap-3.5">
                 <div className="flex items-center gap-3.5">
                   <img
-                    className="w-[20px] h-[20px] sm:w-[30px] sm:h-[30px]"
+                    className="w-[30px] h-[30px]"
                     alt="Frame"
                     src="/frame-2147237132.svg"
                   />
-                  <h3 className="text-[20px] leading-[28px] sm:text-[28px] sm:leading-[36px]" style={{
+                  <h3 style={{
                     color: 'black',
+                    fontSize: '28px',
                     fontFamily: 'Schnyder S',
                     fontWeight: '700',
+                    lineHeight: '36px',
                     wordWrap: 'break-word'
                   }}>
-                    Best for multi-pet
+                    Best for all-round coverage
                   </h3>
                 </div>
                 <Separator className="h-px" />
@@ -120,7 +185,7 @@ export const PetsBestCard4 = (): JSX.Element => {
             </div>
           </div>
 
-          <div className="flex flex-col gap-4 sm:gap-7">
+          <div className="flex flex-col gap-7">
             <div id="product-card-navigation" className="flex overflow-x-auto items-center gap-5 w-full scrollbar-hide" style={{
               scrollbarWidth: 'none',
               msOverflowStyle: 'none',
@@ -166,15 +231,17 @@ export const PetsBestCard4 = (): JSX.Element => {
 
             {activeTab === "expert-take" && (
               <>
-                <h4 className="[font-family:'Work_Sans',Helvetica] font-semibold text-black text-base leading-[26px] sm:text-xl sm:leading-8 tracking-[-0.33px]">
+                <h4 className="[font-family:'Work_Sans',Helvetica] font-semibold text-black text-xl tracking-[-0.33px] leading-8">
                   Our Expert Take
                 </h4>
 
                 <div className="flex flex-col gap-[18px]">
-                  <p className="text-base leading-[26px] sm:text-lg sm:leading-[29.12px]" style={{ 
+                  <p style={{ 
                     color: '#333333', 
+                    fontSize: '18px', 
                     fontFamily: 'Georgia', 
                     fontWeight: '400', 
+                    lineHeight: '29.12px', 
                     wordWrap: 'break-word',
                     margin: 0,
                     display: '-webkit-box',
@@ -182,14 +249,16 @@ export const PetsBestCard4 = (): JSX.Element => {
                     WebkitBoxOrient: 'vertical',
                     overflow: isExpanded ? 'visible' : 'hidden'
                   }}>
-                    We like Embrace because it offers a unique way to save on its accident and illness policy with its Healthy Pet Discount Program. If your claim reimbursements are less than $300 per pet in the year prior to the discount period, you'll qualify for a 5% discount in the first year and 10% in the second year for each pet. Embrace will automatically apply the savings to your annual payment or monthly bill.
+                    Figo stood out in our evaluation due to its solid coverage in the base plan and the options to upgrade your plan via "Powerups." Figo's Powerups include hard-to-find coverage for expenses such as advertising and rewards if your pet is lost or stolen and up to $250 in final respects coverage (including burial and cremation expenses). Also included: up to $10,000 in liability coverage if your pet damages someone else's property, boarding expenses if you are hospitalized and vet exam fees. You're not likely to find all of this coverage at other top pet insurers.
                   </p>
                   
                   {isExpanded && (
-                    <p className="text-base leading-[26px] sm:text-lg sm:leading-[29.12px]" style={{ 
+                    <p style={{ 
                       color: '#333333', 
+                      fontSize: '18px', 
                       fontFamily: 'Georgia', 
                       fontWeight: '400', 
+                      lineHeight: '29.12px', 
                       wordWrap: 'break-word',
                       margin: 0
                     }}>
@@ -203,7 +272,7 @@ export const PetsBestCard4 = (): JSX.Element => {
                         lineHeight: '29.12px', 
                         wordWrap: 'break-word' 
                       }}>
-                        Embrace Pet Insurance Review
+                        Figo Pet Insurance Review
                       </span>
                     </p>
                   )}

@@ -61,8 +61,8 @@ export const PetsBestCard1 = (): JSX.Element => {
       <Card className="col-span-12 p-0 bg-white rounded-3xl border-0 shadow-none">
         <CardContent className="p-0 space-y-6">
           <header className="flex items-center gap-2">
-            <h2 className="[font-family:'Work_Sans',Helvetica] font-bold text-black text-2xl leading-8 underline">
-              PetsBest
+            <h2 className="[font-family:'Work_Sans',Helvetica] font-bold text-black text-2xl leading-8">
+              1. <span className="underline">PetsBest</span>
             </h2>
             <img src="/-duocolor-arrow-up-right.svg" alt="External link" className="w-6 h-6" />
           </header>
@@ -87,16 +87,14 @@ export const PetsBestCard1 = (): JSX.Element => {
               <div className="flex flex-col gap-3.5">
                 <div className="flex items-center gap-3.5">
                   <img
-                    className="w-[30px] h-[30px]"
+                    className="w-[20px] h-[20px] sm:w-[30px] sm:h-[30px]"
                     alt="Frame"
                     src="/frame-2147237132.svg"
                   />
-                  <h3 style={{
+                  <h3 className="text-[20px] leading-[28px] sm:text-[28px] sm:leading-[36px]" style={{
                     color: 'black',
-                    fontSize: '28px',
                     fontFamily: 'Schnyder S',
                     fontWeight: '700',
-                    lineHeight: '36px',
                     wordWrap: 'break-word'
                   }}>
                     Best overall
@@ -142,7 +140,7 @@ export const PetsBestCard1 = (): JSX.Element => {
             </div>
           </div>
 
-          <div className="flex flex-col gap-7">
+          <div className="flex flex-col gap-4 sm:gap-7">
             <div id="product-card-navigation" className="flex overflow-x-auto items-center gap-5 w-full scrollbar-hide" style={{
               scrollbarWidth: 'none',
               msOverflowStyle: 'none',
@@ -285,17 +283,15 @@ export const PetsBestCard1 = (): JSX.Element => {
 
             {activeTab === "expert-take" && (
               <>
-                <h4 className="[font-family:'Work_Sans',Helvetica] font-semibold text-black text-xl tracking-[-0.33px] leading-8">
+                <h4 className="[font-family:'Work_Sans',Helvetica] font-semibold text-black text-base leading-[26px] sm:text-xl sm:leading-8 tracking-[-0.33px]">
                   Our Expert Take
                 </h4>
 
                 <div className="flex flex-col gap-[18px]">
-                  <p style={{ 
+                  <p className="text-base leading-[26px] sm:text-lg sm:leading-[29.12px]" style={{ 
                     color: '#333333', 
-                    fontSize: '18px', 
                     fontFamily: 'Georgia', 
                     fontWeight: '400', 
-                    lineHeight: '29.12px', 
                     wordWrap: 'break-word',
                     margin: 0,
                     display: '-webkit-box',
@@ -308,24 +304,20 @@ export const PetsBestCard1 = (): JSX.Element => {
                   
                   {isExpanded && (
                     <>
-                      <p style={{ 
+                      <p className="text-base leading-[26px] sm:text-lg sm:leading-[29.12px]" style={{ 
                         color: '#333333', 
-                        fontSize: '18px', 
                         fontFamily: 'Georgia', 
                         fontWeight: '400', 
-                        lineHeight: '29.12px', 
                         wordWrap: 'break-word',
                         margin: 0
                       }}>
                         Pets Best's Essential and Plus policies also scored well in our analysis (4.9 stars each). They have differences in coverage and price.
                       </p>
                       
-                      <p style={{ 
+                      <p className="text-base leading-[26px] sm:text-lg sm:leading-[29.12px]" style={{ 
                         color: '#333333', 
-                        fontSize: '18px', 
                         fontFamily: 'Georgia', 
                         fontWeight: '400', 
-                        lineHeight: '29.12px', 
                         wordWrap: 'break-word',
                         margin: 0
                       }}>

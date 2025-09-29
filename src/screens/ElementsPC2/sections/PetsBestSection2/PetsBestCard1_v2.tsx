@@ -33,7 +33,26 @@ const tabItems = [
   { id: "plan-details", label: "Plan Details" },
 ];
 
-export const PetsBestCard4 = (): JSX.Element => {
+const prosConsData = [
+  {
+    pro: "Pets Best will pay your vet directly if your vet signs the Veterinarian Reimbursement Release form",
+    con: "Does not cover prescription food or supplements"
+  },
+  {
+    pro: "CareCredit cardholders can use the card to pay for vet bills and receive reimbursement directly to the card",
+    con: "Does not cover stem cell treatments"
+  },
+  {
+    pro: "No upper pet age limit for buying a new policy",
+    con: "6-month waiting period for coverage of cruciate ligament issues"
+  },
+  {
+    pro: "Offers a 1-month trial policy for dogs and cats ages 8 and under through certain veterinary clinics and companies that partner with Pets Best",
+    con: null
+  }
+];
+
+export const PetsBestCard1_v2 = (): JSX.Element => {
   const [activeTab, setActiveTab] = useState("expert-take");
   const [isExpanded, setIsExpanded] = useState(false);
 
@@ -43,7 +62,7 @@ export const PetsBestCard4 = (): JSX.Element => {
         <CardContent className="p-0 space-y-6">
           <header className="flex items-center gap-2">
             <h2 className="[font-family:'Work_Sans',Helvetica] font-bold text-black text-2xl leading-8">
-              4. <span className="underline">Embrace</span>
+              1. <span className="underline">PetsBest - DUPLICATE PAGE</span>
             </h2>
             <img src="/-duocolor-arrow-up-right.svg" alt="External link" className="w-6 h-6" />
           </header>
@@ -52,15 +71,15 @@ export const PetsBestCard4 = (): JSX.Element => {
             <div className="col-span-12 lg:col-span-5 relative">
               <div className="w-full h-[58px] bg-[#f8f8fa] rounded-[16px_16px_0px_0px] overflow-hidden flex items-center justify-center">
                 <img 
-                  src="/EmbraceIcon.png" 
-                  alt="Embrace Logo" 
+                  src="/pets-best-logo.png?t=1726973000" 
+                  alt="Pets Best Logo" 
                   className="w-[125px] h-[58px] object-contain"
                 />
               </div>
               <img
                 className="w-full h-[207px] object-cover rounded-[0px_0px_16px_16px]"
-                alt="Embrace Pet Insurance"
-                src="/Embracelogo.png"
+                alt="Figo Pet Insurance"
+                src="/FigoImg.png"
               />
             </div>
 
@@ -68,18 +87,21 @@ export const PetsBestCard4 = (): JSX.Element => {
               <div className="flex flex-col gap-3.5">
                 <div className="flex items-center gap-3.5">
                   <img
-                    className="w-[20px] h-[20px] sm:w-[30px] sm:h-[30px]"
+                    className="w-[30px] h-[30px]"
                     alt="Frame"
                     src="/frame-2147237132.svg"
                   />
-                  <h3 className="text-[20px] leading-[28px] sm:text-[28px] sm:leading-[36px]" style={{
+                  <h3 style={{
                     color: 'black',
+                    fontSize: '28px',
                     fontFamily: 'Schnyder S',
                     fontWeight: '700',
+                    lineHeight: '36px',
                     wordWrap: 'break-word'
                   }}>
-                    Best for multi-pet
+                    Best overall
                   </h3>
+                  <TrophyIcon className="w-6 h-6 text-[#007ac8]" />
                 </div>
                 <Separator className="h-px" />
               </div>
@@ -120,7 +142,7 @@ export const PetsBestCard4 = (): JSX.Element => {
             </div>
           </div>
 
-          <div className="flex flex-col gap-4 sm:gap-7">
+          <div className="flex flex-col gap-7">
             <div id="product-card-navigation" className="flex overflow-x-auto items-center gap-5 w-full scrollbar-hide" style={{
               scrollbarWidth: 'none',
               msOverflowStyle: 'none',
@@ -164,17 +186,116 @@ export const PetsBestCard4 = (): JSX.Element => {
               ))}
             </div>
 
+            {activeTab === "pros-cons" && (
+              <>
+                <h4 className="[font-family:'Work_Sans',Helvetica] font-semibold text-black text-xl tracking-[-0.33px] leading-8">
+                  Pros & Cons of Pets Best
+                </h4>
+
+                <table className="w-full border-collapse">
+                  <thead>
+                    <tr>
+                      <th 
+                        className="w-1/2 p-2 bg-[#F8F8FA] border-r border-[#CED4DB] text-left"
+                        style={{
+                          color: 'black',
+                          fontSize: 12,
+                          fontFamily: 'Work Sans',
+                          fontWeight: '700',
+                          lineHeight: '16px',
+                          wordWrap: 'break-word'
+                        }}
+                      >
+                        <div className="flex items-center gap-1">
+                          <div className="w-5 h-5 flex items-center justify-center">
+                            <img
+                              src="/line/thumbs-up.svg"
+                              alt="Thumbs up"
+                              className="w-4 h-4"
+                            />
+                          </div>
+                          Pros
+                        </div>
+                      </th>
+                      <th 
+                        className="w-1/2 p-2 bg-[#F8F8FA] text-left"
+                        style={{
+                          color: 'black',
+                          fontSize: 12,
+                          fontFamily: 'Work Sans',
+                          fontWeight: '700',
+                          lineHeight: '16px',
+                          wordWrap: 'break-word'
+                        }}
+                      >
+                        <div className="flex items-center gap-2">
+                          <div className="w-6 h-6 flex items-center justify-center">
+                            <img
+                              src="/line/thumbs-down.svg"
+                              alt="Thumbs down"
+                              className="w-4 h-4"
+                            />
+                          </div>
+                          Cons
+                        </div>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {prosConsData.map((row, index) => (
+                      <tr key={index}>
+                        <td 
+                          className="p-2 bg-[#F8F8FA] border-t border-r border-[#CED4DB] align-top"
+                          style={{
+                            color: 'black',
+                            fontSize: 14,
+                            fontFamily: 'Work Sans',
+                            fontWeight: '400',
+                            lineHeight: '24px',
+                            wordWrap: 'break-word'
+                          }}
+                        >
+                          <ol start={index + 1} className="list-decimal list-inside m-0 p-0">
+                            <li className="pl-0">{row.pro}</li>
+                          </ol>
+                        </td>
+                        <td 
+                          className="p-2 bg-[#F8F8FA] border-t border-[#CED4DB] align-top"
+                          style={{
+                            color: 'black',
+                            fontSize: 14,
+                            fontFamily: 'Work Sans',
+                            fontWeight: '400',
+                            lineHeight: '24px',
+                            wordWrap: 'break-word'
+                          }}
+                        >
+                          {row.con && (
+                            <ol start={index + 1} className="list-decimal list-inside m-0 p-0">
+                              <li className="pl-0">{row.con}</li>
+                            </ol>
+                          )}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </>
+            )}
+
             {activeTab === "expert-take" && (
               <>
-                <h4 className="[font-family:'Work_Sans',Helvetica] font-semibold text-black text-base leading-[26px] sm:text-xl sm:leading-8 tracking-[-0.33px]">
+                <h4 className="[font-family:'Work_Sans',Helvetica] font-semibold text-black text-xl tracking-[-0.33px] leading-8">
                   Our Expert Take
                 </h4>
 
                 <div className="flex flex-col gap-[18px]">
-                  <p className="text-base leading-[26px] sm:text-lg sm:leading-[29.12px]" style={{ 
+                  <p style={{ 
                     color: '#333333', 
+                    fontSize: '18px', 
                     fontFamily: 'Georgia', 
                     fontWeight: '400', 
+                    lineHeight: '29.12px', 
                     wordWrap: 'break-word',
                     margin: 0,
                     display: '-webkit-box',
@@ -182,30 +303,46 @@ export const PetsBestCard4 = (): JSX.Element => {
                     WebkitBoxOrient: 'vertical',
                     overflow: isExpanded ? 'visible' : 'hidden'
                   }}>
-                    We like Embrace because it offers a unique way to save on its accident and illness policy with its Healthy Pet Discount Program. If your claim reimbursements are less than $300 per pet in the year prior to the discount period, you'll qualify for a 5% discount in the first year and 10% in the second year for each pet. Embrace will automatically apply the savings to your annual payment or monthly bill.
+                    The Pets Best Elite policy is the top-scoring policy in our evaluation. It stands out for its competitive prices and robust coverage, including vet exam fees, dental illnesses, behavioral therapy and alternative therapies. You'll have access to a 24/7 pet telehealth line and the option to buy one of two different tiers of wellness plans to cover expenses such as annual vet exams, vaccinations, microchipping and neutering/spaying.
                   </p>
                   
                   {isExpanded && (
-                    <p className="text-base leading-[26px] sm:text-lg sm:leading-[29.12px]" style={{ 
-                      color: '#333333', 
-                      fontFamily: 'Georgia', 
-                      fontWeight: '400', 
-                      wordWrap: 'break-word',
-                      margin: 0
-                    }}>
-                      <span>More: </span>
-                      <span style={{ 
-                        color: '#007AC8', 
+                    <>
+                      <p style={{ 
+                        color: '#333333', 
                         fontSize: '18px', 
                         fontFamily: 'Georgia', 
-                        fontWeight: '700', 
-                        textDecoration: 'underline', 
+                        fontWeight: '400', 
                         lineHeight: '29.12px', 
-                        wordWrap: 'break-word' 
+                        wordWrap: 'break-word',
+                        margin: 0
                       }}>
-                        Embrace Pet Insurance Review
-                      </span>
-                    </p>
+                        Pets Best's Essential and Plus policies also scored well in our analysis (4.9 stars each). They have differences in coverage and price.
+                      </p>
+                      
+                      <p style={{ 
+                        color: '#333333', 
+                        fontSize: '18px', 
+                        fontFamily: 'Georgia', 
+                        fontWeight: '400', 
+                        lineHeight: '29.12px', 
+                        wordWrap: 'break-word',
+                        margin: 0
+                      }}>
+                        <span>More: </span>
+                        <span style={{ 
+                          color: '#007AC8', 
+                          fontSize: '18px', 
+                          fontFamily: 'Georgia', 
+                          fontWeight: '700', 
+                          textDecoration: 'underline', 
+                          lineHeight: '29.12px', 
+                          wordWrap: 'break-word' 
+                        }}>
+                          Pets Best Pet Insurance Review
+                        </span>
+                      </p>
+                    </>
                   )}
                   
                   <div style={{width: '100%', height: 40, justifyContent: 'space-between', alignItems: 'center', display: 'inline-flex', position: 'relative'}}>

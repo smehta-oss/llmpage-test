@@ -140,7 +140,7 @@ export const ContentSection = (): JSX.Element => {
             </Breadcrumb>
 
             <div className="flex flex-col items-start gap-3 relative w-full min-w-0 max-w-full">
-              <h1 className="w-full max-w-full text-[#333333] text-[32px] sm:text-[36px] md:text-[40px] lg:text-[48px] xl:text-[56px] font-bold leading-[1.1] sm:leading-[1.1] md:leading-[1.2] lg:leading-[1.2] break-words overflow-wrap-anywhere hyphens-auto constrain-text" style={{ fontFamily: 'Schnyder S', wordBreak: 'break-word', overflowWrap: 'break-word' }}>
+              <h1 className="w-full max-w-full text-[#333333] text-[40px] leading-[48px] sm:text-[36px] md:text-[40px] lg:text-[48px] xl:text-[56px] font-bold sm:leading-[1.1] md:leading-[1.2] lg:leading-[1.2] constrain-text" style={{ fontFamily: 'Schnyder S' }}>
                 Best Pet Insurance Companies of 2025
               </h1>
 
@@ -188,6 +188,7 @@ export const ContentSection = (): JSX.Element => {
                 <CardContent className="p-0 flex items-center justify-center gap-2.5 pt-5 pb-0 px-0">
                   <Button
                     variant="ghost"
+                    onClick={() => window.open('https://import-best-of-llm-d-yyv6.bolt.host/', '_blank')}
                     className="inline-flex items-center gap-2 pt-0 pb-4 px-4 h-auto hover:bg-transparent"
                   >
                     <span className="[font-family:'Work_Sans',Helvetica] font-normal text-black text-base tracking-[0] leading-6">

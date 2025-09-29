@@ -33,7 +33,7 @@ const tabItems = [
   { id: "plan-details", label: "Plan Details" },
 ];
 
-export const PetsBestCard4 = (): JSX.Element => {
+export const PetsBestCard3_v2 = (): JSX.Element => {
   const [activeTab, setActiveTab] = useState("expert-take");
   const [isExpanded, setIsExpanded] = useState(false);
 
@@ -43,7 +43,7 @@ export const PetsBestCard4 = (): JSX.Element => {
         <CardContent className="p-0 space-y-6">
           <header className="flex items-center gap-2">
             <h2 className="[font-family:'Work_Sans',Helvetica] font-bold text-black text-2xl leading-8">
-              4. <span className="underline">Embrace</span>
+              3. <span className="underline">Chewy</span>
             </h2>
             <img src="/-duocolor-arrow-up-right.svg" alt="External link" className="w-6 h-6" />
           </header>
@@ -52,15 +52,15 @@ export const PetsBestCard4 = (): JSX.Element => {
             <div className="col-span-12 lg:col-span-5 relative">
               <div className="w-full h-[58px] bg-[#f8f8fa] rounded-[16px_16px_0px_0px] overflow-hidden flex items-center justify-center">
                 <img 
-                  src="/EmbraceIcon.png" 
-                  alt="Embrace Logo" 
+                  src="/ChewyIcon.png" 
+                  alt="Chewy Logo" 
                   className="w-[125px] h-[58px] object-contain"
                 />
               </div>
               <img
                 className="w-full h-[207px] object-cover rounded-[0px_0px_16px_16px]"
-                alt="Embrace Pet Insurance"
-                src="/Embracelogo.png"
+                alt="Chewy Pet Insurance"
+                src="/Chewylogo.png"
               />
             </div>
 
@@ -68,17 +68,19 @@ export const PetsBestCard4 = (): JSX.Element => {
               <div className="flex flex-col gap-3.5">
                 <div className="flex items-center gap-3.5">
                   <img
-                    className="w-[20px] h-[20px] sm:w-[30px] sm:h-[30px]"
+                    className="w-[30px] h-[30px]"
                     alt="Frame"
                     src="/frame-2147237132.svg"
                   />
-                  <h3 className="text-[20px] leading-[28px] sm:text-[28px] sm:leading-[36px]" style={{
+                  <h3 style={{
                     color: 'black',
+                    fontSize: '28px',
                     fontFamily: 'Schnyder S',
                     fontWeight: '700',
+                    lineHeight: '36px',
                     wordWrap: 'break-word'
                   }}>
-                    Best for multi-pet
+                    Best for wellness
                   </h3>
                 </div>
                 <Separator className="h-px" />
@@ -120,7 +122,7 @@ export const PetsBestCard4 = (): JSX.Element => {
             </div>
           </div>
 
-          <div className="flex flex-col gap-4 sm:gap-7">
+          <div className="flex flex-col gap-7">
             <div id="product-card-navigation" className="flex overflow-x-auto items-center gap-5 w-full scrollbar-hide" style={{
               scrollbarWidth: 'none',
               msOverflowStyle: 'none',
@@ -166,15 +168,17 @@ export const PetsBestCard4 = (): JSX.Element => {
 
             {activeTab === "expert-take" && (
               <>
-                <h4 className="[font-family:'Work_Sans',Helvetica] font-semibold text-black text-base leading-[26px] sm:text-xl sm:leading-8 tracking-[-0.33px]">
+                <h4 className="[font-family:'Work_Sans',Helvetica] font-semibold text-black text-xl tracking-[-0.33px] leading-8">
                   Our Expert Take
                 </h4>
 
                 <div className="flex flex-col gap-[18px]">
-                  <p className="text-base leading-[26px] sm:text-lg sm:leading-[29.12px]" style={{ 
+                  <p style={{ 
                     color: '#333333', 
+                    fontSize: '18px', 
                     fontFamily: 'Georgia', 
                     fontWeight: '400', 
+                    lineHeight: '29.12px', 
                     wordWrap: 'break-word',
                     margin: 0,
                     display: '-webkit-box',
@@ -182,30 +186,46 @@ export const PetsBestCard4 = (): JSX.Element => {
                     WebkitBoxOrient: 'vertical',
                     overflow: isExpanded ? 'visible' : 'hidden'
                   }}>
-                    We like Embrace because it offers a unique way to save on its accident and illness policy with its Healthy Pet Discount Program. If your claim reimbursements are less than $300 per pet in the year prior to the discount period, you'll qualify for a 5% discount in the first year and 10% in the second year for each pet. Embrace will automatically apply the savings to your annual payment or monthly bill.
+                    Chewy has partnered with Trupanion and Lemonade to offer pet insurance. Chewy's plan through Trupanion stands out thanks to its ability to pay a vet directly (if the vet has Trupanion's software). This makes Chewy's vet pay system easier to use compared to other insurers that offer ways to pay a vet directly. Options from other pet insurers rely on preapproval from the insurer or the vet waiting for payment.
                   </p>
                   
                   {isExpanded && (
-                    <p className="text-base leading-[26px] sm:text-lg sm:leading-[29.12px]" style={{ 
-                      color: '#333333', 
-                      fontFamily: 'Georgia', 
-                      fontWeight: '400', 
-                      wordWrap: 'break-word',
-                      margin: 0
-                    }}>
-                      <span>More: </span>
-                      <span style={{ 
-                        color: '#007AC8', 
+                    <>
+                      <p style={{ 
+                        color: '#333333', 
                         fontSize: '18px', 
                         fontFamily: 'Georgia', 
-                        fontWeight: '700', 
-                        textDecoration: 'underline', 
+                        fontWeight: '400', 
                         lineHeight: '29.12px', 
-                        wordWrap: 'break-word' 
+                        wordWrap: 'break-word',
+                        margin: 0
                       }}>
-                        Embrace Pet Insurance Review
-                      </span>
-                    </p>
+                        Our rating is based on Chewy's Essential Plus policy through Trupanion. You can buy a plan directly from Trupanion, but Chewy's plan through Trupanion offers different coverage details, cheaper pricing, and it scored higher in our evaluation.
+                      </p>
+                      
+                      <p style={{ 
+                        color: '#333333', 
+                        fontSize: '18px', 
+                        fontFamily: 'Georgia', 
+                        fontWeight: '400', 
+                        lineHeight: '29.12px', 
+                        wordWrap: 'break-word',
+                        margin: 0
+                      }}>
+                        <span>More: </span>
+                        <span style={{ 
+                          color: '#007AC8', 
+                          fontSize: '18px', 
+                          fontFamily: 'Georgia', 
+                          fontWeight: '700', 
+                          textDecoration: 'underline', 
+                          lineHeight: '29.12px', 
+                          wordWrap: 'break-word' 
+                        }}>
+                          Chewy Pet Insurance Review
+                        </span>
+                      </p>
+                    </>
                   )}
                   
                   <div style={{width: '100%', height: 40, justifyContent: 'space-between', alignItems: 'center', display: 'inline-flex', position: 'relative'}}>
