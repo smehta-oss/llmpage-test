@@ -43,7 +43,7 @@ export const PetsBestCard4 = (): JSX.Element => {
         <CardContent className="p-0 space-y-6">
           <header className="flex items-center gap-2">
             <h2 className="[font-family:'Work_Sans',Helvetica] font-bold text-black text-2xl leading-8">
-              4. <span className="underline">Embrace</span>
+              <span className="underline">Embrace</span>
             </h2>
             <img src="/-duocolor-arrow-up-right.svg" alt="External link" className="w-6 h-6" />
           </header>

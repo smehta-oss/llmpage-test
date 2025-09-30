@@ -5,39 +5,24 @@ import { CustomArrowUpRightIcon } from "../../../../assets/icons";
 // Question cards data
 const QUESTION_CARDS = [
   {
-    id: "dogs-cats-same-plan",
-    question: "Does pet insurance cover both dogs and cats under the same plan?",
-    targetSection: "plan-details"
-  },
-  {
-    id: "vaccinations-checkups",
-    question: "Does pet insurance cover vaccinations and annual checkups?",
-    targetSection: "plan-details"
-  },
-  {
-    id: "pre-existing-conditions",
-    question: "Are pre-existing conditions covered?",
-    targetSection: "faq"
-  },
-  {
-    id: "cheapest-puppy-insurance",
-    question: "Cheapest pet insurance for a puppy",
+    id: "dogs-cats-cost",
+    question: "Pet Insurance Cost for Dogs and Cats",
     targetSection: "insurance-cost"
   },
   {
-    id: "dental-coverage",
-    question: "Which coverage includes dental?",
+    id: "plan-details",
+    question: "Pet insurance plan details",
     targetSection: "plan-details"
   },
   {
-    id: "pre-existing-conditions-2",
-    question: "Are pre-existing conditions covered?",
-    targetSection: "faq"
+    id: "user-opinions",
+    question: "User Opinion of Pet Insurance Companies",
+    targetSection: "user-opinion"
   },
   {
-    id: "premium-calculation",
-    question: "How are premiums calculated for pet insurance?",
-    targetSection: "insurance-cost"
+    id: "claims-feedback",
+    question: "User Feedback on Claims Process",
+    targetSection: "claims-feedback"
   }
 ];
 import { Badge } from "../../../../components/ui/badge";
@@ -312,57 +297,29 @@ export const ContentSection = (): JSX.Element => {
                 See the data:
               </div>
               <div className="w-full flex flex-col justify-start items-start gap-2 sm:gap-3">
-                {/* Two-row horizontal scrolling layout */}
-                <div className="w-full flex flex-col gap-2 sm:gap-3">
-                  {/* First row */}
-                  <div 
-                    className="flex overflow-x-auto gap-2 sm:gap-3 scrollbar-hide py-1 sm:py-2 px-1"
-                    style={{ 
-                      scrollbarWidth: 'none', 
-                      msOverflowStyle: 'none',
-                      WebkitOverflowScrolling: 'touch'
-                    }}
-                  >
-                    {QUESTION_CARDS.slice(0, Math.ceil(QUESTION_CARDS.length / 2)).map((questionCard) => (
-                      <div 
-                        key={questionCard.id}
-                        onClick={() => handleQuestionClick(questionCard.targetSection)}
-                        className="flex-shrink-0 w-fit py-2 px-2 sm:px-3 bg-white shadow-[0px_4px_8px_-1px_rgba(0,0,0,0.10)] rounded-lg border border-solid border-[#f4f5f8] justify-center items-center gap-2 sm:gap-2.5 flex cursor-pointer hover:shadow-[0px_6px_12px_-1px_rgba(0,0,0,0.15)] hover:scale-[1.02] hover:border-[#007AC8] transition-all duration-300 ease-in-out group relative before:content-[''] before:absolute before:inset-0 before:p-[1px] before:rounded-lg before:opacity-0 hover:before:opacity-0  hover:before:[animation-fill-mode:forwards] before:transition-opacity before:duration-300 before:[background:linear-gradient(90deg,rgba(0,122,200,0.1)_0%,rgba(255,177,54,0.1)_50%,rgba(220,0,0,0.1)_100%)] before:[-webkit-mask:linear-gradient(#fff_0_0)_content-box,linear-gradient(#fff_0_0)] before:[-webkit-mask-composite:xor] before:[mask-composite:exclude] before:z-[1] before:pointer-events-none "
-                      >
-                        <div className="justify-center flex flex-col text-[#606f7f] text-xs leading-[16px] sm:leading-[18px] break-words max-w-[200px] sm:max-w-none" style={{ fontFamily: 'Work Sans', fontWeight: '400' }}>
-                          {questionCard.question}
-                        </div>
-                        <div className="w-4 h-4 sm:w-5 sm:h-5 relative flex-shrink-0 group-hover:rotate-45 transition-transform duration-300 ease-in-out">
-                          <CustomArrowUpRightIcon />
-                        </div>
+                {/* Single row horizontal scrolling layout */}
+                <div 
+                  className="flex overflow-x-auto gap-2 sm:gap-3 scrollbar-hide py-1 sm:py-2 px-1"
+                  style={{ 
+                    scrollbarWidth: 'none', 
+                    msOverflowStyle: 'none',
+                    WebkitOverflowScrolling: 'touch'
+                  }}
+                >
+                  {QUESTION_CARDS.map((questionCard) => (
+                    <div 
+                      key={questionCard.id}
+                      onClick={() => handleQuestionClick(questionCard.targetSection)}
+                      className="flex-shrink-0 w-fit py-2 px-2 sm:px-3 bg-white shadow-[0px_4px_8px_-1px_rgba(0,0,0,0.10)] rounded-lg border border-solid border-[#f4f5f8] justify-center items-center gap-2 sm:gap-2.5 flex cursor-pointer hover:shadow-[0px_6px_12px_-1px_rgba(0,0,0,0.15)] hover:scale-[1.02] hover:border-[#007AC8] transition-all duration-300 ease-in-out group relative before:content-[''] before:absolute before:inset-0 before:p-[1px] before:rounded-lg before:opacity-0 hover:before:opacity-0  hover:before:[animation-fill-mode:forwards] before:transition-opacity before:duration-300 before:[background:linear-gradient(90deg,rgba(0,122,200,0.1)_0%,rgba(255,177,54,0.1)_50%,rgba(220,0,0,0.1)_100%)] before:[-webkit-mask:linear-gradient(#fff_0_0)_content-box,linear-gradient(#fff_0_0)] before:[-webkit-mask-composite:xor] before:[mask-composite:exclude] before:z-[1] before:pointer-events-none "
+                    >
+                      <div className="justify-center flex flex-col text-[#606f7f] text-xs leading-[16px] sm:leading-[18px] break-words max-w-[200px] sm:max-w-none" style={{ fontFamily: 'Work Sans', fontWeight: '400' }}>
+                        {questionCard.question}
                       </div>
-                    ))}
-                  </div>
-                  
-                  {/* Second row */}
-                  <div 
-                    className="flex overflow-x-auto gap-2 sm:gap-3 scrollbar-hide py-1 sm:py-2 px-1"
-                    style={{ 
-                      scrollbarWidth: 'none', 
-                      msOverflowStyle: 'none',
-                      WebkitOverflowScrolling: 'touch'
-                    }}
-                  >
-                    {QUESTION_CARDS.slice(Math.ceil(QUESTION_CARDS.length / 2)).map((questionCard) => (
-                      <div 
-                        key={questionCard.id}
-                        onClick={() => handleQuestionClick(questionCard.targetSection)}
-                        className="flex-shrink-0 w-fit py-2 px-2 sm:px-3 bg-white shadow-[0px_4px_8px_-1px_rgba(0,0,0,0.10)] rounded-lg border border-solid border-[#f4f5f8] justify-center items-center gap-2 sm:gap-2.5 flex cursor-pointer hover:shadow-[0px_6px_12px_-1px_rgba(0,0,0,0.15)] hover:scale-[1.02] hover:border-[#007AC8] transition-all duration-300 ease-in-out group relative before:content-[''] before:absolute before:inset-0 before:p-[1px] before:rounded-lg before:opacity-0 hover:before:opacity-0  hover:before:[animation-fill-mode:forwards] before:transition-opacity before:duration-300 before:[background:linear-gradient(90deg,rgba(0,122,200,0.1)_0%,rgba(255,177,54,0.1)_50%,rgba(220,0,0,0.1)_100%)] before:[-webkit-mask:linear-gradient(#fff_0_0)_content-box,linear-gradient(#fff_0_0)] before:[-webkit-mask-composite:xor] before:[mask-composite:exclude] before:z-[1] before:pointer-events-none "
-                      >
-                        <div className="justify-center flex flex-col text-[#606f7f] text-xs leading-[16px] sm:leading-[18px] break-words max-w-[200px] sm:max-w-none" style={{ fontFamily: 'Work Sans', fontWeight: '400' }}>
-                          {questionCard.question}
-                        </div>
-                        <div className="w-4 h-4 sm:w-5 sm:h-5 relative flex-shrink-0 group-hover:rotate-45 transition-transform duration-300 ease-in-out">
-                          <CustomArrowUpRightIcon />
-                        </div>
+                      <div className="w-4 h-4 sm:w-5 sm:h-5 relative flex-shrink-0 group-hover:rotate-45 transition-transform duration-300 ease-in-out">
+                        <CustomArrowUpRightIcon />
                       </div>
-                    ))}
-                  </div>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
