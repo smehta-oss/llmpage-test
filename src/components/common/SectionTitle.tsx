@@ -12,11 +12,11 @@ export const SectionTitle: React.FC<SectionTitleProps> = ({ children, className 
       case 'h1':
         return 'text-black text-[40px] sm:text-[40px] md:text-[40px] lg:text-[40px] font-bold leading-[48px] sm:leading-[48px] md:leading-[48px] lg:leading-[48px] font-schnyder-bold';
       case 'h2':
-        return 'text-black text-[32px] sm:text-[32px] md:text-[32px] lg:text-[32px] font-bold leading-[39px] sm:leading-[39px] md:leading-[39px] lg:leading-[39px] font-schnyder-bold';
+        return 'text-black text-[32px] sm:text-[32px] md:text-[32px] lg:text-[40px] font-bold leading-[39px] sm:leading-[39px] md:leading-[39px] lg:leading-[48px] font-schnyder-bold';
       case 'h3':
         return 'text-black text-[24px] sm:text-[24px] md:text-[24px] lg:text-[32px] font-bold leading-[29px] sm:leading-[29px] md:leading-[29px] lg:leading-[39px] font-schnyder-bold';
       default:
-        return 'text-black text-[32px] sm:text-[32px] md:text-[32px] lg:text-[32px] font-bold leading-[39px] sm:leading-[39px] md:leading-[39px] lg:leading-[39px] font-schnyder-bold';
+        return 'text-black text-[32px] sm:text-[32px] md:text-[32px] lg:text-[40px] font-bold leading-[39px] sm:leading-[39px] md:leading-[39px] lg:leading-[48px] font-schnyder-bold';
     }
   };
 

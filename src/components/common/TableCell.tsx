@@ -15,7 +15,7 @@ export const TableCell: React.FC<TableCellProps> = ({
 }) => {
   const baseClasses = "px-2 py-3 text-left transition-colors duration-200";
   const headerClasses = isHeader ? "bg-[#ecf1ff] font-semibold text-[#333333]" : "bg-white hover:bg-[#f8f9fa]";
-  const providerClasses = isProvider ? "font-semibold text-[#007ac8] underline hover:text-[#005a8a]" : "font-normal text-[#6a6a6a]";
+  const providerClasses = isProvider ? "font-semibold text-black" : "font-normal text-[#6a6a6a]";
   
   // Check if this is a corner cell that needs special border handling
   const isTopLeftCorner = className.includes('rounded-tl-');

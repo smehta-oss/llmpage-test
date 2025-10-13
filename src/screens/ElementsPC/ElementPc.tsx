@@ -88,7 +88,7 @@ export const ElementPc = (): JSX.Element => {
         {/* Responsive layout with proper gutters */}
         <div className="flex gap-6 sm:gap-8 md:gap-11">
           {/* Navigation - spans 3 columns - Visible only on desktop (1024px+) */}
-          <nav className="hidden lg:flex flex-col items-start justify-start gap-3 max-w-[212px] sticky top-[152px] self-start z-[1] bg-white/90 backdrop-blur-sm rounded-lg p-2">
+          <nav className="hidden xl:flex flex-col items-start justify-start gap-3 max-w-[212px] sticky top-[152px] self-start z-[1] bg-white/90 backdrop-blur-sm rounded-lg p-2">
             {navigationItems.map((item, index) => (
               <Button
                 key={item.id}
@@ -130,7 +130,10 @@ export const ElementPc = (): JSX.Element => {
           <main className="w-full self-start">
             {/* Full content parent div */}
             <div id="compare-plans" className="full-content-parent flex flex-col gap-6">
-              <div className="featured-partner-section flex flex-col items-center gap-[18px] px-4 py-1 bg-[#ffffffcc] rounded-3xl overflow-hidden border-[none] shadow-[0px_0px_16px_4px_#7d0af81f,inset_0_1px_0_rgba(255,255,255,0.40),inset_1px_0_0_rgba(255,255,255,0.32),inset_0_-1px_1px_rgba(0,0,0,0.13),inset_-1px_0_1px_rgba(0,0,0,0.11)] backdrop-blur-[2.0px] backdrop-brightness-[110%] [-webkit-backdrop-filter:blur(2.0px)_brightness(110%)] before:content-[''] before:absolute before:inset-0 before:p-1 before:rounded-3xl before:[background:linear-gradient(90deg,rgba(0,122,200,0.4)_0%,rgba(255,177,54,0.4)_50%,rgba(220,0,0,0.4)_100%)] before:[-webkit-mask:linear-gradient(#fff_0_0)_content-box,linear-gradient(#fff_0_0)] before:[-webkit-mask-composite:xor] before:[mask-composite:exclude] before:z-[1] before:pointer-events-none relative transition-all duration-300 ease-in-out hover:shadow-[0px_0px_20px_6px_#7d0af825,inset_0_1px_0_rgba(255,255,255,0.50),inset_1px_0_0_rgba(255,255,255,0.40),inset_0_-1px_1px_rgba(0,0,0,0.15),inset_-1px_0_1px_rgba(0,0,0,0.13)] cursor-pointer">
+              {/* Featured Partner Section with Grid Alignment */}
+              <div className="grid grid-cols-12 gap-5">
+                <div className="col-span-12">
+                  <div className="featured-partner-section flex flex-col items-center gap-[18px] px-4 py-1 bg-[#ffffffcc] rounded-3xl overflow-hidden border-[none] shadow-[0px_0px_16px_4px_#7d0af81f,inset_0_1px_0_rgba(255,255,255,0.40),inset_1px_0_0_rgba(255,255,255,0.32),inset_0_-1px_1px_rgba(0,0,0,0.13),inset_-1px_0_1px_rgba(0,0,0,0.11)] backdrop-blur-[2.0px] backdrop-brightness-[110%] [-webkit-backdrop-filter:blur(2.0px)_brightness(110%)] before:content-[''] before:absolute before:inset-0 before:p-1 before:rounded-3xl before:[background:linear-gradient(90deg,rgba(0,122,200,0.4)_0%,rgba(255,177,54,0.4)_50%,rgba(220,0,0,0.4)_100%)] before:[-webkit-mask:linear-gradient(#fff_0_0)_content-box,linear-gradient(#fff_0_0)] before:[-webkit-mask-composite:xor] before:[mask-composite:exclude] before:z-[1] before:pointer-events-none relative transition-all duration-300 ease-in-out hover:shadow-[0px_0px_20px_6px_#7d0af825,inset_0_1px_0_rgba(255,255,255,0.50),inset_1px_0_0_rgba(255,255,255,0.40),inset_0_-1px_1px_rgba(0,0,0,0.15),inset_-1px_0_1px_rgba(0,0,0,0.13)] cursor-pointer">
               <div className="featured-partner-offer-group">
               <div className="featured-partner-offer-group mt-2">
                 <header className="relative flex items-center justify-center w-full mt-[-4.00px] [font-family:'Work_Sans',Helvetica] font-semibold text-black text-sm text-center tracking-[0.92px] leading-5 whitespace-nowrap">
@@ -247,6 +250,8 @@ export const ElementPc = (): JSX.Element => {
                 </Card>
               </div>
               </div>
+              </div>
+                </div>
               </div>
               
               <DetailedInfoSection />

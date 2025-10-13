@@ -6,7 +6,7 @@ import {
 import React from "react";
 import { Button } from "../../components/ui/button";
 import { useCarousel } from "../../hooks/useCarousel";
-import { CarouselCard1, CarouselCard2, CarouselCard3, CarouselCard4, CarouselCard5 } from "./components";
+import { CarouselCard1, CarouselCard3, CarouselCard4, CarouselCard5, CarouselCard6 } from "./components";
 
 export const BestPetsCarousel = (): JSX.Element => {
   const CARD_WIDTH = 312 + 20; // card width + gap
@@ -60,7 +60,7 @@ export const BestPetsCarousel = (): JSX.Element => {
               }}
             >
               <CarouselCard4 />
-              <CarouselCard2 />
+              <CarouselCard6 />
               <CarouselCard3 />
               <CarouselCard1 />
               <CarouselCard5 />

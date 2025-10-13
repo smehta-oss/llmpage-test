@@ -31,12 +31,13 @@ export const PetInsuranceComparison: React.FC<PetInsuranceComparisonProps> = ({ 
                 </div>
                 
                 <div className="w-full overflow-x-auto">
-                  <table className="w-full table-fixed border-separate border-spacing-0">
+                  <table className="w-full table-fixed border-separate border-spacing-0 min-w-[800px]">
                     <thead>
                       <tr>
                         <TableCell isHeader className="w-[25%] rounded-tl-[8px] ">Provider</TableCell>
-                        <TableCell isHeader className="w-[37.5%]">Average Monthly for Dogs</TableCell>
-                        <TableCell isHeader className="w-[37.5%] rounded-tr-[16px]">Average Monthly for Cats</TableCell>
+                        <TableCell isHeader className="w-[30%]">Average Monthly for Dogs</TableCell>
+                        <TableCell isHeader className="w-[30%]">Average Monthly for Cats</TableCell>
+                        <TableCell isHeader className="w-[15%] rounded-tr-[16px]">Apply Now</TableCell>
                       </tr>
                     </thead>
                     <tbody>
@@ -45,6 +46,16 @@ export const PetInsuranceComparison: React.FC<PetInsuranceComparisonProps> = ({ 
                           <TableCell isProvider>{row.provider}</TableCell>
                           <TableCell>{row.dogCost}</TableCell>
                           <TableCell>{row.catCost}</TableCell>
+                          <TableCell>
+                            <a 
+                              href={row.applyNowUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="font-semibold text-[#007ac8] underline hover:text-[#005a8a] transition-colors duration-200"
+                            >
+                              Apply Now
+                            </a>
+                          </TableCell>
                         </tr>
                       ))}
                     </tbody>
@@ -67,15 +78,16 @@ export const PetInsuranceComparison: React.FC<PetInsuranceComparisonProps> = ({ 
                 
                 <div className="flex flex-col items-start gap-6 w-full">
                 <div className="w-full overflow-x-auto relative">
-                  <table className="w-full border-separate border-spacing-0 table-fixed min-w-[1000px] relative">
+                  <table className="w-full border-separate border-spacing-0 table-fixed min-w-[1200px] relative">
                     <thead>
                       <tr>
                         <TableCell isHeader className="w-[10%] rounded-tl-[8px] sticky left-0 z-[1] bg-[#ecf1ff]">Provider</TableCell>
-                        <TableCell isHeader className="w-[15%]">Age Restrictions</TableCell>
-                        <TableCell isHeader className="w-[35%]">Waiting Periods</TableCell>
-                        <TableCell isHeader className="w-[13%]">End of Life Expenses</TableCell>
-                        <TableCell isHeader className="w-[13%]">Vet Exam Fees</TableCell>
-                        <TableCell isHeader className="w-[14%] rounded-tr-[16px] overflow-hidden">Microchipping</TableCell>
+                        <TableCell isHeader className="w-[13%]">Age Restrictions</TableCell>
+                        <TableCell isHeader className="w-[30%]">Waiting Periods</TableCell>
+                        <TableCell isHeader className="w-[12%]">End of Life Expenses</TableCell>
+                        <TableCell isHeader className="w-[12%]">Vet Exam Fees</TableCell>
+                        <TableCell isHeader className="w-[12%]">Microchipping</TableCell>
+                        <TableCell isHeader className="w-[11%] rounded-tr-[16px] overflow-hidden">Apply Now</TableCell>
                       </tr>
                     </thead>
                     <tbody>
@@ -87,6 +99,16 @@ export const PetInsuranceComparison: React.FC<PetInsuranceComparisonProps> = ({ 
                           <TableCell className="align-top">{row.endOfLife}</TableCell>
                           <TableCell className="align-top">{row.vetExamFees}</TableCell>
                           <TableCell className="align-top">{row.microchipping}</TableCell>
+                          <TableCell className="align-top">
+                            <a 
+                              href={row.applyNowUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="font-semibold text-[#007ac8] underline hover:text-[#005a8a] transition-colors duration-200"
+                            >
+                              Apply Now
+                            </a>
+                          </TableCell>
                         </tr>
                       ))}
                     </tbody>
@@ -109,14 +131,15 @@ export const PetInsuranceComparison: React.FC<PetInsuranceComparisonProps> = ({ 
                 </div>
                 
                 <div className="w-full overflow-x-auto relative">
-                  <table className="w-full table-fixed border-separate border-spacing-0 min-w-[800px] relative">
+                  <table className="w-full table-fixed border-separate border-spacing-0 min-w-[1000px] relative">
                     <thead>
                       <tr>
                         <TableCell isHeader className="w-[15%] rounded-tl-[8px] sticky left-0 z-[1] bg-[#ecf1ff]">Provider</TableCell>
-                        <TableCell isHeader className="w-[15%]">CSI Rating</TableCell>
-                        <TableCell isHeader className="w-[20%]">How Likely to Recommend</TableCell>
-                        <TableCell isHeader className="w-[25%]">Common Positive Sentiments</TableCell>
-                        <TableCell isHeader className="w-[25%] rounded-tr-[8px]">Common Negative Sentiments</TableCell>
+                        <TableCell isHeader className="w-[12%]">CSI Rating</TableCell>
+                        <TableCell isHeader className="w-[18%]">How Likely to Recommend</TableCell>
+                        <TableCell isHeader className="w-[22%]">Common Positive Sentiments</TableCell>
+                        <TableCell isHeader className="w-[22%]">Common Negative Sentiments</TableCell>
+                        <TableCell isHeader className="w-[11%] rounded-tr-[8px]">Apply Now</TableCell>
                       </tr>
                     </thead>
                     <tbody>
@@ -127,6 +150,16 @@ export const PetInsuranceComparison: React.FC<PetInsuranceComparisonProps> = ({ 
                           <TableCell>{row.likelyToRecommend}</TableCell>
                           <TableCell>{row.positiveComments}</TableCell>
                           <TableCell>{row.negativeComments}</TableCell>
+                          <TableCell>
+                            <a 
+                              href={row.applyNowUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="font-semibold text-[#007ac8] underline hover:text-[#005a8a] transition-colors duration-200"
+                            >
+                              Apply Now
+                            </a>
+                          </TableCell>
                         </tr>
                       ))}
                     </tbody>
@@ -148,12 +181,13 @@ export const PetInsuranceComparison: React.FC<PetInsuranceComparisonProps> = ({ 
                 </div>
                 
                 <div className="w-full overflow-x-auto relative">
-                  <table className="w-full table-fixed border-separate border-spacing-0 min-w-[600px] relative">
+                  <table className="w-full table-fixed border-separate border-spacing-0 min-w-[800px] relative">
                     <thead>
                       <tr>
                         <TableCell isHeader className="w-[25%] rounded-tl-[8px] sticky left-0 z-[1] bg-[#ecf1ff]">Provider</TableCell>
-                        <TableCell isHeader className="w-[37.5%]">Satisfaction with Claims</TableCell>
-                        <TableCell isHeader className="w-[37.5%] rounded-tr-[16px]">Overall Satisfaction</TableCell>
+                        <TableCell isHeader className="w-[30%]">Satisfaction with Claims</TableCell>
+                        <TableCell isHeader className="w-[30%]">Overall Satisfaction</TableCell>
+                        <TableCell isHeader className="w-[15%] rounded-tr-[16px]">Apply Now</TableCell>
                       </tr>
                     </thead>
                     <tbody>
@@ -162,6 +196,16 @@ export const PetInsuranceComparison: React.FC<PetInsuranceComparisonProps> = ({ 
                           <TableCell isProvider className="sticky left-0 z-[1] bg-white">{row.provider}</TableCell>
                           <TableCell>{row.claimsSatisfaction}</TableCell>
                           <TableCell>{row.overallSatisfaction}</TableCell>
+                          <TableCell>
+                            <a 
+                              href={row.applyNowUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="font-semibold text-[#007ac8] underline hover:text-[#005a8a] transition-colors duration-200"
+                            >
+                              Apply Now
+                            </a>
+                          </TableCell>
                         </tr>
                       ))}
                     </tbody>

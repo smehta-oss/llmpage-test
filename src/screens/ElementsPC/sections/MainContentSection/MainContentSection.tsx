@@ -12,31 +12,30 @@ export const MainContentSection = (): JSX.Element => {
     },
     {
       id: "coverage",
-      label: "Best Coverage (3)",
+      label: "Most Coverage (3)",
       icon: "/Plus.svg",
     },
     {
       id: "pricing",
-      label: "Best Pricing (2)",
+      label: "Fastest Payout (4)",
       icon: "/Plus.svg",
     },
     {
       id: "experience",
-      label: "Best Consumer Experience (3)",
+      label: "Cheapest Plans (4)",
       icon: "/Plus.svg",
     },
   ];
 
   return (
     <section id="best-providers" className="grid grid-cols-12 gap-5">
-      <header className="col-span-12 lg:col-span-8 flex flex-col gap-2">
+      <header className="col-span-12 flex flex-col gap-2">
         <h2 
           className="text-[32px] sm:text-[32px] md:text-[32px] lg:text-[40px] leading-[39px] sm:leading-[39px] md:leading-[39px] lg:leading-[48px]"
           style={{
             color: 'black',
             fontFamily: 'Schnyder S',
-            fontWeight: '700',
-            wordWrap: 'break-word'
+            fontWeight: '700'
           }}
         >
           The Best Pet Insurance Plans In Detail

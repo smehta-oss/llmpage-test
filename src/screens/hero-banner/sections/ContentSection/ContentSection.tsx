@@ -94,6 +94,18 @@ export const ContentSection = (): JSX.Element => {
       <div className="flex flex-col items-center px-0 py-6 relative w-full bg-[linear-gradient(180deg,rgba(255,255,255,1)_0%,rgba(245,245,247,1)_100%)] overflow-hidden">
         <div className="w-full max-w-none sm:max-w-[1440px] min-w-0 mx-auto px-4 sm:px-6 md:px-8 lg:px-[90px] overflow-hidden">
           <div className="grid grid-cols-1 sm:grid-cols-8 md:grid-cols-10 lg:grid-cols-12 gap-3 sm:gap-5 w-full min-w-0">
+            {/* Advertiser Disclosure Section */}
+            <div className="col-span-1 sm:col-span-8 md:col-span-10 lg:col-span-12 py-2 mb-4">
+              <div style={{width: '100%', maxWidth: '1440px', justifyContent: 'space-between', alignItems: 'center', display: 'flex'}}>
+                <div style={{color: '#8B94A2', fontSize: 14, fontFamily: 'Work Sans', fontWeight: '400', lineHeight: '24px', wordWrap: 'break-word'}}>
+                  We independently select all products and services. If you click through links we provide, we may earn a commission.
+                </div>
+                <div style={{color: '#8B94A2', fontSize: 12, fontFamily: 'Work Sans', fontWeight: '600', lineHeight: '16px', wordWrap: 'break-word', whiteSpace: 'nowrap'}}>
+                  Advertiser Disclosure
+                </div>
+              </div>
+            </div>
+            
             <div className="col-span-1 sm:col-span-8 md:col-span-10 lg:col-span-12 flex flex-col items-start gap-4 sm:gap-6 min-w-0">
           <div className="flex flex-col w-full items-start gap-4 relative min-w-0 max-w-full constrain-container">
             <Breadcrumb className="w-full max-w-full">
@@ -138,7 +150,7 @@ export const ContentSection = (): JSX.Element => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-3 sm:gap-5 w-full min-w-0">
           <div className="col-span-1 lg:col-span-7 flex flex-col items-start gap-4 sm:gap-6 min-w-0">
               <div className="flex flex-col items-start gap-4 relative w-full min-w-0">
-                <div className="flex items-center gap-px relative w-full min-w-0">
+                <div className="flex items-center gap-1 relative w-full min-w-0 overflow-hidden">
                   <Badge className="inline-flex h-12 items-center justify-center gap-1.5 pl-3 pr-4 py-2.5 bg-black text-white hover:bg-black rounded-none flex-shrink-0">
                     <img
                       className="w-[15.4px] h-5 object-contain flex-shrink-0"
@@ -149,11 +161,7 @@ export const ContentSection = (): JSX.Element => {
                       HOW WE ANALYZED
                     </span>
                   </Badge>
-                  <img
-                    className="flex-1 h-px object-cover"
-                    alt="Vector"
-                    src="/vector-25.svg"
-                  />
+                  <div className="flex-1 h-px bg-gray-300 min-w-4"></div>
                 </div>
 
                 <p className="[font-family:'Work_Sans',Helvetica] font-normal text-black text-sm tracking-[0] leading-6 break-words overflow-wrap-anywhere w-full">
@@ -190,7 +198,40 @@ export const ContentSection = (): JSX.Element => {
             </div>
 
           <div className="col-span-1 lg:col-span-5">
-            <div className="w-full h-[180px] sm:h-[230px] rounded-3xl bg-[url(/frame-2147236889.png)] bg-cover bg-[50%_50%] hidden lg:block" />
+            <div style={{width: '100%', height: '100%', position: 'relative', overflow: 'hidden', borderRadius: 24, backgroundImage: 'url(/HeroImage3.png)', backgroundSize: 'cover', backgroundPosition: '50% 50%', minHeight: '230px'}} className="hidden lg:block">
+              {/* Grouped Badge Container - Vertically Centered */}
+              <div style={{position: 'absolute', right: 0, top: '50%', transform: 'translateY(-50%)', display: 'flex', flexDirection: 'column', gap: 16, alignItems: 'flex-end'}}>
+                <div style={{width: 'auto', height: 40, padding: '6px 10px', background: 'rgba(0, 0, 0, 0.6)', borderRadius: 8, backdropFilter: 'blur(6px)', justifyContent: 'flex-start', alignItems: 'center', gap: 8, display: 'inline-flex'}}>
+                  <div style={{justifyContent: 'flex-start', alignItems: 'center', gap: 4, display: 'flex', flexShrink: 0}}>
+                    <div style={{width: 24, height: 24, position: 'relative', overflow: 'hidden', flexShrink: 0}}>
+                      <img src="/activity-heart.svg" alt="Average Cost" style={{width: 24, height: 24, position: 'absolute', filter: 'brightness(0) saturate(100%) invert(75%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(75%) contrast(100%)'}} />
+                    </div>
+                    <div style={{color: 'rgb(191, 191, 191)', fontSize: 12, fontFamily: 'Work Sans', fontWeight: '600', lineHeight: '12px', wordWrap: 'break-word', flexShrink: 0, whiteSpace: 'nowrap'}}>Average Cost</div>
+                  </div>
+                  <div style={{textAlign: 'right', color: 'white', fontSize: 12, fontFamily: 'Work Sans', fontWeight: '600', lineHeight: '12px', wordWrap: 'break-word', flexShrink: 0, whiteSpace: 'nowrap'}}>As low as $24/mo</div>
+                </div>
+                
+                <div style={{width: 'auto', height: 40, padding: '6px 10px', background: 'rgba(0, 0, 0, 0.6)', borderRadius: 8, backdropFilter: 'blur(6px)', justifyContent: 'flex-start', alignItems: 'center', gap: 8, display: 'inline-flex'}}>
+                  <div style={{justifyContent: 'flex-start', alignItems: 'center', gap: 4, display: 'flex', flexShrink: 0}}>
+                    <div style={{width: 24, height: 24, position: 'relative', overflow: 'hidden', flexShrink: 0}}>
+                      <img src="/activity-heart.svg" alt="Eligibility" style={{width: 24, height: 24, position: 'absolute', filter: 'brightness(0) saturate(100%) invert(75%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(75%) contrast(100%)'}} />
+                    </div>
+                    <div style={{color: 'rgb(191, 191, 191)', fontSize: 12, fontFamily: 'Work Sans', fontWeight: '600', lineHeight: '12px', wordWrap: 'break-word', flexShrink: 0, whiteSpace: 'nowrap'}}>Eligibility</div>
+                  </div>
+                  <div style={{textAlign: 'right', color: 'white', fontSize: 12, fontFamily: 'Work Sans', fontWeight: '600', lineHeight: '12px', wordWrap: 'break-word', flexShrink: 0, whiteSpace: 'nowrap'}}>Typically kicks in 3-4 weeks</div>
+                </div>
+                
+                <div style={{width: 'auto', height: 40, padding: '6px 10px', background: 'rgba(0, 0, 0, 0.6)', borderRadius: 8, backdropFilter: 'blur(6px)', justifyContent: 'flex-start', alignItems: 'center', gap: 8, display: 'inline-flex'}}>
+                  <div style={{justifyContent: 'flex-start', alignItems: 'center', gap: 4, display: 'flex', flexShrink: 0}}>
+                    <div style={{width: 24, height: 24, position: 'relative', overflow: 'hidden', flexShrink: 0}}>
+                      <img src="/activity-heart.svg" alt="Wellness Options" style={{width: 24, height: 24, position: 'absolute', filter: 'brightness(0) saturate(100%) invert(75%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(75%) contrast(100%)'}} />
+                    </div>
+                    <div style={{color: 'rgb(191, 191, 191)', fontSize: 12, fontFamily: 'Work Sans', fontWeight: '600', lineHeight: '12px', wordWrap: 'break-word', flexShrink: 0, whiteSpace: 'nowrap'}}>Wellness Options</div>
+                  </div>
+                  <div style={{textAlign: 'right', color: 'white', fontSize: 12, fontFamily: 'Work Sans', fontWeight: '600', lineHeight: '12px', wordWrap: 'break-word', flexShrink: 0, whiteSpace: 'nowrap'}}>7 of 12 listed partners</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 

@@ -196,6 +196,66 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Chat Animation Keyframes */
+@keyframes slideUpFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes messageSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes subtleBounce {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+@keyframes slideDownFadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(15px) scale(0.97);
+  }
+}
+
+/* Smooth scrolling for messages */
+.messages-container {
+  scroll-behavior: smooth;
+}
+
+/* Subtle bounce for buttons */
+.button-bounce:hover {
+  animation: subtleBounce 0.3s ease-in-out;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;

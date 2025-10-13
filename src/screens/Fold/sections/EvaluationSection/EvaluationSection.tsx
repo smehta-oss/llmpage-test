@@ -212,7 +212,131 @@ export const EvaluationSection: React.FC<EvaluationSectionProps> = ({
   };
 
   return (
-    <section id="methodology" className="w-full border-t [border-top-style:solid] border-[#CED4DB] flex flex-col py-8">
+    <>
+      {/* Pro Tips From Our Experts Section */}
+      <section className="w-full border-t [border-top-style:solid] border-[#CED4DB] flex flex-col pt-16 pb-8">
+        <div className="grid grid-cols-12 gap-5">
+          <div className="col-span-12">
+            <div className="flex flex-col gap-10">
+              {/* Header */}
+              <div className="grid grid-cols-12 gap-5">
+                <div className="col-span-12 lg:col-span-10 xl:col-span-8">
+                  <h2 
+                    className="text-[32px] sm:text-[32px] md:text-[32px] lg:text-[40px] leading-[39px] sm:leading-[39px] md:leading-[39px] lg:leading-[48px]"
+                    style={{
+                      color: 'black', 
+                      fontFamily: 'Schnyder S', 
+                      fontWeight: '700', 
+                      wordWrap: 'break-word'
+                    }}
+                  >
+                    Pro Tips From Our Experts
+                  </h2>
+                </div>
+              </div>
+
+              {/* Expert Tips Cards */}
+              <div className="grid grid-cols-12 gap-4">
+                {/* Card 1 - Enroll before symptoms */}
+                <div className="col-span-12 xl:col-span-4">
+                  <div className="w-full h-auto xl:h-[349px] bg-[#F8F8FA] overflow-hidden rounded-[24px] py-7 px-4 flex flex-col xl:justify-between">
+                    {/* Top section with category and title */}
+                    <div className="flex flex-col gap-4">
+                      <div className="text-black text-base font-normal underline leading-[26px] font-['Work_Sans']">
+                        Clauses
+                      </div>
+                      <div className="text-black text-xl font-semibold leading-[26px] font-['Work_Sans']">
+                        Enroll before symptoms
+                      </div>
+                      <div className="text-[#606F7F] text-base font-normal leading-6 font-['Work_Sans']">
+                        Waiting periods (e.g., 1–14 days) and pre-existing clauses mean issues noted in records may be excluded later.
+                      </div>
+                    </div>
+                    
+                    {/* Bottom section with author */}
+                    <div className="flex items-center gap-3 mt-4 xl:mt-0">
+                      <img className="w-10 h-10 rounded-full flex-shrink-0" src="https://placehold.co/40x40" alt="Dr. Maya Chen" />
+                      <div className="flex flex-col min-w-0">
+                        <div className="text-[#333333] text-sm font-semibold underline leading-[19.60px] font-['Work_Sans']">
+                          Dr. Maya Chen, DVM
+                        </div>
+                        <div className="text-[#333333] text-xs font-normal leading-4 font-['Work_Sans']">
+                          Emergency Veterinarian
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Card 2 - Don't overbuy wellness */}
+                <div className="col-span-12 xl:col-span-4">
+                  <div className="w-full h-auto xl:h-[349px] bg-[#F8F8FA] overflow-hidden rounded-[24px] py-7 px-4 flex flex-col xl:justify-between">
+                    {/* Top section with category and title */}
+                    <div className="flex flex-col gap-4">
+                      <div className="text-black text-base font-normal underline leading-[26px] font-['Work_Sans']">
+                        Coverage
+                      </div>
+                      <div className="text-black text-xl font-semibold leading-[26px] font-['Work_Sans']">
+                        Don't overbuy wellness
+                      </div>
+                      <div className="text-[#606F7F] text-base font-normal leading-6 font-['Work_Sans']">
+                        Add it only if your routine-care spend exceeds the add-on price; otherwise keep accident + illness lean.
+                      </div>
+                    </div>
+                    
+                    {/* Bottom section with author */}
+                    <div className="flex items-center gap-3 mt-4 xl:mt-0">
+                      <img className="w-10 h-10 rounded-full flex-shrink-0" src="https://placehold.co/40x40" alt="Dr. Maya Chen" />
+                      <div className="flex flex-col min-w-0">
+                        <div className="text-[#333333] text-sm font-semibold underline leading-[19.60px] font-['Work_Sans']">
+                          Dr. Maya Chen, DVM
+                        </div>
+                        <div className="text-[#333333] text-xs font-normal leading-4 font-['Work_Sans']">
+                          Emergency Veterinarian
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Card 3 - Direct pay isn't universal */}
+                <div className="col-span-12 xl:col-span-4">
+                  <div className="w-full h-auto xl:h-[349px] bg-[#F8F8FA] overflow-hidden rounded-[24px] py-7 px-4 flex flex-col xl:justify-between">
+                    {/* Top section with category and title */}
+                    <div className="flex flex-col gap-4">
+                      <div className="text-black text-base font-normal underline leading-[26px] font-['Work_Sans']">
+                        Cost
+                      </div>
+                      <div className="text-black text-xl font-semibold leading-[26px] font-['Work_Sans']">
+                        Direct pay isn't universal
+                      </div>
+                      <div className="text-[#606F7F] text-base font-normal leading-6 font-['Work_Sans']">
+                        "Pay-the-vet" features can be limited; confirm availability with your clinic before you need it.
+                      </div>
+                    </div>
+                    
+                    {/* Bottom section with author */}
+                    <div className="flex items-center gap-3 mt-4 xl:mt-0">
+                      <img className="w-10 h-10 rounded-full flex-shrink-0" src="https://placehold.co/40x40" alt="Dr. Maya Chen" />
+                      <div className="flex flex-col min-w-0">
+                        <div className="text-[#333333] text-sm font-semibold underline leading-[19.60px] font-['Work_Sans']">
+                          Dr. Maya Chen, DVM
+                        </div>
+                        <div className="text-[#333333] text-xs font-normal leading-4 font-['Work_Sans']">
+                          Emergency Veterinarian
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* How We Found The Best Pet Insurance Section */}
+      <section id="methodology" className="w-full border-t [border-top-style:solid] border-[#CED4DB] flex flex-col pt-16 pb-8">
       <div className="grid grid-cols-12 gap-5">
         <div className="col-span-12">
           <header className="mb-8">
@@ -262,5 +386,6 @@ export const EvaluationSection: React.FC<EvaluationSectionProps> = ({
         </div>
       </div>
     </section>
+    </>
   );
 };
