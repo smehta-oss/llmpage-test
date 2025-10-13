@@ -107,6 +107,7 @@ export const ChatOverlay: React.FC<ChatOverlayProps> = ({
   const [isClosing, setIsClosing] = useState(false);
   const [typingMessageId, setTypingMessageId] = useState<string | null>(null);
   const [isTypingActive, setIsTypingActive] = useState(false);
+  const [isChatInitialized, setIsChatInitialized] = useState(false); // Prevent double initialization
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   const scrollToNewest = () => {
@@ -662,6 +663,7 @@ CRITICAL: Respond ONLY with a valid JSON object in this exact format:
     setShowRecommendations(false);
     setTextInput('');
     setIsProcessing(false);
+    setIsChatInitialized(false); // Reset initialization flag
 
     setTimeout(() => {
       addBotMessageWithDelay(
@@ -686,6 +688,7 @@ CRITICAL: Respond ONLY with a valid JSON object in this exact format:
       setTextInput('');
       setIsProcessing(false);
       setIsClosing(false);
+      setIsChatInitialized(false); // Reset initialization flag
     }, 200); // Match the fade-out duration
   };
 
@@ -1059,8 +1062,10 @@ CRITICAL: Respond ONLY with a valid JSON object in this exact format:
                 value={textInput}
                 onChange={(e) => setTextInput(e.target.value)}
                 onKeyDown={handleKeyDown}
-                onFocus={() => {
-                  if (messages.length === 0 && !showRecommendations && currentQuestionIndex < CONVERSATION_FLOW.length) {
+                onFocus={(e) => {
+                  // Prevent double triggering by checking if chat is already initialized
+                  if (!isChatInitialized && messages.length === 0 && !showRecommendations && currentQuestionIndex < CONVERSATION_FLOW.length) {
+                    setIsChatInitialized(true);
                     setTimeout(() => {
                       addBotMessageWithDelay(
                         "Hi! 👋 I'll help you find the perfect pet insurance provider. Let's get started!", 
