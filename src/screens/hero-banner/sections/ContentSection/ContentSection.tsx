@@ -91,16 +91,16 @@ export const ContentSection = (): JSX.Element => {
 
   return (
     <section className="flex z-[1] w-full relative flex-col items-start gap-6 pt-[136px] overflow-hidden">
-      <div className="flex flex-col items-center px-0 py-6 relative w-full bg-[linear-gradient(180deg,rgba(255,255,255,1)_0%,rgba(245,245,247,1)_100%)] overflow-hidden">
+      <div className="flex flex-col items-center px-0 pb-6 relative w-full bg-[linear-gradient(180deg,rgba(255,255,255,1)_0%,rgba(245,245,247,1)_100%)] overflow-hidden">
         <div className="w-full max-w-none sm:max-w-[1440px] min-w-0 mx-auto px-4 sm:px-6 md:px-8 lg:px-[90px] overflow-hidden">
           <div className="grid grid-cols-1 sm:grid-cols-8 md:grid-cols-10 lg:grid-cols-12 gap-3 sm:gap-5 w-full min-w-0">
             {/* Advertiser Disclosure Section */}
-            <div className="col-span-1 sm:col-span-8 md:col-span-10 lg:col-span-12 py-2 mb-4">
-              <div style={{width: '100%', maxWidth: '1440px', justifyContent: 'space-between', alignItems: 'center', display: 'flex'}}>
-                <div style={{color: '#8B94A2', fontSize: 14, fontFamily: 'Work Sans', fontWeight: '400', lineHeight: '24px', wordWrap: 'break-word'}}>
+            <div className="col-span-1 sm:col-span-8 md:col-span-10 lg:col-span-12 pt-2">
+              <div className="flex flex-col xl:flex-row xl:justify-between xl:items-center gap-2" style={{width: '100%', maxWidth: '1440px'}}>
+                <div className="order-2 xl:order-1" style={{color: '#8B94A2', fontSize: 12, fontFamily: 'Work Sans', fontWeight: '400', lineHeight: '16px', wordWrap: 'break-word'}}>
                   We independently select all products and services. If you click through links we provide, we may earn a commission.
                 </div>
-                <div style={{color: '#8B94A2', fontSize: 12, fontFamily: 'Work Sans', fontWeight: '600', lineHeight: '16px', wordWrap: 'break-word', whiteSpace: 'nowrap'}}>
+                <div className="order-1 xl:order-2" style={{color: '#8B94A2', fontSize: 12, fontFamily: 'Work Sans', fontWeight: '600', lineHeight: '16px', wordWrap: 'break-word', whiteSpace: 'nowrap'}}>
                   Advertiser Disclosure
                 </div>
               </div>
