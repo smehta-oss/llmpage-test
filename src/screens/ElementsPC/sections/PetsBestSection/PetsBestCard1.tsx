@@ -283,71 +283,166 @@ export const PetsBestCard1 = (): JSX.Element => {
 
             {activeTab === "consumer-sentiment" && (
               <>
-                <div className="flex flex-col gap-6">
-                  <div className="flex flex-col sm:flex-row gap-6 items-start">
-                    <div className="flex flex-col items-center gap-3">
-                      <div className="relative w-32 h-32">
-                        <svg viewBox="0 0 120 120" className="w-full h-full -rotate-90">
-                          <circle cx="60" cy="60" r="50" fill="none" stroke="#E5E7EB" strokeWidth="12"/>
-                          <circle
-                            cx="60"
-                            cy="60"
-                            r="50"
-                            fill="none"
-                            stroke="url(#gradient1)"
-                            strokeWidth="12"
-                            strokeDasharray="314"
-                            strokeDashoffset="94"
-                            strokeLinecap="round"
-                          />
-                          <defs>
-                            <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="0%">
-                              <stop offset="0%" stopColor="#DC2626"/>
-                              <stop offset="50%" stopColor="#F59E0B"/>
-                              <stop offset="100%" stopColor="#10B981"/>
-                            </linearGradient>
-                          </defs>
-                        </svg>
-                        <div className="absolute inset-0 flex items-center justify-center">
-                          <div className="text-center">
-                            <div className="text-3xl font-bold text-black">6.6</div>
-                            <div className="text-sm text-gray-600">/10</div>
+                <div className="flex flex-col gap-8">
+                  {/* Top Section with Rating and Legend */}
+                  <div className="flex flex-col lg:flex-row items-start justify-between gap-8">
+                    {/* Left: Rating Gauge and Legend */}
+                    <div className="flex items-start gap-8">
+                      {/* Rating Gauge */}
+                      <div className="flex flex-col items-center gap-4">
+                        <div className="relative" style={{ width: '140px', height: '140px' }}>
+                          {/* Semi-circle SVG */}
+                          <svg viewBox="0 0 140 90" className="w-full h-full">
+                            {/* Background arc */}
+                            <path
+                              d="M 20 80 A 50 50 0 0 1 120 80"
+                              fill="none"
+                              stroke="#E5E7EB"
+                              strokeWidth="16"
+                              strokeLinecap="round"
+                            />
+                            {/* Colored gradient arc */}
+                            <defs>
+                              <linearGradient id="gaugeGradient1" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" stopColor="#DC2626" />
+                                <stop offset="35%" stopColor="#F59E0B" />
+                                <stop offset="60%" stopColor="#EAB308" />
+                                <stop offset="100%" stopColor="#16A34A" />
+                              </linearGradient>
+                            </defs>
+                            <path
+                              d="M 20 80 A 50 50 0 0 1 120 80"
+                              fill="none"
+                              stroke="url(#gaugeGradient1)"
+                              strokeWidth="16"
+                              strokeLinecap="round"
+                              strokeDasharray="157"
+                              strokeDashoffset="57"
+                            />
+                            {/* Indicator dot */}
+                            <circle cx="92" cy="35" r="8" fill="#EAB308" stroke="white" strokeWidth="2"/>
+                          </svg>
+                          {/* Center Text */}
+                          <div className="absolute inset-0 flex items-end justify-center pb-2">
+                            <div className="text-center">
+                              <div style={{
+                                fontSize: '48px',
+                                fontWeight: '700',
+                                lineHeight: '1',
+                                color: '#000000',
+                                fontFamily: 'Work Sans, sans-serif'
+                              }}>
+                                6.6
+                                <span style={{ fontSize: '20px', color: '#6B7280' }}>/10</span>
+                              </div>
+                            </div>
                           </div>
                         </div>
+                        {/* Fair Badge */}
+                        <div style={{
+                          padding: '6px 24px',
+                          backgroundColor: '#FEF3C7',
+                          borderRadius: '4px'
+                        }}>
+                          <span style={{
+                            fontSize: '16px',
+                            fontWeight: '600',
+                            color: '#000000',
+                            fontFamily: 'Work Sans, sans-serif'
+                          }}>Fair</span>
+                        </div>
                       </div>
-                      <div className="px-4 py-1.5 bg-[#FEF3C7] rounded">
-                        <span className="text-sm font-semibold text-black">Fair</span>
+
+                      {/* Legend */}
+                      <div className="flex flex-col gap-3 pt-4">
+                        <div className="flex items-center gap-3">
+                          <div style={{
+                            width: '12px',
+                            height: '12px',
+                            borderRadius: '50%',
+                            backgroundColor: '#DC2626'
+                          }}></div>
+                          <span style={{
+                            fontSize: '16px',
+                            color: '#4B5563',
+                            fontFamily: 'Work Sans, sans-serif'
+                          }}>0-5 Poor</span>
+                        </div>
+                        <div className="flex items-center gap-3">
+                          <div style={{
+                            width: '12px',
+                            height: '12px',
+                            borderRadius: '50%',
+                            backgroundColor: '#EAB308'
+                          }}></div>
+                          <span style={{
+                            fontSize: '16px',
+                            color: '#4B5563',
+                            fontFamily: 'Work Sans, sans-serif'
+                          }}>5-7 Fair</span>
+                        </div>
+                        <div className="flex items-center gap-3">
+                          <div style={{
+                            width: '12px',
+                            height: '12px',
+                            borderRadius: '50%',
+                            backgroundColor: '#16A34A'
+                          }}></div>
+                          <span style={{
+                            fontSize: '16px',
+                            color: '#4B5563',
+                            fontFamily: 'Work Sans, sans-serif'
+                          }}>7-10 Good</span>
+                        </div>
                       </div>
                     </div>
 
-                    <div className="flex flex-col gap-3 flex-1">
-                      <div className="flex items-center gap-2">
-                        <div className="w-3 h-3 rounded-full bg-red-600"></div>
-                        <span className="text-sm text-gray-700">0-5 Poor</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-                        <span className="text-sm text-gray-700">5-7 Fair</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <div className="w-3 h-3 rounded-full bg-green-600"></div>
-                        <span className="text-sm text-gray-700">7-10 Good</span>
+                    {/* Center: Highlight Box */}
+                    <div className="flex-1 max-w-xl">
+                      <div style={{
+                        padding: '24px',
+                        backgroundColor: '#EFF6FF',
+                        border: '1px solid #BFDBFE',
+                        borderRadius: '8px'
+                      }}>
+                        <h4 style={{
+                          fontSize: '20px',
+                          fontWeight: '700',
+                          color: '#000000',
+                          marginBottom: '8px',
+                          fontFamily: 'Work Sans, sans-serif'
+                        }}>
+                          Excellent coverage and customer service
+                        </h4>
+                        <p style={{
+                          fontSize: '16px',
+                          color: '#6B7280',
+                          fontFamily: 'Work Sans, sans-serif',
+                          lineHeight: '1.5'
+                        }}>
+                          Users ranked Pets Best #1 in coverage across 4k+ reviews
+                        </p>
                       </div>
                     </div>
 
-                    <div className="flex flex-col items-center gap-2 border-l border-gray-200 pl-6">
-                      <div className="text-3xl font-bold text-[#007AC8]">7,920</div>
-                      <div className="text-sm text-gray-600">Insights Analyzed</div>
+                    {/* Right: Insights Count */}
+                    <div className="flex flex-col items-center gap-2 pl-8 border-l border-gray-200">
+                      <div style={{
+                        fontSize: '48px',
+                        fontWeight: '700',
+                        color: '#007AC8',
+                        fontFamily: 'Work Sans, sans-serif',
+                        lineHeight: '1'
+                      }}>7,920</div>
+                      <div style={{
+                        fontSize: '16px',
+                        color: '#6B7280',
+                        fontFamily: 'Work Sans, sans-serif'
+                      }}>Insights Analyzed</div>
                     </div>
                   </div>
 
-                  <div className="border-t border-gray-200 pt-6">
-                    <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-4">
-                      <h4 className="font-bold text-lg text-black mb-2">Excellent coverage and customer service</h4>
-                      <p className="text-sm text-gray-700">Users ranked Pets Best #1 in coverage across 4k+ reviews</p>
-                    </div>
-                  </div>
-
+                  {/* What Pet Parents Say */}
                   <div>
                     <h4 className="font-bold text-lg text-black mb-4">What Pet Parents Say About Pets Best</h4>
                     <p className="text-base text-gray-700 leading-relaxed mb-4">
