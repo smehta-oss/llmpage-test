@@ -354,7 +354,7 @@ export const PetsBestCard1 = (): JSX.Element => {
                             Included
                           </td>
                         </tr>
-                        <tr className="bg-[#F8F8FA] border-b border-[#E5E7EB]">
+                        <tr className="border-b border-[#E5E7EB]">
                           <td className="p-4 [font-family:'Work_Sans',Helvetica] text-[#333333] text-base leading-[26px]">
                             Vet exam fees
                           </td>
@@ -362,7 +362,7 @@ export const PetsBestCard1 = (): JSX.Element => {
                             Available as an add-on
                           </td>
                         </tr>
-                        <tr>
+                        <tr className="bg-[#F8F8FA]">
                           <td className="p-4 [font-family:'Work_Sans',Helvetica] text-[#333333] text-base leading-[26px]">
                             Microchipping
                           </td>
