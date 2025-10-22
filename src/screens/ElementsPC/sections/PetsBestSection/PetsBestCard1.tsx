@@ -285,9 +285,9 @@ export const PetsBestCard1 = (): JSX.Element => {
               <>
                 <div className="flex flex-col gap-8">
                   {/* Top Section with Rating and Legend */}
-                  <div className="flex flex-col lg:flex-row items-start justify-between gap-8">
+                  <div className="flex flex-col lg:flex-row items-start gap-0">
                     {/* Left: Rating Gauge and Legend */}
-                    <div className="flex items-start" style={{ gap: '32px', width: '90%' }}>
+                    <div className="flex items-start" style={{ gap: '32px', width: '90%', marginRight: '15px' }}>
                       {/* Rating Gauge */}
                       <div className="flex flex-col items-center" style={{ gap: '5px' }}>
                         <div className="relative" style={{ width: '170px', height: '105px' }}>
@@ -437,8 +437,9 @@ export const PetsBestCard1 = (): JSX.Element => {
                     {/* Center: Highlight Box */}
                     <div style={{
                       maxWidth: '427px',
-                      paddingLeft: '32px',
+                      paddingLeft: '15px',
                       paddingRight: '15px',
+                      marginLeft: '15px',
                       borderLeft: '1px solid #E5E7EB'
                     }}>
                       <h4 style={{
@@ -463,7 +464,7 @@ export const PetsBestCard1 = (): JSX.Element => {
                     </div>
 
                     {/* Right: Insights Count */}
-                    <div className="flex flex-col items-center gap-2 pl-8 border-l border-gray-200">
+                    <div className="flex flex-col items-center gap-2 border-l border-gray-200" style={{ paddingLeft: '15px', marginLeft: '15px' }}>
                       <div style={{
                         fontSize: '48px',
                         fontWeight: '700',
