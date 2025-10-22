@@ -280,6 +280,102 @@ export const PetsBestCard4 = (): JSX.Element => {
               </>
             )}
 
+            {activeTab === "plan-details" && (
+              <>
+                <div className="flex flex-col gap-6">
+                  <div>
+                    <h3 className="[font-family:'Work_Sans',Helvetica] font-bold text-black text-2xl leading-[30px] mb-4">
+                      Extra Costs
+                    </h3>
+                    <ul className="list-disc pl-5 space-y-2">
+                      <li className="[font-family:'Work_Sans',Helvetica] text-[#333333] text-base leading-[26px]">
+                        Wellness Rewards: $250 to $650 per year for routine care
+                      </li>
+                      <li className="[font-family:'Work_Sans',Helvetica] text-[#333333] text-base leading-[26px]">
+                        Healthy Pet Deductible Discount: Reduces deductible by $50 annually
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div>
+                    <h3 className="[font-family:'Work_Sans',Helvetica] font-bold text-black text-2xl leading-[30px] mb-4">
+                      Coverage Details
+                    </h3>
+                    <table className="w-full border-collapse">
+                      <thead>
+                        <tr>
+                          <th className="bg-[#2B4C7E] text-white text-left p-4 [font-family:'Work_Sans',Helvetica] font-bold text-base">
+                            Coverage Type
+                          </th>
+                          <th className="bg-[#2B4C7E] text-white text-left p-4 [font-family:'Work_Sans',Helvetica] font-bold text-base">
+                            Plan Details
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr className="border-b border-[#E5E7EB]">
+                          <td className="p-4 [font-family:'Work_Sans',Helvetica] text-[#333333] text-base leading-[26px]">
+                            Reimbursement choices
+                          </td>
+                          <td className="p-4 [font-family:'Work_Sans',Helvetica] text-[#333333] text-base leading-[26px]">
+                            70%, 80%, 90%
+                          </td>
+                        </tr>
+                        <tr className="bg-[#F8F8FA] border-b border-[#E5E7EB]">
+                          <td className="p-4 [font-family:'Work_Sans',Helvetica] text-[#333333] text-base leading-[26px]">
+                            Waiting periods
+                          </td>
+                          <td className="p-4 [font-family:'Work_Sans',Helvetica] text-[#333333] text-base leading-[26px]">
+                            14 days for accidents and illnesses; 6 months for orthopedic conditions
+                          </td>
+                        </tr>
+                        <tr className="border-b border-[#E5E7EB]">
+                          <td className="p-4 [font-family:'Work_Sans',Helvetica] text-[#333333] text-base leading-[26px]">
+                            Age restrictions
+                          </td>
+                          <td className="p-4 [font-family:'Work_Sans',Helvetica] text-[#333333] text-base leading-[26px]">
+                            Available for pets as young as 6 weeks; no upper age limit for new policies
+                          </td>
+                        </tr>
+                        <tr className="bg-[#F8F8FA] border-b border-[#E5E7EB]">
+                          <td className="p-4 [font-family:'Work_Sans',Helvetica] text-[#333333] text-base leading-[26px]">
+                            Multi-pet discount
+                          </td>
+                          <td className="p-4 [font-family:'Work_Sans',Helvetica] text-[#333333] text-base leading-[26px]">
+                            5% for 2 pets, 10% for 3 or more
+                          </td>
+                        </tr>
+                        <tr className="border-b border-[#E5E7EB]">
+                          <td className="p-4 [font-family:'Work_Sans',Helvetica] text-[#333333] text-base leading-[26px]">
+                            Euthanasia or end-of-life expenses
+                          </td>
+                          <td className="p-4 [font-family:'Work_Sans',Helvetica] text-[#333333] text-base leading-[26px]">
+                            Included up to $1,000
+                          </td>
+                        </tr>
+                        <tr className="bg-[#F8F8FA] border-b border-[#E5E7EB]">
+                          <td className="p-4 [font-family:'Work_Sans',Helvetica] text-[#333333] text-base leading-[26px]">
+                            Vet exam fees
+                          </td>
+                          <td className="p-4 [font-family:'Work_Sans',Helvetica] text-[#333333] text-base leading-[26px]">
+                            Included in base policy
+                          </td>
+                        </tr>
+                        <tr>
+                          <td className="p-4 [font-family:'Work_Sans',Helvetica] text-[#333333] text-base leading-[26px]">
+                            Microchipping
+                          </td>
+                          <td className="p-4 [font-family:'Work_Sans',Helvetica] text-[#333333] text-base leading-[26px]">
+                            Yes, with Wellness Rewards
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </>
+            )}
+
             {activeTab === "expert-take" && (
               <>
                 <h4 className="[font-family:'Work_Sans',Helvetica] font-semibold text-black text-base leading-[26px] sm:text-xl sm:leading-8 tracking-[-0.33px]">
