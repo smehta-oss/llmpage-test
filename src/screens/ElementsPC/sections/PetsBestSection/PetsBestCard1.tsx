@@ -337,14 +337,14 @@ export const PetsBestCard1 = (): JSX.Element => {
                               fontFamily: 'system-ui, -apple-system, sans-serif',
                               fontWeight: '800',
                               color: '#2D3748',
-                              fontSize: '64px',
+                              fontSize: '24px',
                               letterSpacing: '-0.02em',
                               lineHeight: '1'
                             }}>6.6</span>
                             <span style={{
                               fontFamily: 'system-ui, -apple-system, sans-serif',
                               fontWeight: '400',
-                              fontSize: '28px',
+                              fontSize: '12px',
                               color: '#718096',
                               letterSpacing: '-0.01em'
                             }}>/10</span>
@@ -355,10 +355,10 @@ export const PetsBestCard1 = (): JSX.Element => {
                             position: 'absolute',
                             top: '-5px',
                             right: '-35px',
-                            width: '32px',
-                            height: '32px',
+                            width: '16px',
+                            height: '16px',
                             borderRadius: '50%',
-                            border: '2.5px solid #A0AEC0',
+                            border: '1.5px solid #A0AEC0',
                             display: 'flex',
                             alignItems: 'center',
                             justifyContent: 'center',
@@ -366,7 +366,7 @@ export const PetsBestCard1 = (): JSX.Element => {
                             cursor: 'pointer'
                           }}>
                             <span style={{
-                              fontSize: '18px',
+                              fontSize: '10px',
                               color: '#A0AEC0',
                               fontWeight: '600',
                               fontFamily: 'Georgia, serif',
