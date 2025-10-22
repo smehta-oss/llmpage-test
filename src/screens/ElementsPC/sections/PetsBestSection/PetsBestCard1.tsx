@@ -289,65 +289,101 @@ export const PetsBestCard1 = (): JSX.Element => {
                     {/* Left: Rating Gauge and Legend */}
                     <div className="flex items-start gap-8">
                       {/* Rating Gauge */}
-                      <div className="flex flex-col items-center gap-4">
-                        <div className="relative" style={{ width: '140px', height: '140px' }}>
+                      <div className="flex flex-col items-center gap-3">
+                        <div className="relative" style={{ width: '160px', height: '100px' }}>
                           {/* Semi-circle SVG */}
-                          <svg viewBox="0 0 140 90" className="w-full h-full">
-                            {/* Background arc */}
-                            <path
-                              d="M 20 80 A 50 50 0 0 1 120 80"
-                              fill="none"
-                              stroke="#E5E7EB"
-                              strokeWidth="16"
-                              strokeLinecap="round"
-                            />
-                            {/* Colored gradient arc */}
+                          <svg viewBox="0 0 200 110" style={{ width: '160px', height: '100px' }}>
                             <defs>
                               <linearGradient id="gaugeGradient1" x1="0%" y1="0%" x2="100%" y2="0%">
-                                <stop offset="0%" stopColor="#DC2626" />
-                                <stop offset="35%" stopColor="#F59E0B" />
-                                <stop offset="60%" stopColor="#EAB308" />
-                                <stop offset="100%" stopColor="#16A34A" />
+                                <stop offset="0%" stopColor="#C84430" />
+                                <stop offset="33%" stopColor="#E88F3C" />
+                                <stop offset="50%" stopColor="#EAB454" />
+                                <stop offset="100%" stopColor="#3D7C6D" />
                               </linearGradient>
                             </defs>
+
+                            {/* Red segment (0-5) */}
                             <path
-                              d="M 20 80 A 50 50 0 0 1 120 80"
+                              d="M 30 90 A 70 70 0 0 1 75 25"
                               fill="none"
-                              stroke="url(#gaugeGradient1)"
-                              strokeWidth="16"
+                              stroke="#C84430"
+                              strokeWidth="18"
                               strokeLinecap="round"
-                              strokeDasharray="157"
-                              strokeDashoffset="57"
                             />
-                            {/* Indicator dot */}
-                            <circle cx="92" cy="35" r="8" fill="#EAB308" stroke="white" strokeWidth="2"/>
+
+                            {/* Yellow segment (5-7) */}
+                            <path
+                              d="M 77 24 A 70 70 0 0 1 115 15"
+                              fill="none"
+                              stroke="#EAB454"
+                              strokeWidth="18"
+                              strokeLinecap="round"
+                            />
+
+                            {/* Green segment (7-10) */}
+                            <path
+                              d="M 117 15 A 70 70 0 0 1 170 90"
+                              fill="none"
+                              stroke="#3D7C6D"
+                              strokeWidth="18"
+                              strokeLinecap="round"
+                            />
+
+                            {/* Indicator dot on yellow segment */}
+                            <circle cx="115" cy="15" r="12" fill="#EAB454"/>
                           </svg>
+
                           {/* Center Text */}
-                          <div className="absolute inset-0 flex items-end justify-center pb-2">
-                            <div className="text-center">
-                              <div style={{
-                                fontSize: '48px',
-                                fontWeight: '700',
-                                lineHeight: '1',
-                                color: '#000000',
-                                fontFamily: 'Work Sans, sans-serif'
-                              }}>
-                                6.6
-                                <span style={{ fontSize: '20px', color: '#6B7280' }}>/10</span>
-                              </div>
+                          <div className="absolute" style={{
+                            bottom: '8px',
+                            left: '50%',
+                            transform: 'translateX(-50%)',
+                            textAlign: 'center'
+                          }}>
+                            <div style={{
+                              fontFamily: 'Work Sans, sans-serif',
+                              fontWeight: '700',
+                              color: '#1F2937',
+                              lineHeight: '1'
+                            }}>
+                              <span style={{ fontSize: '56px' }}>6.6</span>
+                              <span style={{ fontSize: '24px', color: '#6B7280' }}>/10</span>
                             </div>
                           </div>
+
+                          {/* Info icon */}
+                          <div style={{
+                            position: 'absolute',
+                            top: '0',
+                            right: '-30px',
+                            width: '24px',
+                            height: '24px',
+                            borderRadius: '50%',
+                            border: '2px solid #9CA3AF',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            backgroundColor: 'white'
+                          }}>
+                            <span style={{
+                              fontSize: '14px',
+                              color: '#9CA3AF',
+                              fontWeight: '600',
+                              fontFamily: 'serif'
+                            }}>i</span>
+                          </div>
                         </div>
+
                         {/* Fair Badge */}
                         <div style={{
-                          padding: '6px 24px',
+                          padding: '8px 32px',
                           backgroundColor: '#FEF3C7',
-                          borderRadius: '4px'
+                          borderRadius: '6px'
                         }}>
                           <span style={{
-                            fontSize: '16px',
+                            fontSize: '18px',
                             fontWeight: '600',
-                            color: '#000000',
+                            color: '#1F2937',
                             fontFamily: 'Work Sans, sans-serif'
                           }}>Fair</span>
                         </div>
