@@ -287,7 +287,7 @@ export const PetsBestCard1 = (): JSX.Element => {
                   {/* Top Section with Rating and Legend */}
                   <div className="flex flex-col lg:flex-row items-start gap-0">
                     {/* Left: Rating Gauge and Legend */}
-                    <div className="flex items-start" style={{ gap: '32px', width: '90%', marginRight: '15px' }}>
+                    <div className="flex items-start" style={{ gap: '32px', marginRight: '15px' }}>
                       {/* Rating Gauge */}
                       <div className="flex flex-col items-center" style={{ gap: '5px' }}>
                         <div className="relative" style={{ width: '170px', height: '105px' }}>
