@@ -482,7 +482,10 @@ export const PetsBestCard1 = (): JSX.Element => {
 
                   {/* What Pet Parents Say */}
                   <div>
-                    <h4 className="font-bold text-lg text-black mb-4">What Pet Parents Say About Pets Best</h4>
+                    <div className="flex items-center gap-4 mb-4">
+                      <h4 className="font-bold text-lg text-black whitespace-nowrap">What Pet Parents Say About Pets Best</h4>
+                      <div className="flex-1 h-px bg-gray-300"></div>
+                    </div>
                     <p className="text-base text-gray-700 leading-relaxed mb-4">
                       Customers generally find that Pets Best offers comprehensive plans with good options for customization. The primary customer complaint is slow processing times for claims, which can cause frustration...
                     </p>
