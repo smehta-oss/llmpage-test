@@ -324,6 +324,137 @@ export const PetsBestCard2 = (): JSX.Element => {
               </>
             )}
 
+            {activeTab === "consumer-sentiment" && (
+              <>
+                <div className="flex flex-col gap-6">
+                  <div className="flex flex-col sm:flex-row gap-6 items-start">
+                    <div className="flex flex-col items-center gap-3">
+                      <div className="relative w-32 h-32">
+                        <svg viewBox="0 0 120 120" className="w-full h-full -rotate-90">
+                          <circle cx="60" cy="60" r="50" fill="none" stroke="#E5E7EB" strokeWidth="12"/>
+                          <circle
+                            cx="60"
+                            cy="60"
+                            r="50"
+                            fill="none"
+                            stroke="url(#gradient2)"
+                            strokeWidth="12"
+                            strokeDasharray="314"
+                            strokeDashoffset="50"
+                            strokeLinecap="round"
+                          />
+                          <defs>
+                            <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="0%">
+                              <stop offset="0%" stopColor="#DC2626"/>
+                              <stop offset="50%" stopColor="#F59E0B"/>
+                              <stop offset="100%" stopColor="#10B981"/>
+                            </linearGradient>
+                          </defs>
+                        </svg>
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          <div className="text-center">
+                            <div className="text-3xl font-bold text-black">7.8</div>
+                            <div className="text-sm text-gray-600">/10</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="px-4 py-1.5 bg-[#D1FAE5] rounded">
+                        <span className="text-sm font-semibold text-black">Good</span>
+                      </div>
+                    </div>
+
+                    <div className="flex flex-col gap-3 flex-1">
+                      <div className="flex items-center gap-2">
+                        <div className="w-3 h-3 rounded-full bg-red-600"></div>
+                        <span className="text-sm text-gray-700">0-5 Poor</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+                        <span className="text-sm text-gray-700">5-7 Fair</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <div className="w-3 h-3 rounded-full bg-green-600"></div>
+                        <span className="text-sm text-gray-700">7-10 Good</span>
+                      </div>
+                    </div>
+
+                    <div className="flex flex-col items-center gap-2 border-l border-gray-200 pl-6">
+                      <div className="text-3xl font-bold text-[#007AC8]">8,540</div>
+                      <div className="text-sm text-gray-600">Insights Analyzed</div>
+                    </div>
+                  </div>
+
+                  <div className="border-t border-gray-200 pt-6">
+                    <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-4">
+                      <h4 className="font-bold text-lg text-black mb-2">Outstanding customization options</h4>
+                      <p className="text-sm text-gray-700">Users ranked Figo #1 in flexibility and customization across 5k+ reviews</p>
+                    </div>
+                  </div>
+
+                  <div>
+                    <h4 className="font-bold text-lg text-black mb-4">What Pet Parents Say About Figo</h4>
+                    <p className="text-base text-gray-700 leading-relaxed mb-4">
+                      Customers appreciate Figo's user-friendly mobile app and excellent customer service. The Powerups feature allows great customization, though some find the base coverage limiting without add-ons...
+                    </p>
+                    <button className="text-[#007AC8] font-semibold text-sm hover:underline">Read more</button>
+                  </div>
+
+                  <div className="flex flex-wrap gap-3 mb-4">
+                    <div className="flex items-center gap-2 px-4 py-2 bg-green-50 border border-green-600 rounded-full">
+                      <span className="text-green-600 text-xl">↑</span>
+                      <span className="font-semibold text-sm">Ranked #1 in App Experience</span>
+                    </div>
+                    <div className="flex items-center gap-2 px-4 py-2 bg-green-50 border border-green-600 rounded-full">
+                      <span className="text-green-600 text-xl">↑</span>
+                      <span className="font-semibold text-sm">#2 in Coverage</span>
+                    </div>
+                    <div className="flex items-center gap-2 px-4 py-2 bg-yellow-50 border border-yellow-600 rounded-full">
+                      <span className="text-yellow-600 text-xl">→</span>
+                      <span className="font-semibold text-sm">#3 in Claims</span>
+                    </div>
+                    <div className="flex items-center gap-2 px-4 py-2 bg-yellow-50 border border-yellow-600 rounded-full">
+                      <span className="text-yellow-600 text-xl">→</span>
+                      <span className="font-semibold text-sm">#4 in Cost</span>
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="bg-gray-50 rounded-lg p-6">
+                      <div className="flex items-start gap-3 mb-4">
+                        <div className="text-3xl">👍</div>
+                        <div>
+                          <div className="font-semibold text-sm text-gray-900 mb-1">
+                            In 4.2k+ comparisons where Figo <span className="font-bold">was preferred</span>, people say it is
+                          </div>
+                        </div>
+                      </div>
+                      <div className="flex flex-wrap gap-2">
+                        <span className="px-3 py-1.5 bg-white border border-gray-300 rounded-full text-sm">Easy to Use (950+)</span>
+                        <span className="px-3 py-1.5 bg-white border border-gray-300 rounded-full text-sm">Customizable Plans (600+)</span>
+                        <span className="px-3 py-1.5 bg-white border border-gray-300 rounded-full text-sm">Fast Claims (450+)</span>
+                      </div>
+                    </div>
+
+                    <div className="bg-gray-50 rounded-lg p-6">
+                      <div className="flex items-start gap-3 mb-4">
+                        <div className="text-3xl">👎</div>
+                        <div>
+                          <div className="font-semibold text-sm text-gray-900 mb-1">
+                            In 1.8k+ comparisons where Figo <span className="font-bold">was not preferred</span>, people say it is
+                          </div>
+                        </div>
+                      </div>
+                      <div className="flex flex-wrap gap-2">
+                        <span className="px-3 py-1.5 bg-white border border-gray-300 rounded-full text-sm">Add-ons Needed (400+)</span>
+                        <span className="px-3 py-1.5 bg-white border border-gray-300 rounded-full text-sm">Higher Premiums (350+)</span>
+                        <span className="px-3 py-1.5 bg-white border border-gray-300 rounded-full text-sm">Complex Options (150+)</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </>
+            )}
+
             {activeTab === "plan-details" && (
               <>
                 <div className="flex flex-col gap-6">
