@@ -289,7 +289,7 @@ export const PetsBestCard1 = (): JSX.Element => {
                     {/* Left: Rating Gauge and Legend */}
                     <div className="flex items-start" style={{ gap: '32px', marginRight: '15px' }}>
                       {/* Rating Gauge */}
-                      <div className="flex flex-col items-center" style={{ gap: '5px' }}>
+                      <div className="flex flex-col items-center" style={{ gap: '0px' }}>
                         <div className="relative" style={{ width: '170px', height: '105px' }}>
                           {/* Semi-circle SVG */}
                           <svg viewBox="0 0 200 120" style={{ width: '170px', height: '105px', overflow: 'visible' }}>
@@ -327,9 +327,9 @@ export const PetsBestCard1 = (): JSX.Element => {
                           {/* Center Text */}
                           <div style={{
                             position: 'absolute',
-                            bottom: '12px',
+                            top: '50%',
                             left: '50%',
-                            transform: 'translateX(-50%)',
+                            transform: 'translate(-50%, -50%)',
                             textAlign: 'center',
                             whiteSpace: 'nowrap'
                           }}>
