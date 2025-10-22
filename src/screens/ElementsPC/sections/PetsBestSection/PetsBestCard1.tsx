@@ -287,7 +287,7 @@ export const PetsBestCard1 = (): JSX.Element => {
                   {/* Top Section with Rating and Legend */}
                   <div className="flex flex-col lg:flex-row items-start justify-between gap-8">
                     {/* Left: Rating Gauge and Legend */}
-                    <div className="flex items-start gap-8">
+                    <div className="flex items-start" style={{ gap: '32px', width: '90%' }}>
                       {/* Rating Gauge */}
                       <div className="flex flex-col items-center" style={{ gap: '5px' }}>
                         <div className="relative" style={{ width: '170px', height: '105px' }}>
@@ -400,7 +400,7 @@ export const PetsBestCard1 = (): JSX.Element => {
                             backgroundColor: '#DC2626'
                           }}></div>
                           <span style={{
-                            fontSize: '16px',
+                            fontSize: '12px',
                             color: '#4B5563',
                             fontFamily: 'Work Sans, sans-serif'
                           }}>0-5 Poor</span>
@@ -413,7 +413,7 @@ export const PetsBestCard1 = (): JSX.Element => {
                             backgroundColor: '#EAB308'
                           }}></div>
                           <span style={{
-                            fontSize: '16px',
+                            fontSize: '12px',
                             color: '#4B5563',
                             fontFamily: 'Work Sans, sans-serif'
                           }}>5-7 Fair</span>
@@ -426,7 +426,7 @@ export const PetsBestCard1 = (): JSX.Element => {
                             backgroundColor: '#16A34A'
                           }}></div>
                           <span style={{
-                            fontSize: '16px',
+                            fontSize: '12px',
                             color: '#4B5563',
                             fontFamily: 'Work Sans, sans-serif'
                           }}>7-10 Good</span>
@@ -437,8 +437,9 @@ export const PetsBestCard1 = (): JSX.Element => {
                     {/* Center: Highlight Box */}
                     <div style={{
                       maxWidth: '427px',
-                      paddingLeft: '15px',
-                      paddingRight: '15px'
+                      paddingLeft: '32px',
+                      paddingRight: '15px',
+                      borderLeft: '1px solid #E5E7EB'
                     }}>
                       <h4 style={{
                         fontSize: '20px',
