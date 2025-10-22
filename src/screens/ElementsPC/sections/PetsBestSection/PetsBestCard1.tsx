@@ -289,7 +289,7 @@ export const PetsBestCard1 = (): JSX.Element => {
                     {/* Left: Rating Gauge and Legend */}
                     <div className="flex items-start gap-8">
                       {/* Rating Gauge */}
-                      <div className="flex flex-col items-center" style={{ gap: '12px' }}>
+                      <div className="flex flex-col items-center" style={{ gap: '5px' }}>
                         <div className="relative" style={{ width: '170px', height: '105px' }}>
                           {/* Semi-circle SVG */}
                           <svg viewBox="0 0 200 120" style={{ width: '170px', height: '105px', overflow: 'visible' }}>
@@ -377,17 +377,15 @@ export const PetsBestCard1 = (): JSX.Element => {
 
                         {/* Fair Badge */}
                         <div style={{
-                          padding: '10px 40px',
+                          padding: '6px 24px',
                           backgroundColor: '#FEF3C7',
-                          borderRadius: '8px',
-                          marginTop: '4px'
+                          borderRadius: '24px'
                         }}>
                           <span style={{
-                            fontSize: '20px',
+                            fontSize: '14px',
                             fontWeight: '500',
-                            color: '#2D3748',
-                            fontFamily: 'system-ui, -apple-system, sans-serif',
-                            letterSpacing: '0.01em'
+                            color: '#3D3D3D',
+                            fontFamily: 'system-ui, -apple-system, sans-serif'
                           }}>Fair</span>
                         </div>
                       </div>
