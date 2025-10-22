@@ -435,31 +435,30 @@ export const PetsBestCard1 = (): JSX.Element => {
                     </div>
 
                     {/* Center: Highlight Box */}
-                    <div className="flex-1 max-w-xl">
-                      <div style={{
-                        padding: '24px',
-                        backgroundColor: '#EFF6FF',
-                        border: '1px solid #BFDBFE',
-                        borderRadius: '8px'
+                    <div style={{
+                      maxWidth: '427px',
+                      paddingLeft: '15px',
+                      paddingRight: '15px'
+                    }}>
+                      <h4 style={{
+                        fontSize: '20px',
+                        fontWeight: '700',
+                        color: '#000000',
+                        marginBottom: '8px',
+                        fontFamily: 'Work Sans, sans-serif',
+                        lineHeight: '1.3'
                       }}>
-                        <h4 style={{
-                          fontSize: '20px',
-                          fontWeight: '700',
-                          color: '#000000',
-                          marginBottom: '8px',
-                          fontFamily: 'Work Sans, sans-serif'
-                        }}>
-                          Excellent coverage and customer service
-                        </h4>
-                        <p style={{
-                          fontSize: '16px',
-                          color: '#6B7280',
-                          fontFamily: 'Work Sans, sans-serif',
-                          lineHeight: '1.5'
-                        }}>
-                          Users ranked Pets Best #1 in coverage across 4k+ reviews
-                        </p>
-                      </div>
+                        Excellent coverage and customer service
+                      </h4>
+                      <p style={{
+                        fontSize: '16px',
+                        color: '#6B7280',
+                        fontFamily: 'Work Sans, sans-serif',
+                        lineHeight: '1.5',
+                        margin: 0
+                      }}>
+                        Users ranked Pets Best #1 in coverage across 4k+ reviews
+                      </p>
                     </div>
 
                     {/* Right: Insights Count */}
