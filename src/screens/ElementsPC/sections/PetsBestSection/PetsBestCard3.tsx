@@ -33,6 +33,25 @@ const tabItems = [
   { id: "plan-details", label: "Plan Details" },
 ];
 
+const prosConsData = [
+  {
+    pro: "Chewy can pay your vet directly if they have Trupanion's software installed",
+    con: "Coverage details vary between Trupanion and Lemonade plans"
+  },
+  {
+    pro: "No payout limits on claims if your vet uses Trupanion Express",
+    con: "Does not cover pre-existing conditions"
+  },
+  {
+    pro: "90% reimbursement rate with no annual or lifetime limits",
+    con: "Only covers unexpected injuries and illnesses"
+  },
+  {
+    pro: "Includes access to Chewy's pharmacy and customer service",
+    con: null
+  }
+];
+
 export const PetsBestCard3 = (): JSX.Element => {
   const [activeTab, setActiveTab] = useState("expert-take");
   const [isExpanded, setIsExpanded] = useState(false);
@@ -163,6 +182,103 @@ export const PetsBestCard3 = (): JSX.Element => {
                 </button>
               ))}
             </div>
+
+            {activeTab === "pros-cons" && (
+              <>
+                <h4 className="[font-family:'Work_Sans',Helvetica] font-semibold text-black text-xl tracking-[-0.33px] leading-8">
+                  Pros & Cons of Chewy
+                </h4>
+
+                <table className="w-full border-collapse">
+                  <thead>
+                    <tr>
+                      <th
+                        className="w-1/2 p-2 bg-[#F8F8FA] border-r border-[#CED4DB] text-left"
+                        style={{
+                          color: 'black',
+                          fontSize: 12,
+                          fontFamily: 'Work Sans',
+                          fontWeight: '700',
+                          lineHeight: '16px',
+                          wordWrap: 'break-word'
+                        }}
+                      >
+                        <div className="flex items-center gap-1">
+                          <div className="w-5 h-5 flex items-center justify-center">
+                            <img
+                              src="/line/thumbs-up.svg"
+                              alt="Thumbs up"
+                              className="w-4 h-4"
+                            />
+                          </div>
+                          Pros
+                        </div>
+                      </th>
+                      <th
+                        className="w-1/2 p-2 bg-[#F8F8FA] text-left"
+                        style={{
+                          color: 'black',
+                          fontSize: 12,
+                          fontFamily: 'Work Sans',
+                          fontWeight: '700',
+                          lineHeight: '16px',
+                          wordWrap: 'break-word'
+                        }}
+                      >
+                        <div className="flex items-center gap-2">
+                          <div className="w-6 h-6 flex items-center justify-center">
+                            <img
+                              src="/line/thumbs-down.svg"
+                              alt="Thumbs down"
+                              className="w-4 h-4"
+                            />
+                          </div>
+                          Cons
+                        </div>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {prosConsData.map((row, index) => (
+                      <tr key={index}>
+                        <td
+                          className="p-2 bg-[#F8F8FA] border-t border-r border-[#CED4DB] align-top"
+                          style={{
+                            color: 'black',
+                            fontSize: 14,
+                            fontFamily: 'Work Sans',
+                            fontWeight: '400',
+                            lineHeight: '24px',
+                            wordWrap: 'break-word'
+                          }}
+                        >
+                          <ol start={index + 1} className="list-decimal list-inside m-0 p-0">
+                            <li className="pl-0">{row.pro}</li>
+                          </ol>
+                        </td>
+                        <td
+                          className="p-2 bg-[#F8F8FA] border-t border-[#CED4DB] align-top"
+                          style={{
+                            color: 'black',
+                            fontSize: 14,
+                            fontFamily: 'Work Sans',
+                            fontWeight: '400',
+                            lineHeight: '24px',
+                            wordWrap: 'break-word'
+                          }}
+                        >
+                          {row.con && (
+                            <ol start={index + 1} className="list-decimal list-inside m-0 p-0">
+                              <li className="pl-0">{row.con}</li>
+                            </ol>
+                          )}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </>
+            )}
 
             {activeTab === "expert-take" && (
               <>

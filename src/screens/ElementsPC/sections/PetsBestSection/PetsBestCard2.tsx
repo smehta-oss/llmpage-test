@@ -35,19 +35,19 @@ const tabItems = [
 
 const prosConsData = [
   {
-    pro: "Pets Best will pay your vet directly if your vet signs the Veterinarian Reimbursement Release form",
-    con: "Does not cover prescription food or supplements"
+    pro: "Unique Powerups allow you to customize your coverage with hard-to-find benefits",
+    con: "Does not cover pre-existing conditions"
   },
   {
-    pro: "CareCredit cardholders can use the card to pay for vet bills and receive reimbursement directly to the card",
-    con: "Does not cover stem cell treatments"
+    pro: "Includes up to $10,000 in liability coverage if your pet damages property",
+    con: "Limited availability in some states"
   },
   {
-    pro: "No upper pet age limit for buying a new policy",
-    con: "6-month waiting period for coverage of cruciate ligament issues"
+    pro: "Covers lost pet advertising and rewards up to $1,000",
+    con: "Higher premiums for older pets"
   },
   {
-    pro: "Offers a 1-month trial policy for dogs and cats ages 8 and under through certain veterinary clinics and companies that partner with Pets Best",
+    pro: "Offers coverage for boarding expenses if you are hospitalized",
     con: null
   }
 ];
@@ -226,6 +226,103 @@ export const PetsBestCard2 = (): JSX.Element => {
                 </button>
               ))}
             </div>
+
+            {activeTab === "pros-cons" && (
+              <>
+                <h4 className="[font-family:'Work_Sans',Helvetica] font-semibold text-black text-xl tracking-[-0.33px] leading-8">
+                  Pros & Cons of Figo
+                </h4>
+
+                <table className="w-full border-collapse">
+                  <thead>
+                    <tr>
+                      <th
+                        className="w-1/2 p-2 bg-[#F8F8FA] border-r border-[#CED4DB] text-left"
+                        style={{
+                          color: 'black',
+                          fontSize: 12,
+                          fontFamily: 'Work Sans',
+                          fontWeight: '700',
+                          lineHeight: '16px',
+                          wordWrap: 'break-word'
+                        }}
+                      >
+                        <div className="flex items-center gap-1">
+                          <div className="w-5 h-5 flex items-center justify-center">
+                            <img
+                              src="/line/thumbs-up.svg"
+                              alt="Thumbs up"
+                              className="w-4 h-4"
+                            />
+                          </div>
+                          Pros
+                        </div>
+                      </th>
+                      <th
+                        className="w-1/2 p-2 bg-[#F8F8FA] text-left"
+                        style={{
+                          color: 'black',
+                          fontSize: 12,
+                          fontFamily: 'Work Sans',
+                          fontWeight: '700',
+                          lineHeight: '16px',
+                          wordWrap: 'break-word'
+                        }}
+                      >
+                        <div className="flex items-center gap-2">
+                          <div className="w-6 h-6 flex items-center justify-center">
+                            <img
+                              src="/line/thumbs-down.svg"
+                              alt="Thumbs down"
+                              className="w-4 h-4"
+                            />
+                          </div>
+                          Cons
+                        </div>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {prosConsData.map((row, index) => (
+                      <tr key={index}>
+                        <td
+                          className="p-2 bg-[#F8F8FA] border-t border-r border-[#CED4DB] align-top"
+                          style={{
+                            color: 'black',
+                            fontSize: 14,
+                            fontFamily: 'Work Sans',
+                            fontWeight: '400',
+                            lineHeight: '24px',
+                            wordWrap: 'break-word'
+                          }}
+                        >
+                          <ol start={index + 1} className="list-decimal list-inside m-0 p-0">
+                            <li className="pl-0">{row.pro}</li>
+                          </ol>
+                        </td>
+                        <td
+                          className="p-2 bg-[#F8F8FA] border-t border-[#CED4DB] align-top"
+                          style={{
+                            color: 'black',
+                            fontSize: 14,
+                            fontFamily: 'Work Sans',
+                            fontWeight: '400',
+                            lineHeight: '24px',
+                            wordWrap: 'break-word'
+                          }}
+                        >
+                          {row.con && (
+                            <ol start={index + 1} className="list-decimal list-inside m-0 p-0">
+                              <li className="pl-0">{row.con}</li>
+                            </ol>
+                          )}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </>
+            )}
 
             {activeTab === "expert-take" && (
               <>
